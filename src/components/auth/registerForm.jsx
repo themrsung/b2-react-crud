@@ -54,22 +54,26 @@ const RegisterForm = function () {
         onUserRegister()
       }}
     >
-      <label>ID</label>
-      <input
-        type="text"
-        value={userId}
-        onChange={(e) => {
-          setUserId(e.target.value)
-        }}
-      ></input>
-      <label>PASSWORD</label>
-      <input
-        type="password"
-        value={userPassword}
-        onChange={(e) => {
-          setUserPassword(e.target.value)
-        }}
-      ></input>
+      <div className="RegisterFormIdContainer">
+        <label>ID</label>
+        <input
+          type="text"
+          value={userId}
+          onChange={(e) => {
+            setUserId(e.target.value)
+          }}
+        ></input>
+      </div>
+      <div className="RegisterFormPasswordContainer">
+        <label>PASSWORD</label>
+        <input
+          type="password"
+          value={userPassword}
+          onChange={(e) => {
+            setUserPassword(e.target.value)
+          }}
+        ></input>
+      </div>
       <button type="submit">회원가입</button>
     </form>
   )

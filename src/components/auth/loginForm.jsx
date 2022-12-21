@@ -43,22 +43,27 @@ const LoginForm = function () {
         onUserLogin()
       }}
     >
-      <label>ID</label>
-      <input
-        type="text"
-        value={userId}
-        onChange={(e) => {
-          setUserId(e.target.value)
-        }}
-      ></input>
-      <label>PASSWORD</label>
-      <input
-        type="password"
-        value={userPassword}
-        onChange={(e) => {
-          setUserPassword(e.target.value)
-        }}
-      ></input>
+      <div className="LoginFormIdContainer">
+        <label>ID</label>
+        <input
+          type="text"
+          value={userId}
+          onChange={(e) => {
+            setUserId(e.target.value)
+          }}
+        ></input>
+      </div>
+      <div className="LoginFormPasswordContainer">
+        <label>PASSWORD</label>
+        <input
+          type="password"
+          value={userPassword}
+          onChange={(e) => {
+            setUserPassword(e.target.value)
+          }}
+        ></input>
+      </div>
+
       <button type="submit">로그인</button>
     </form>
   )
