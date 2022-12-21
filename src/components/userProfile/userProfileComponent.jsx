@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { getCurrentUserState } from '../../redux/config/configStore'
 import { SERVER_URL } from '../../serverUrl'
 
@@ -17,6 +18,13 @@ const UserProfileComponent = function ({ userId }) {
   }, [])
 
   const user = users.filter((user) => user.id === userId)[0]
+
+  let navigate = useNavigate()
+
+  if (!user) {
+    navigate('/login')
+  }
+
   const currentlyLoggedInUserId = getCurrentUserState().id
   const isProfileOfCurrentUser = user
     ? user.id === currentlyLoggedInUserId
@@ -51,7 +59,6 @@ const UserProfileComponent = function ({ userId }) {
 
     setIsChangingUserProfileMotd(!isChangingUserProfileMotd)
   }
-
   return user ? (
     <div className="UserProfileComponent">
       <div className="UserProfileId">
@@ -121,9 +128,7 @@ const UserProfileComponent = function ({ userId }) {
       </div>
     </div>
   ) : (
-    <div className="UserProfileComponent">
-      <p>User not found</p>
-    </div>
+    <></>
   )
 }
 

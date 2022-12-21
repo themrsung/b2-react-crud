@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
 import { getCurrentUserState, store } from '../../redux/config/configStore'
@@ -10,6 +10,24 @@ const WritePostForm = function () {
   const [postContent, setPostContent] = useState('')
 
   let navigate = useNavigate()
+
+  const [users, setUsers] = useState([])
+
+  const fetchUsers = async function () {
+    const response = await axios.get(SERVER_URL + '/users')
+    const data = response.data
+    setUsers(data)
+  }
+
+  useEffect(() => {
+    fetchUsers()
+  }, [])
+
+  const user = users.filter((user) => user.id === getCurrentUserState().id)[0]
+
+  if (!user) {
+    navigate('/login')
+  }
 
   const onWritePost = async () => {
     const post = {
