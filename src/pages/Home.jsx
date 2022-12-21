@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { logOut } from '../auth/logOut'
 import { getCurrentUserState } from '../redux/config/configStore'
 
 const Home = function () {
@@ -30,6 +31,13 @@ const Home = function () {
         }}
       >
         (개발용) currentUserState 콘솔에 찍기
+      </button>
+      <button
+        onClick={() => {
+          logOut()
+        }}
+      >
+        (개발용) 로그아웃
       </button>
     </div>
   )
