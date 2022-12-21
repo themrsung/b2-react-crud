@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
-import { getCurrentUserState, store } from '../../redux/config/configStore'
+import { getCurrentUserState } from '../../redux/config/configStore'
 import { SERVER_URL } from '../../serverUrl'
 
 const WritePostForm = function () {
@@ -34,7 +34,8 @@ const WritePostForm = function () {
       id: uuidv4(),
       author: getCurrentUserState().id,
       title: postTitle,
-      content: postContent
+      content: postContent,
+      createdAt: Date.now()
     }
 
     await axios.post(SERVER_URL + '/posts', post)

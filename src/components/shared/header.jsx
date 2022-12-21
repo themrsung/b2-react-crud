@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { logOut } from '../../auth/logOut'
+import { logOut } from '../../../auth/logOut'
 
 const Header = function () {
   let navigate = useNavigate()
