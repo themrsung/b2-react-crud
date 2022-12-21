@@ -8,6 +8,13 @@ const Header = function () {
       HEADER
       <button
         onClick={() => {
+          navigate('/')
+        }}
+      >
+        (개발용) 홈으로
+      </button>
+      <button
+        onClick={() => {
           navigate('/login')
         }}
       >
@@ -40,6 +47,13 @@ const Header = function () {
         }}
       >
         (개발용) 로그아웃
+      </button>
+      <button
+        onClick={() => {
+          navigate('/write')
+        }}
+      >
+        (개발용) 글쓰기
       </button>
     </header>
   )

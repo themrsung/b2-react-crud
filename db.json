@@ -30,5 +30,31 @@
       "name": "",
       "motd": ""
     }
+  ],
+  "posts": [
+    {
+      "id": "640b1c82-f1a2-4985-9a2f-bb6191458085",
+      "author": "admin",
+      "title": "ㅁㄴㅇ",
+      "content": "ㅁㄴㅇㅁㄴㅇㄴㅁㅇ"
+    },
+    {
+      "id": "84434282-73f4-46bf-8498-871c181496b4",
+      "author": "test",
+      "title": "ㄹㄹ",
+      "content": "ㅁㄴㅇㄴㅁㅇ"
+    },
+    {
+      "id": "d31a0a91-25ac-4e88-adfb-9ecfd259b447",
+      "author": "test",
+      "title": "ㅁㄴㅇ",
+      "content": "ㅁㄴㅇㅁㄴㅇ"
+    },
+    {
+      "id": "8c32b304-742c-4b47-a51d-1fcd93fcbd7a",
+      "author": "test",
+      "title": "ㅁㄴㅇ",
+      "content": "ㅁㄴㅇㅁㄴㅇ"
+    }
   ]
 }

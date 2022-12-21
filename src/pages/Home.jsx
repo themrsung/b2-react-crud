@@ -18,7 +18,6 @@ const Home = function () {
   return (
     <div className="Home">
       HOME
-      <WritePostForm />
       <button
         onClick={() => {
           console.log(users)

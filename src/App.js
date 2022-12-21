@@ -6,6 +6,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Home from './pages/Home'
 import UserProfile from './pages/UserProfile'
+import WritePost from './pages/WritePost'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="register" element={<Register />} />
           <Route path="profile/:id" element={<UserProfile />} />
           <Route path="profile" element={<UserProfile />} />
+          <Route path="write" element={<WritePost />} />
         </Routes>
         <Footer />
       </BrowserRouter>
