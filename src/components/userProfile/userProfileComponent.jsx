@@ -128,7 +128,7 @@ const UserProfileComponent = function ({ userId }) {
       </div>
     </div>
   ) : (
-    <></>
+    <>User not found</>
   )
 }
 
