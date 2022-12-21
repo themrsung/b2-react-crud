@@ -69,9 +69,6 @@ const UserProfileComponent = function ({ userId }) {
             )}
           </div>
         ) : (
-          <></>
-        )}
-        {isChangingUserProfileName ? (
           <form
             className="UserProfileNameChangeForm"
             onSubmit={(e) => {
@@ -89,13 +86,11 @@ const UserProfileComponent = function ({ userId }) {
             />
             <button type="submit">수정 완료</button>
           </form>
-        ) : (
-          <></>
         )}
       </div>
 
       <div className="UserProfileMotd">
-        {!isChangingUserProfileName ? (
+        {!isChangingUserProfileMotd ? (
           <div>
             <h3>{user.motd ? user.motd : 'motd'}</h3>
             {isProfileOfCurrentUser ? (
@@ -105,9 +100,6 @@ const UserProfileComponent = function ({ userId }) {
             )}
           </div>
         ) : (
-          <></>
-        )}
-        {isChangingUserProfileMotd ? (
           <form
             className="UserProfileMotdChangeForm"
             onSubmit={(e) => {
@@ -125,8 +117,6 @@ const UserProfileComponent = function ({ userId }) {
             />
             <button type="submit">수정 완료</button>
           </form>
-        ) : (
-          <></>
         )}
       </div>
     </div>

@@ -3,8 +3,8 @@
     {
       "id": "admin",
       "password": 1216985755,
-      "name": "adasdasdasd",
-      "motd": "상태메시지!!!"
+      "name": "관리자",
+      "motd": "관리자의 한 줄 소개"
     },
     {
       "id": "admin2",
