@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { hashPassword } from '../../auth/hashPassword'
+import { SERVER_URL } from '../../serverUrl'
 
 const LoginForm = function () {
   let navigate = useNavigate()
@@ -11,7 +12,7 @@ const LoginForm = function () {
   const [users, setUsers] = useState([])
 
   const fetchUsers = async function () {
-    const response = await axios.get('http://localhost:3001/users')
+    const response = await axios.get(SERVER_URL + '/users')
     const data = response.data
     setUsers(data)
   }

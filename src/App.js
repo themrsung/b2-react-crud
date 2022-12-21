@@ -1,4 +1,3 @@
-import logo from './logo.svg'
 import './App.css'
 import Header from './components/shared/header'
 import Footer from './components/shared/footer'

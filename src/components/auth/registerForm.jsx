@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { hashPassword } from '../../auth/hashPassword'
+import { SERVER_URL } from '../../serverUrl'
 
 const RegisterForm = function () {
   let navigate = useNavigate()
@@ -11,7 +12,7 @@ const RegisterForm = function () {
   const [users, setUsers] = useState([])
 
   const fetchUsers = async function () {
-    const response = await axios.get('http://localhost:3001/users')
+    const response = await axios.get(SERVER_URL + '/users')
     const data = response.data
     setUsers(data)
   }
@@ -39,7 +40,7 @@ const RegisterForm = function () {
     })
 
     if (!userIdIsAlreadyTaken) {
-      axios.post('http://localhost:3001/users', user)
+      axios.post(SERVER_URL + '/users', user)
       navigate('/login')
     } else {
       alert('이미 사용 중인 아이디입니다.')
