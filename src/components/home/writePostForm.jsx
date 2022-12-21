@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
+import { getCurrentUserState, store } from '../../redux/config/configStore'
 import { SERVER_URL } from '../../serverUrl'
 
 const WritePostForm = function () {
@@ -10,6 +11,7 @@ const WritePostForm = function () {
   const onWritePost = () => {
     const post = {
       id: uuidv4(),
+      author: getCurrentUserState().id,
       title: postTitle,
       content: postContent
     }
