@@ -2,23 +2,33 @@
   "users": [
     {
       "id": "admin",
-      "password": 1216985755
+      "password": 1216985755,
+      "name": "adasdasdasd",
+      "motd": "상태메시지!!!"
     },
     {
       "id": "admin2",
-      "password": 1216985755
+      "password": 1216985755,
+      "name": "",
+      "motd": ""
     },
     {
       "id": "admin3",
-      "password": 1216985755
+      "password": 1216985755,
+      "name": "",
+      "motd": ""
     },
     {
       "id": "admin4",
-      "password": 1216985755
+      "password": 1216985755,
+      "name": "",
+      "motd": ""
     },
     {
       "id": "admin222",
-      "password": 1216985755
+      "password": 1216985755,
+      "name": "",
+      "motd": ""
     }
   ]
 }

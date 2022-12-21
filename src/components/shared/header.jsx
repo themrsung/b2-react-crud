@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { logOut } from '../../auth/logOut'
 
 const Header = function () {
   let navigate = useNavigate()
@@ -18,6 +19,27 @@ const Header = function () {
         }}
       >
         (개발용) 회원가입으로
+      </button>
+      <button
+        onClick={() => {
+          navigate('/profile')
+        }}
+      >
+        (개발용) 내 프로필
+      </button>
+      <button
+        onClick={() => {
+          navigate('/profile/admin')
+        }}
+      >
+        (개발용) admin의 프로필
+      </button>
+      <button
+        onClick={() => {
+          logOut()
+        }}
+      >
+        (개발용) 로그아웃
       </button>
     </header>
   )

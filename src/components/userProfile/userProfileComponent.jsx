@@ -1,0 +1,140 @@
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+import { getCurrentUserState } from '../../redux/config/configStore'
+import { SERVER_URL } from '../../serverUrl'
+
+const UserProfileComponent = function ({ userId }) {
+  const [users, setUsers] = useState([])
+
+  const fetchUsers = async function () {
+    const response = await axios.get(SERVER_URL + '/users')
+    const data = response.data
+    setUsers(data)
+  }
+
+  useEffect(() => {
+    fetchUsers()
+  }, [])
+
+  const user = users.filter((user) => user.id === userId)[0]
+  const currentlyLoggedInUserId = getCurrentUserState().id
+  const isProfileOfCurrentUser = user
+    ? user.id === currentlyLoggedInUserId
+    : false
+
+  const [isChangingUserProfileName, setIsChangingUserProfileName] =
+    useState(false)
+  const [isChangingUserProfileMotd, setIsChangingUserProfileMotd] =
+    useState(false)
+
+  const [newUserProfileName, setNewUserProfileName] = useState('')
+  const [newUserProfileMotd, setNewUserProfileMotd] = useState('')
+
+  const onUserProfileNameChangeClicked = async function () {
+    if (isChangingUserProfileName) {
+      await axios.patch(SERVER_URL + '/users/' + user.id, {
+        name: newUserProfileName
+      })
+      await fetchUsers()
+    }
+
+    setIsChangingUserProfileName(!isChangingUserProfileName)
+  }
+
+  const onUserProfileMotdChangeClicked = async function () {
+    if (isChangingUserProfileMotd) {
+      await axios.patch(SERVER_URL + '/users/' + user.id, {
+        motd: newUserProfileMotd
+      })
+      await fetchUsers()
+    }
+
+    setIsChangingUserProfileMotd(!isChangingUserProfileMotd)
+  }
+
+  return user ? (
+    <div className="UserProfileComponent">
+      <div className="UserProfileId">
+        <h3>{user.id}</h3>
+      </div>
+
+      <div className="UserProfileName">
+        {!isChangingUserProfileName ? (
+          <div>
+            <h3>{user.name ? user.name : 'username'}</h3>
+            {isProfileOfCurrentUser ? (
+              <button onClick={onUserProfileNameChangeClicked}>수정</button>
+            ) : (
+              <></>
+            )}
+          </div>
+        ) : (
+          <></>
+        )}
+        {isChangingUserProfileName ? (
+          <form
+            className="UserProfileNameChangeForm"
+            onSubmit={(e) => {
+              e.preventDefault()
+              onUserProfileNameChangeClicked()
+            }}
+          >
+            <input
+              type="text"
+              placeholder=""
+              value={newUserProfileName}
+              onChange={(e) => {
+                setNewUserProfileName(e.target.value)
+              }}
+            />
+            <button type="submit">수정 완료</button>
+          </form>
+        ) : (
+          <></>
+        )}
+      </div>
+
+      <div className="UserProfileMotd">
+        {!isChangingUserProfileName ? (
+          <div>
+            <h3>{user.motd ? user.motd : 'motd'}</h3>
+            {isProfileOfCurrentUser ? (
+              <button onClick={onUserProfileMotdChangeClicked}>수정</button>
+            ) : (
+              <></>
+            )}
+          </div>
+        ) : (
+          <></>
+        )}
+        {isChangingUserProfileMotd ? (
+          <form
+            className="UserProfileMotdChangeForm"
+            onSubmit={(e) => {
+              e.preventDefault()
+              onUserProfileMotdChangeClicked()
+            }}
+          >
+            <input
+              type="text"
+              placeholder=""
+              value={newUserProfileMotd}
+              onChange={(e) => {
+                setNewUserProfileMotd(e.target.value)
+              }}
+            />
+            <button type="submit">수정 완료</button>
+          </form>
+        ) : (
+          <></>
+        )}
+      </div>
+    </div>
+  ) : (
+    <div className="UserProfileComponent">
+      <p>User not found</p>
+    </div>
+  )
+}
+
+export default UserProfileComponent

@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Home from './pages/Home'
+import UserProfile from './pages/UserProfile'
 
 function App() {
   return (
@@ -12,9 +13,11 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="login" element={<Login />}></Route>
-          <Route path="register" element={<Register />}></Route>
+          <Route path="/" element={<Home />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="profile/:id" element={<UserProfile />} />
+          <Route path="profile" element={<UserProfile />} />
         </Routes>
         <Footer />
       </BrowserRouter>
