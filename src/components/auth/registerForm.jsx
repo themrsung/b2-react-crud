@@ -21,6 +21,11 @@ const RegisterForm = function () {
   }, [])
 
   const onUserRegister = () => {
+    if (userId === '' || userPassword === '') {
+      alert('아이디 및 비밀번호를 확인해주세요.')
+      return
+    }
+
     const user = {
       id: userId,
       password: hashPassword(userPassword)
