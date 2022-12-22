@@ -29,6 +29,10 @@
       "password": 1216985755,
       "name": "",
       "motd": ""
+    },
+    {
+      "id": "김원준",
+      "password": 1480580
     }
   ],
   "posts": [
@@ -66,6 +70,13 @@
       "title": "asd",
       "content": "dddddd",
       "createdAt": 1671662660598
+    },
+    {
+      "id": "99e64fd1-4841-4ee0-a239-c87cf05de52e",
+      "author": "김원준",
+      "title": "한글이 되네요",
+      "content": "ㅎ",
+      "createdAt": 1671672588981
     }
   ]
 }
