@@ -7,9 +7,17 @@ import { SERVER_URL } from '../serverUrl'
 
 const Home = function ({ goTo }) {
   let navigate = useNavigate()
+  let params = useParams()
+
   useEffect(() => {
     if (goTo === 'write') {
       document.getElementById('OpenWriteModalButton').click()
+    }
+  }, [])
+
+  useEffect(() => {
+    if (params.id) {
+      navigate('/notfound')
     }
   }, [])
 

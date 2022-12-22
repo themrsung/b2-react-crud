@@ -6,7 +6,6 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Home from './pages/Home'
 import UserProfile from './pages/UserProfile'
-import WritePost from './pages/WritePost'
 import ViewPost from './pages/ViewPost'
 import NotFound from './pages/NotFound'
 
