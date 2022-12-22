@@ -5,6 +5,8 @@ import { useState } from 'react'
 import { getCurrentUserState, store } from '../../redux/config/configStore'
 import './sharedComponents.css'
 
+import logo from '../../logo.svg'
+
 const Header = function () {
   let navigate = useNavigate()
 
@@ -16,15 +18,14 @@ const Header = function () {
   return (
     <header className="Header">
       <div className="HeaderLeft">
-        <div className="HeaderLeftTitleArea">
-          <h1
-            className="HeaderLeftTitle"
-            onClick={() => {
-              navigate('/')
-            }}
-          >
-            Happy2NewYear
-          </h1>
+        <div
+          className="HeaderLeftTitleArea"
+          onClick={() => {
+            navigate('/')
+          }}
+        >
+          <img className="HeaderLeftLogo" src={logo} alt="H2NY-logo" />
+          <h1 className="HeaderLeftTitle">Happy2NewYear</h1>
         </div>
       </div>
       <div className="HeaderRight">
