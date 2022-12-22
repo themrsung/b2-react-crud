@@ -17,12 +17,13 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/:id" element={<Home />} />
             <Route path="login" element={<Login />} />
             <Route path="login/:id" element={<Login />} />
             <Route path="register" element={<Register />} />
             <Route path="profile/:id" element={<UserProfile />} />
             <Route path="profile" element={<UserProfile />} />
-            <Route path="write" element={<WritePost />} />
+            <Route path="write" element={<Home goTo="write" />} />
             <Route path="view/:id" element={<ViewPost />} />
           </Routes>
         </main>

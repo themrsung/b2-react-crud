@@ -1,10 +1,17 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import NewsfeedComponent from '../components/home/newsfeedComponent'
 import { getCurrentUserState } from '../redux/config/configStore'
 import { SERVER_URL } from '../serverUrl'
 
-const Home = function () {
+const Home = function ({ goTo }) {
+  useEffect(() => {
+    if (goTo === 'write') {
+      document.getElementById('OpenWriteModalButton').click()
+    }
+  }, [])
+
   //개발용
   const [users, setUsers] = useState([])
 

@@ -5,6 +5,9 @@ import { useState } from 'react'
 import { getCurrentUserState, store } from '../../redux/config/configStore'
 import './sharedComponents.css'
 
+import ModalForm from '../home/modalForm'
+import logo from '../../logo.svg'
+
 const Header = function () {
   let navigate = useNavigate()
 
@@ -13,18 +16,27 @@ const Header = function () {
     setIsLoggedIn(getCurrentUserState().id !== '')
   })
 
+  // 모달관련
+  const [modalOpen, setModalOpen] = useState(false)
+
+  const openModal = () => {
+    setModalOpen(true)
+  }
+  const closeModal = () => {
+    setModalOpen(false)
+  }
+
   return (
     <header className="Header">
       <div className="HeaderLeft">
-        <div className="HeaderLeftTitleArea">
-          <h1
-            className="HeaderLeftTitle"
-            onClick={() => {
-              navigate('/')
-            }}
-          >
-            Happy2NewYear
-          </h1>
+        <div
+          className="HeaderLeftTitleArea"
+          onClick={() => {
+            navigate('/')
+          }}
+        >
+          <img className="HeaderLeftLogo" src={logo} alt="H2NY-logo" />
+          <h1 className="HeaderLeftTitle">Happy2NewYear</h1>
         </div>
       </div>
       <div className="HeaderRight">
@@ -42,13 +54,26 @@ const Header = function () {
             </li>
             <li>
               <button
+                id="OpenWriteModalButton"
                 className="Button BigButton MenuButton"
+                // onClick={() => {
+                //   navigate('/write')
+                // }}
                 onClick={() => {
-                  navigate('/write')
+                  if (isLoggedIn) {
+                    openModal()
+                  } else {
+                    navigate('/login/write')
+                  }
                 }}
               >
                 Write
               </button>
+              <ModalForm
+                open={modalOpen}
+                close={closeModal}
+                header="HAPPY NEW YEAR"
+              ></ModalForm>
             </li>
           </ul>
         </nav>
