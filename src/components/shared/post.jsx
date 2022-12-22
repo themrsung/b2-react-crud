@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import './sharedComponents.css'
 
 const Post = function ({ post, noLink = false }) {
   let navigate = useNavigate()

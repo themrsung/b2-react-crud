@@ -1,12 +1,12 @@
 import { useNavigate } from 'react-router-dom'
 import { logOut } from '../../auth/logOut'
 import { getCurrentUserState } from '../../redux/config/configStore'
+import './sharedComponents.css'
 
 const Header = function () {
   let navigate = useNavigate()
   return (
     <header className="Header">
-      HEADER
       <div className="HeaderLeft">
         <div className="HeaderLeftTitleArea">
           <h1 className="HeaderLeftTitle">Happy2NewYear</h1>
@@ -72,7 +72,7 @@ const Header = function () {
           </ul>
         </div>
       </div>
-      <div>
+      {/* <div>
         <button
           onClick={() => {
             navigate('/')
@@ -122,7 +122,7 @@ const Header = function () {
         >
           (개발용) 글쓰기
         </button>
-      </div>
+      </div> */}
     </header>
   )
 }
