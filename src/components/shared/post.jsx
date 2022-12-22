@@ -12,7 +12,9 @@ const Post = function ({ post, noLink = false }) {
   const postStyle = noLink
     ? {}
     : {
-        cursor: 'pointer'
+        cursor: 'pointer',
+        padding: '20px',
+        border: '1px solid black'
       }
 
   const postAuthorStyle = {
@@ -22,6 +24,7 @@ const Post = function ({ post, noLink = false }) {
   return (
     <div className="Post" style={postStyle} onClick={onPostClick}>
       <h3>{post.title}</h3>
+      <p>{post.content}</p>
       <p>
         by{' '}
         <span
@@ -34,7 +37,6 @@ const Post = function ({ post, noLink = false }) {
         </span>{' '}
         at {post.createdAt}
       </p>
-      <p>{post.content}</p>
     </div>
   )
 }

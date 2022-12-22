@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { hashPassword } from '../../auth/hashPassword'
 import { setCurrentUserState } from '../../redux/config/configStore'
 import { SERVER_URL } from '../../serverUrl'
+import Cookies from 'universal-cookie'
 
 const LoginForm = function () {
   let navigate = useNavigate()
@@ -12,18 +13,28 @@ const LoginForm = function () {
 
   const [users, setUsers] = useState([])
 
+  const cookies = new Cookies()
+
   const fetchUsers = async function () {
     const response = await axios.get(SERVER_URL + '/users')
     const data = response.data
     setUsers(data)
   }
-
-  useEffect(() => {
-    fetchUsers()
-  }, [])
-
   let params = useParams()
   const goBackTo = params.id ? params.id : ''
+
+  // const [autoLogin, setAutoLogin] = useState(true)
+
+  useEffect(() => {
+    // if (cookies.get('auto-login') === 'true') {
+    //   setCurrentUserState({
+    //     id: cookies.get('auto-login-id')
+    //   })
+    //   navigate('/' + goBackTo)
+    //   return
+    // }
+    fetchUsers()
+  }, [])
 
   const onUserLogin = () => {
     const user = users.filter((user) => user.id === userId)[0]
@@ -31,6 +42,10 @@ const LoginForm = function () {
       setCurrentUserState({
         id: user.id
       })
+      // if (autoLogin) {
+      //   cookies.set('auto-login', 'true', { path: '/' })
+      //   cookies.set('auto-login-id', user.id, { path: '/' })
+      // }
       navigate('/' + goBackTo)
       return
     }
