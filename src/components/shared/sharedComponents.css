@@ -97,6 +97,10 @@
   .HeaderLeftTitle {
     font-size: 1.5rem;
   }
+
+  .Footer {
+    height: fit-content;
+  }
 }
 
 @media (width < 550px) {
