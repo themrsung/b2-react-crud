@@ -75,10 +75,6 @@ const Header = function () {
                 header="HAPPY NEW YEAR"
               ></ModalForm>
             </li>
-          </ul>
-        </nav>
-        <div className="HeaderRightProfileMenu">
-          <ul className="HeaderRightProfileMenuUl">
             <li>
               <button
                 className="Button BigButton MenuButton"
@@ -116,7 +112,7 @@ const Header = function () {
               )}
             </li>
           </ul>
-        </div>
+        </nav>
       </div>
       {/* <div>
         <button
