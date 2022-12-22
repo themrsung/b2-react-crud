@@ -1,0 +1,112 @@
+{
+  "users": [
+    {
+      "id": "admin",
+      "password": 1216985755,
+      "name": "관리자",
+      "motd": "관리자의 한 줄 소개"
+    },
+    {
+      "id": "admin2",
+      "password": 1216985755,
+      "name": "",
+      "motd": ""
+    },
+    {
+      "id": "admin3",
+      "password": 1216985755,
+      "name": "",
+      "motd": ""
+    },
+    {
+      "id": "admin4",
+      "password": 1216985755,
+      "name": "",
+      "motd": ""
+    },
+    {
+      "id": "admin222",
+      "password": 1216985755,
+      "name": "",
+      "motd": ""
+    },
+    {
+      "id": "ska",
+      "password": 3483987
+    },
+    {
+      "id": "admin!",
+      "password": 646494183,
+      "name": "123",
+      "motd": "1"
+    },
+    {
+      "id": "dudwns",
+      "password": -852673857,
+      "name": "123",
+      "motd": "123"
+    },
+    {
+      "id": "rkdlqdyd",
+      "password": 256650335
+    }
+  ],
+  "posts": [
+    {
+      "id": "640b1c82-f1a2-4985-9a2f-bb6191458085",
+      "author": "admin",
+      "title": "ㅁㄴㅇ",
+      "content": "ㅁㄴㅇㅁㄴㅇㄴㅁㅇ",
+      "createdAt": 1671662660594
+    },
+    {
+      "id": "84434282-73f4-46bf-8498-871c181496b4",
+      "author": "test",
+      "title": "ㄹㄹ",
+      "content": "ㅁㄴㅇㄴㅁㅇ",
+      "createdAt": 1671662660595
+    },
+    {
+      "id": "d31a0a91-25ac-4e88-adfb-9ecfd259b447",
+      "author": "test",
+      "title": "ㅁㄴㅇ",
+      "content": "ㅁㄴㅇㅁㄴㅇ",
+      "createdAt": 1671662660596
+    },
+    {
+      "id": "8c32b304-742c-4b47-a51d-1fcd93fcbd7a",
+      "author": "test",
+      "title": "ㅁㄴㅇ",
+      "content": "ㅁㄴㅇㅁㄴㅇ",
+      "createdAt": 1671662660597
+    },
+    {
+      "id": "3c0d98ab-8c4a-4f79-b278-04e2553f6701",
+      "author": "admin",
+      "title": "asd",
+      "content": "dddddd",
+      "createdAt": 1671662660598
+    },
+    {
+      "id": "f000cec8-7466-41ea-81c9-46de158bc301",
+      "author": "ska",
+      "title": "g",
+      "content": "gg",
+      "createdAt": 1671677215690
+    },
+    {
+      "id": "cccfad70-baad-435e-8e51-9060dcb43afb",
+      "author": "dudwns",
+      "title": "123",
+      "content": "123",
+      "createdAt": 1671691834722
+    },
+    {
+      "id": "ecb27ea3-05ce-4213-8187-6e19ead71135",
+      "author": "rkdlqdyd",
+      "title": "가입완료,",
+      "content": "작성 가능?",
+      "createdAt": 1671697372610
+    }
+  ]
+}
