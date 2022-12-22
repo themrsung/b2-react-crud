@@ -32,17 +32,19 @@
     },
     {
       "id": "ska",
-      "password": 3483987,
-      "name": "ㅎㅎ"
+      "password": 3483987
     },
     {
-      "id": "ghldnjs",
-      "password": -471532206
+      "id": "admin!",
+      "password": 646494183,
+      "name": "123",
+      "motd": "1"
     },
     {
-      "id": "rkdlq",
-      "password": -635363246,
-      "name": "ㄹㄹㄹㄹ"
+      "id": "dudwns",
+      "password": -852673857,
+      "name": "234",
+      "motd": "asd"
     }
   ],
   "posts": [
@@ -89,32 +91,11 @@
       "createdAt": 1671677215690
     },
     {
-      "id": "4968d2ba-3e6c-41c3-9212-f506f6455c94",
-      "author": "ghldnjs",
-      "title": "dfdf",
-      "content": "dfdfd",
-      "createdAt": 1671691454510
-    },
-    {
-      "id": "8cc9c256-fdcf-4813-9844-5688f749da31",
-      "author": "rkdlq",
-      "title": "삭제해보자",
-      "content": "삭제 ㄱ고고",
-      "createdAt": 1671694313357
-    },
-    {
-      "id": "8610c989-3e5b-4eae-9452-8c7289afa225",
-      "author": "rkdlq",
-      "title": "삭제해보자",
-      "content": "삭제 ㄱ고고",
-      "createdAt": 1671694316536
-    },
-    {
-      "id": "a3991452-3fe3-4259-ba41-f0204778a142",
-      "author": "rkdlq",
-      "title": "삭제해보자",
-      "content": "삭제 ㄱ고고",
-      "createdAt": 1671694317244
+      "id": "cccfad70-baad-435e-8e51-9060dcb43afb",
+      "author": "dudwns",
+      "title": "123",
+      "content": "123",
+      "createdAt": 1671691834722
     }
   ]
 }

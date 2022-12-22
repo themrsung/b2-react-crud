@@ -20,7 +20,7 @@ const UserProfileComponent = function ({ userId }) {
 
   const user = users.filter((user) => user.id === userId)[0]
 
-  let navigate = useNavigate()
+  const navigate = useNavigate()
 
   if (!user) {
     navigate('/login/profile')
@@ -62,10 +62,8 @@ const UserProfileComponent = function ({ userId }) {
   }
   return user ? (
     <ProfileBox>
+      <h2>프로필 수정</h2>
       <div className="UserProfileComponent">
-        <div className="UserProfileId">
-          <h3>{user.id}</h3>
-        </div>
         <div className="UserProfileName">
           {!isChangingUserProfileName ? (
             <div>
@@ -86,7 +84,7 @@ const UserProfileComponent = function ({ userId }) {
             >
               <input
                 type="text"
-                placeholder="Name"
+                placeholder={user.name}
                 required
                 onChange={(e) => {
                   setNewUserProfileName(e.target.value)
@@ -116,7 +114,7 @@ const UserProfileComponent = function ({ userId }) {
             >
               <input
                 type="text"
-                placeholder="Message of the day"
+                placeholder={user.motd}
                 required
                 onChange={(e) => {
                   setNewUserProfileMotd(e.target.value)
@@ -139,6 +137,4 @@ const ProfileBox = styled.div`
   width: 420px;
   height: 300px;
   padding: 20px;
-  border: 1px solid;
-  border-radius: 20px;
 `
