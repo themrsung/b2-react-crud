@@ -9,7 +9,14 @@ const Header = function () {
     <header className="Header">
       <div className="HeaderLeft">
         <div className="HeaderLeftTitleArea">
-          <h1 className="HeaderLeftTitle">Happy2NewYear</h1>
+          <h1
+            className="HeaderLeftTitle"
+            onClick={() => {
+              navigate('/')
+            }}
+          >
+            Happy2NewYear
+          </h1>
         </div>
       </div>
       <div className="HeaderRight">
