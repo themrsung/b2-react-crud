@@ -12,8 +12,6 @@ const UserProfileComponent = function ({ userId }) {
     const data = response.data
     setUsers(data)
   }
-  // const [show, setShow] = useState(false)
-  // const cancelOnclickHandler = () => setShow((event) => !event)
 
   useEffect(() => {
     fetchUsers()
@@ -42,7 +40,6 @@ const UserProfileComponent = function ({ userId }) {
       })
       await fetchUsers()
     }
-
     setIsChangingUserProfileName(!isChangingUserProfileName)
   }
 
@@ -53,9 +50,9 @@ const UserProfileComponent = function ({ userId }) {
       })
       await fetchUsers()
     }
-
     setIsChangingUserProfileMotd(!isChangingUserProfileMotd)
   }
+
   return user ? (
     <ProfileBox>
       <h2>프로필 수정</h2>

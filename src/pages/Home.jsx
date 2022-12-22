@@ -48,21 +48,6 @@ const Home = function ({ goTo }) {
   return (
     <div className="Home">
       <NewsfeedComponent posts={posts} />
-
-      <button
-        onClick={() => {
-          console.log(users)
-        }}
-      >
-        (개발용) 유저DB 콘솔로그 찍기
-      </button>
-      <button
-        onClick={() => {
-          console.log(getCurrentUserState())
-        }}
-      >
-        (개발용) currentUserState 콘솔에 찍기
-      </button>
     </div>
   )
 }
