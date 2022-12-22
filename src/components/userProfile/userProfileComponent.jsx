@@ -20,7 +20,7 @@ const UserProfileComponent = function ({ userId }) {
 
   const user = users.filter((user) => user.id === userId)[0]
 
-  let navigate = useNavigate()
+  const navigate = useNavigate()
 
   if (!user) {
     navigate('/login/profile')
@@ -62,11 +62,9 @@ const UserProfileComponent = function ({ userId }) {
   }
   return user ? (
     <ProfileBox>
-      <div className="UserProfileComponent">
-        <div className="UserProfileId">
-          <h3>{user.id}</h3>
-        </div>
-        <div className="UserProfileName">
+      <h2>프로필 수정</h2>
+      <div>
+        <div>
           {!isChangingUserProfileName ? (
             <div>
               <h3>{user.name ? user.name : 'username'}</h3>
@@ -78,7 +76,6 @@ const UserProfileComponent = function ({ userId }) {
             </div>
           ) : (
             <form
-              className="UserProfileNameChangeForm"
               onSubmit={(e) => {
                 e.preventDefault()
                 onUserProfileNameChangeClicked()
@@ -93,11 +90,10 @@ const UserProfileComponent = function ({ userId }) {
                 }}
               />
               <button type="submit">수정 완료</button>
-              <button>취소</button>
             </form>
           )}
         </div>
-        <div className="UserProfileMotd">
+        <div>
           {!isChangingUserProfileMotd ? (
             <div>
               <h3>{user.motd ? user.motd : 'Message of the day'}</h3>
@@ -109,7 +105,6 @@ const UserProfileComponent = function ({ userId }) {
             </div>
           ) : (
             <form
-              className="UserProfileMotdChangeForm"
               onSubmit={(e) => {
                 e.preventDefault()
                 onUserProfileMotdChangeClicked()
@@ -124,7 +119,6 @@ const UserProfileComponent = function ({ userId }) {
                 }}
               />
               <button type="submit">수정 완료</button>
-              <button>취소</button>
             </form>
           )}
         </div>
@@ -141,6 +135,4 @@ const ProfileBox = styled.div`
   width: 420px;
   height: 300px;
   padding: 20px;
-  border: 1px solid;
-  border-radius: 20px;
 `
