@@ -8,7 +8,7 @@ const ViewPost = function () {
   const params = useParams()
   const postId = params.id
 
-  const [post, setPost] = useState([])
+  const [post, setPost] = useState({})
 
   const fetchPost = async function () {
     const response = await axios.get(SERVER_URL + '/posts/' + postId)
