@@ -10,6 +10,10 @@ body {
   margin: 0;
 }
 
+main {
+  min-height: 75vh;
+}
+
 .Button {
   background-color: transparent;
   border: 2px solid black;

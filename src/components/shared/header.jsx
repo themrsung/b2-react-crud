@@ -1,10 +1,15 @@
 import { useNavigate } from 'react-router-dom'
 import { logOut } from '../../auth/logOut'
+import { useState } from 'react'
+
 import { getCurrentUserState } from '../../redux/config/configStore'
 import './sharedComponents.css'
 
 const Header = function () {
   let navigate = useNavigate()
+
+  const [isLoggedIn, setIsLoggedIn] = useState(getCurrentUserState() !== '')
+
   return (
     <header className="Header">
       <div className="HeaderLeft">
@@ -57,7 +62,7 @@ const Header = function () {
               </button>
             </li>
             <li>
-              {getCurrentUserState() !== '' ? (
+              {!isLoggedIn ? (
                 <>
                   <button
                     className="Button BigButton MenuButton"
