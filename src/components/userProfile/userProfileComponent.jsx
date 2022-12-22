@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { getCurrentUserState } from '../../redux/config/configStore'
 import { SERVER_URL } from '../../serverUrl'
 import styled from 'styled-components'
 
@@ -13,6 +12,8 @@ const UserProfileComponent = function ({ userId }) {
     const data = response.data
     setUsers(data)
   }
+  // const [show, setShow] = useState(false)
+  // const cancelOnclickHandler = () => setShow((event) => !event)
 
   useEffect(() => {
     fetchUsers()
@@ -25,11 +26,6 @@ const UserProfileComponent = function ({ userId }) {
   if (!user) {
     navigate('/login/profile')
   }
-
-  const currentlyLoggedInUserId = getCurrentUserState().id
-  const isProfileOfCurrentUser = user
-    ? user.id === currentlyLoggedInUserId
-    : false
 
   const [isChangingUserProfileName, setIsChangingUserProfileName] =
     useState(false)
@@ -69,11 +65,7 @@ const UserProfileComponent = function ({ userId }) {
           {!isChangingUserProfileName ? (
             <div>
               <h3>{user.name ? user.name : 'username'}</h3>
-              {isProfileOfCurrentUser ? (
-                <button onClick={onUserProfileNameChangeClicked}>수정</button>
-              ) : (
-                <></>
-              )}
+              <button onClick={onUserProfileNameChangeClicked}>수정</button>
             </div>
           ) : (
             <form
@@ -104,11 +96,7 @@ const UserProfileComponent = function ({ userId }) {
           {!isChangingUserProfileMotd ? (
             <div>
               <h3>{user.motd ? user.motd : 'Message of the day'}</h3>
-              {isProfileOfCurrentUser ? (
-                <button onClick={onUserProfileMotdChangeClicked}>수정</button>
-              ) : (
-                <></>
-              )}
+              <button onClick={onUserProfileMotdChangeClicked}>수정</button>
             </div>
           ) : (
             <form
