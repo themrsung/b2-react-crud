@@ -1,6 +1,6 @@
 export const currentUserReducer = function (
   state = {
-    id: 'test'
+    id: ''
   },
   action
 ) {
