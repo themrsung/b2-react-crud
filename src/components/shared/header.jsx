@@ -54,11 +54,18 @@ const Header = function () {
             </li>
             <li>
               <button
+                id="OpenWriteModalButton"
                 className="Button BigButton MenuButton"
                 // onClick={() => {
                 //   navigate('/write')
                 // }}
-                onClick={openModal}
+                onClick={() => {
+                  if (isLoggedIn) {
+                    openModal()
+                  } else {
+                    navigate('/login/write')
+                  }
+                }}
               >
                 Write
               </button>

@@ -7,12 +7,12 @@ const ModalForm = (props) => {
 
   return (
     // 모달이 열릴때 openModal 클래스가 생성된다.
-    <div className={open ? 'openModal modal' : 'modal'}>
+    <div className={open ? 'OpenModal Modal' : 'Modal'}>
       {open ? (
         <section>
           <header>
             {header}
-            <button className="close" onClick={close}>
+            <button className="Close" onClick={close}>
               &times;
             </button>
           </header>

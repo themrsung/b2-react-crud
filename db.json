@@ -32,6 +32,7 @@
     },
     {
       "id": "ska",
+<<<<<<< HEAD
       "password": 3483987
     },
     {
@@ -45,6 +46,10 @@
       "password": -852673857,
       "name": "123",
       "motd": "asd"
+=======
+      "password": 3483987,
+      "name": "ㅎㅎ"
+>>>>>>> b8a92a360f55c92b61158989fc34fbfb55126280
     }
   ],
   "posts": [
@@ -91,11 +96,19 @@
       "createdAt": 1671677215690
     },
     {
+<<<<<<< HEAD
       "id": "cccfad70-baad-435e-8e51-9060dcb43afb",
       "author": "dudwns",
       "title": "123",
       "content": "123",
       "createdAt": 1671691834722
+=======
+      "id": "dbf47900-a1ae-477e-ab5d-ebd786899c88",
+      "author": "ska",
+      "title": "행복",
+      "content": "내년에는 행복한 일만 있기를",
+      "createdAt": 1671689429116
+>>>>>>> b8a92a360f55c92b61158989fc34fbfb55126280
     }
   ]
 }
