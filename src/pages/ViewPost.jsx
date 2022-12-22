@@ -15,13 +15,28 @@ const ViewPost = function () {
     setPost(response.data)
   }
 
+  // 삭제버튼 이벤트 핸들러
+  // const onDeleteBtn = (postId) => {
+  //   axios.delete(`SERVER_URL + '/posts/' + ${postId}`)
+  // }
+
   useEffect(() => {
     fetchPost()
   }, [])
 
+  console.log(post)
+
   return (
     <div className="ViewPost">
       <Post post={post} noLink={true} />
+
+      {/* 수정버튼  */}
+      <button>수정</button>
+      <button>삭제</button>
+      {/* 삭제버튼 */}
+      {/* <button type="button" onClick={() => onDeleteBtn(post.Id)}>
+        삭제
+      </button> */}
     </div>
   )
 }

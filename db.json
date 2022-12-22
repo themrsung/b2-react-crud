@@ -34,6 +34,15 @@
       "id": "ska",
       "password": 3483987,
       "name": "ㅎㅎ"
+    },
+    {
+      "id": "ghldnjs",
+      "password": -471532206
+    },
+    {
+      "id": "rkdlq",
+      "password": -635363246,
+      "name": "ㄹㄹㄹㄹ"
     }
   ],
   "posts": [
@@ -78,6 +87,34 @@
       "title": "g",
       "content": "gg",
       "createdAt": 1671677215690
+    },
+    {
+      "id": "4968d2ba-3e6c-41c3-9212-f506f6455c94",
+      "author": "ghldnjs",
+      "title": "dfdf",
+      "content": "dfdfd",
+      "createdAt": 1671691454510
+    },
+    {
+      "id": "8cc9c256-fdcf-4813-9844-5688f749da31",
+      "author": "rkdlq",
+      "title": "삭제해보자",
+      "content": "삭제 ㄱ고고",
+      "createdAt": 1671694313357
+    },
+    {
+      "id": "8610c989-3e5b-4eae-9452-8c7289afa225",
+      "author": "rkdlq",
+      "title": "삭제해보자",
+      "content": "삭제 ㄱ고고",
+      "createdAt": 1671694316536
+    },
+    {
+      "id": "a3991452-3fe3-4259-ba41-f0204778a142",
+      "author": "rkdlq",
+      "title": "삭제해보자",
+      "content": "삭제 ㄱ고고",
+      "createdAt": 1671694317244
     }
   ]
 }
