@@ -1,15 +1,22 @@
 import { useNavigate } from 'react-router-dom'
 import { logOut } from '../../auth/logOut'
 import { getCurrentUserState } from '../../redux/config/configStore'
+import './sharedComponents.css'
 
 const Header = function () {
   let navigate = useNavigate()
   return (
     <header className="Header">
-      HEADER
       <div className="HeaderLeft">
         <div className="HeaderLeftTitleArea">
-          <h1 className="HeaderLeftTitle">Happy2NewYear</h1>
+          <h1
+            className="HeaderLeftTitle"
+            onClick={() => {
+              navigate('/')
+            }}
+          >
+            Happy2NewYear
+          </h1>
         </div>
       </div>
       <div className="HeaderRight">
@@ -17,6 +24,7 @@ const Header = function () {
           <ul className="HeaderRightNavBarUl">
             <li>
               <button
+                className="Button BigButton MenuButton"
                 onClick={() => {
                   navigate('/')
                 }}
@@ -26,6 +34,7 @@ const Header = function () {
             </li>
             <li>
               <button
+                className="Button BigButton MenuButton"
                 onClick={() => {
                   navigate('/write')
                 }}
@@ -39,6 +48,7 @@ const Header = function () {
           <ul className="HeaderRightProfileMenuUl">
             <li>
               <button
+                className="Button BigButton MenuButton"
                 onClick={() => {
                   navigate('/profile')
                 }}
@@ -50,6 +60,7 @@ const Header = function () {
               {getCurrentUserState() !== '' ? (
                 <>
                   <button
+                    className="Button BigButton MenuButton"
                     onClick={() => {
                       navigate('/login')
                     }}
@@ -60,6 +71,7 @@ const Header = function () {
               ) : (
                 <>
                   <button
+                    className="Button BigButton MenuButton"
                     onClick={() => {
                       logOut()
                     }}
@@ -72,7 +84,7 @@ const Header = function () {
           </ul>
         </div>
       </div>
-      <div>
+      {/* <div>
         <button
           onClick={() => {
             navigate('/')
@@ -122,7 +134,7 @@ const Header = function () {
         >
           (개발용) 글쓰기
         </button>
-      </div>
+      </div> */}
     </header>
   )
 }

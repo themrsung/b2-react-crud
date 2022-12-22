@@ -1,0 +1,60 @@
+.Header {
+  width: 100%;
+  background-color: black;
+  color: white;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: stretch;
+}
+
+.HeaderLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+
+  margin-right: auto;
+}
+
+.HeaderLeftTitleArea {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+
+.HeaderLeftTitle {
+  font-size: 2rem;
+  margin: 1rem;
+
+  cursor: pointer;
+}
+
+.HeaderRight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+
+  margin-left: auto;
+}
+
+.HeaderRightNavBarUl {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+
+  list-style: none;
+}
+
+.HeaderRightProfileMenuUl {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+
+  list-style: none;
+}
