@@ -46,28 +46,29 @@ const Header = function () {
                 Profile
               </button>
             </li>
-
-            {getCurrentUserState() !== '' ? (
-              <>
-                <button
-                  onClick={() => {
-                    navigate('/login')
-                  }}
-                >
-                  Login
-                </button>
-              </>
-            ) : (
-              <>
-                <button
-                  onClick={() => {
-                    logOut()
-                  }}
-                >
-                  Logout
-                </button>
-              </>
-            )}
+            <li>
+              {getCurrentUserState() !== '' ? (
+                <>
+                  <button
+                    onClick={() => {
+                      navigate('/login')
+                    }}
+                  >
+                    Login
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button
+                    onClick={() => {
+                      logOut()
+                    }}
+                  >
+                    Logout
+                  </button>
+                </>
+              )}
+            </li>
           </ul>
         </div>
       </div>
