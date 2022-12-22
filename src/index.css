@@ -18,6 +18,7 @@ main {
   background-color: transparent;
   border: 2px solid black;
   color: black;
+  cursor: pointer;
 
   margin: 0.1rem 0.3rem;
   padding: 0.5rem 1rem;
