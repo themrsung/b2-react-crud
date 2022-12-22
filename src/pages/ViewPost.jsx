@@ -17,7 +17,7 @@ const ViewPost = function () {
 
   useEffect(() => {
     fetchPost()
-  })
+  }, [])
 
   return (
     <div className="ViewPost">
