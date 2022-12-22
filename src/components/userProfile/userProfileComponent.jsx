@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getCurrentUserState } from '../../redux/config/configStore'
 import { SERVER_URL } from '../../serverUrl'
+import styled from 'styled-components'
 
 const UserProfileComponent = function ({ userId }) {
   const [users, setUsers] = useState([])
@@ -60,76 +61,84 @@ const UserProfileComponent = function ({ userId }) {
     setIsChangingUserProfileMotd(!isChangingUserProfileMotd)
   }
   return user ? (
-    <div className="UserProfileComponent">
-      <div className="UserProfileId">
-        <h3>{user.id}</h3>
-      </div>
-
-      <div className="UserProfileName">
-        {!isChangingUserProfileName ? (
-          <div>
-            <h3>{user.name ? user.name : 'username'}</h3>
-            {isProfileOfCurrentUser ? (
-              <button onClick={onUserProfileNameChangeClicked}>수정</button>
-            ) : (
-              <></>
-            )}
-          </div>
-        ) : (
-          <form
-            className="UserProfileNameChangeForm"
-            onSubmit={(e) => {
-              e.preventDefault()
-              onUserProfileNameChangeClicked()
-            }}
-          >
-            <input
-              type="text"
-              placeholder=""
-              value={newUserProfileName}
-              onChange={(e) => {
-                setNewUserProfileName(e.target.value)
+    <ProfileBox>
+      <div className="UserProfileComponent">
+        <div className="UserProfileId">
+          <h3>{user.id}</h3>
+        </div>
+        <div className="UserProfileName">
+          {!isChangingUserProfileName ? (
+            <div>
+              <h3>{user.name ? user.name : 'username'}</h3>
+              {isProfileOfCurrentUser ? (
+                <button onClick={onUserProfileNameChangeClicked}>수정</button>
+              ) : (
+                <></>
+              )}
+            </div>
+          ) : (
+            <form
+              className="UserProfileNameChangeForm"
+              onSubmit={(e) => {
+                e.preventDefault()
+                onUserProfileNameChangeClicked()
               }}
-            />
-            <button type="submit">수정 완료</button>
-          </form>
-        )}
-      </div>
-
-      <div className="UserProfileMotd">
-        {!isChangingUserProfileMotd ? (
-          <div>
-            <h3>{user.motd ? user.motd : 'motd'}</h3>
-            {isProfileOfCurrentUser ? (
-              <button onClick={onUserProfileMotdChangeClicked}>수정</button>
-            ) : (
-              <></>
-            )}
-          </div>
-        ) : (
-          <form
-            className="UserProfileMotdChangeForm"
-            onSubmit={(e) => {
-              e.preventDefault()
-              onUserProfileMotdChangeClicked()
-            }}
-          >
-            <input
-              type="text"
-              placeholder=""
-              value={newUserProfileMotd}
-              onChange={(e) => {
-                setNewUserProfileMotd(e.target.value)
+            >
+              <input
+                type="text"
+                placeholder="Name"
+                required
+                onChange={(e) => {
+                  setNewUserProfileName(e.target.value)
+                }}
+              />
+              <button type="submit">수정 완료</button>
+            </form>
+          )}
+        </div>
+        <div className="UserProfileMotd">
+          {!isChangingUserProfileMotd ? (
+            <div>
+              <h3>{user.motd ? user.motd : 'Message of the day'}</h3>
+              {isProfileOfCurrentUser ? (
+                <button onClick={onUserProfileMotdChangeClicked}>수정</button>
+              ) : (
+                <></>
+              )}
+            </div>
+          ) : (
+            <form
+              className="UserProfileMotdChangeForm"
+              onSubmit={(e) => {
+                e.preventDefault()
+                onUserProfileMotdChangeClicked()
               }}
-            />
-            <button type="submit">수정 완료</button>
-          </form>
-        )}
+            >
+              <input
+                type="text"
+                placeholder="Message of the day"
+                required
+                onChange={(e) => {
+                  setNewUserProfileMotd(e.target.value)
+                }}
+              />
+              <button type="submit">수정 완료</button>
+            </form>
+          )}
+        </div>
       </div>
-    </div>
+    </ProfileBox>
   ) : (
     <>User not found</>
   )
 }
 
 export default UserProfileComponent
+
+const ProfileBox = styled.div`
+  width: 420px;
+  height: 300px;
+  padding: 20px;
+  border: 1px solid;
+  border-radius: 20px;
+`

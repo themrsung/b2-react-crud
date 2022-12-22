@@ -8,11 +8,31 @@ const Post = function ({ post, noLink = false }) {
       navigate('/view/' + post.id)
     }
   }
+
+  const postStyle = noLink
+    ? {}
+    : {
+        cursor: 'pointer'
+      }
+
+  const postAuthorStyle = {
+    cursor: 'pointer'
+  }
+
   return (
-    <div className="Post" onClick={onPostClick}>
+    <div className="Post" style={postStyle} onClick={onPostClick}>
       <h3>{post.title}</h3>
       <p>
-        by {post.author} at {post.createdAt}
+        by{' '}
+        <span
+          style={postAuthorStyle}
+          onClick={() => {
+            navigate('/profile/' + post.author)
+          }}
+        >
+          {post.author}
+        </span>{' '}
+        at {post.createdAt}
       </p>
       <p>{post.content}</p>
     </div>
