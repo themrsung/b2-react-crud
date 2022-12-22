@@ -22,3 +22,32 @@
   align-items: center;
   justify-content: left;
 }
+
+.HeaderLeftTitle {
+  font-size: 2rem;
+}
+
+.HeaderRight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+}
+
+.HeaderRightNavBarUl {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+
+  list-style: none;
+}
+
+.HeaderRightProfileMenuUl {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+
+  list-style: none;
+}

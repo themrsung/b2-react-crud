@@ -17,6 +17,7 @@ const Header = function () {
           <ul className="HeaderRightNavBarUl">
             <li>
               <button
+                className="Button BigButton MenuButton"
                 onClick={() => {
                   navigate('/')
                 }}
@@ -26,6 +27,7 @@ const Header = function () {
             </li>
             <li>
               <button
+                className="Button BigButton MenuButton"
                 onClick={() => {
                   navigate('/write')
                 }}
@@ -39,6 +41,7 @@ const Header = function () {
           <ul className="HeaderRightProfileMenuUl">
             <li>
               <button
+                className="Button BigButton MenuButton"
                 onClick={() => {
                   navigate('/profile')
                 }}
@@ -50,6 +53,7 @@ const Header = function () {
               {getCurrentUserState() !== '' ? (
                 <>
                   <button
+                    className="Button BigButton MenuButton"
                     onClick={() => {
                       navigate('/login')
                     }}
@@ -60,6 +64,7 @@ const Header = function () {
               ) : (
                 <>
                   <button
+                    className="Button BigButton MenuButton"
                     onClick={() => {
                       logOut()
                     }}
