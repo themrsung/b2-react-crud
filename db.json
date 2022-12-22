@@ -45,6 +45,10 @@
       "password": -852673857,
       "name": "234",
       "motd": "asd"
+    },
+    {
+      "id": "rkdlqdyd",
+      "password": 256650335
     }
   ],
   "posts": [
@@ -96,6 +100,13 @@
       "title": "123",
       "content": "123",
       "createdAt": 1671691834722
+    },
+    {
+      "id": "ecb27ea3-05ce-4213-8187-6e19ead71135",
+      "author": "rkdlqdyd",
+      "title": "가입완료,",
+      "content": "작성 가능?",
+      "createdAt": 1671697372610
     }
   ]
 }

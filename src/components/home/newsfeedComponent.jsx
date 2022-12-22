@@ -1,9 +1,7 @@
 import Post from '../shared/post'
 
 const NewsfeedComponent = function ({ posts }) {
-  const newsfeedStyle = {
-    display: 'grid'
-  }
+  const newsfeedStyle = {}
 
   return (
     <div className="NewsfeedComponent" style={newsfeedStyle}>
