@@ -14,7 +14,11 @@ const ViewCommentsComponent = ({ postId }) => {
   const fetchPost = async function () {
     const response = await axios.get(SERVER_URL + '/posts/' + postId)
     setPost(response.data)
-    setComments(response.data.comments)
+    setComments(
+      response.data.comments.sort((a, b) =>
+        a.createdAt < b.createdAt ? 1 : -1
+      )
+    )
   }
 
   const [dummyStateBoolean, setDummyStateBoolean] = useState(false)
@@ -31,6 +35,7 @@ const ViewCommentsComponent = ({ postId }) => {
     const user = getCurrentUserState()
     if (user.id === '') {
       navigate('/login')
+      return
     }
 
     const comment = {
@@ -43,10 +48,11 @@ const ViewCommentsComponent = ({ postId }) => {
     let newComments = comments ? comments : []
     newComments.push(comment)
 
-    const res = await axios.patch(SERVER_URL + '/posts/' + postId, {
+    await axios.patch(SERVER_URL + '/posts/' + postId, {
       comments: newComments
     })
 
+    window.location.reload()
     setDummyStateBoolean(!dummyStateBoolean)
   }
 

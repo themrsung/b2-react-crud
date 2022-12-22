@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { logOut } from '../../auth/logOut'
 import { useState } from 'react'
 
@@ -26,13 +26,19 @@ const Header = function () {
     setModalOpen(false)
   }
 
+  const location = useLocation()
+
   return (
     <header className="Header">
       <div className="HeaderLeft">
         <div
           className="HeaderLeftTitleArea"
           onClick={() => {
-            navigate('/')
+            if (location.pathname !== '/') {
+              navigate('/')
+            } else {
+              window.location.reload()
+            }
           }}
         >
           <img className="HeaderLeftLogo" src={logo} alt="H2NY-logo" />
