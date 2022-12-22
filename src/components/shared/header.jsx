@@ -54,6 +54,7 @@ const Header = function () {
             </li>
             <li>
               <button
+                id="OpenWriteModalButton"
                 className="Button BigButton MenuButton"
                 // onClick={() => {
                 //   navigate('/write')
