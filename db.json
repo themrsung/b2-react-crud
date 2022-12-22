@@ -33,6 +33,18 @@
     {
       "id": "ska",
       "password": 3483987
+    },
+    {
+      "id": "admin!",
+      "password": 646494183,
+      "name": "123",
+      "motd": "1"
+    },
+    {
+      "id": "dudwns",
+      "password": -852673857,
+      "name": "123123",
+      "motd": "asd"
     }
   ],
   "posts": [

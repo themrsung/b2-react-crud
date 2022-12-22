@@ -86,13 +86,14 @@ const UserProfileComponent = function ({ userId }) {
             >
               <input
                 type="text"
-                placeholder="Name"
+                placeholder={user.name}
                 required
                 onChange={(e) => {
                   setNewUserProfileName(e.target.value)
                 }}
               />
               <button type="submit">수정 완료</button>
+              <button>취소</button>
             </form>
           )}
         </div>
@@ -116,13 +117,14 @@ const UserProfileComponent = function ({ userId }) {
             >
               <input
                 type="text"
-                placeholder="Message of the day"
+                placeholder={user.motd}
                 required
                 onChange={(e) => {
                   setNewUserProfileMotd(e.target.value)
                 }}
               />
               <button type="submit">수정 완료</button>
+              <button>취소</button>
             </form>
           )}
         </div>
