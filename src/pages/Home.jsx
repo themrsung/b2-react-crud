@@ -1,14 +1,18 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import NewsfeedComponent from '../components/home/newsfeedComponent'
 import { getCurrentUserState } from '../redux/config/configStore'
 import { SERVER_URL } from '../serverUrl'
 
 const Home = function ({ goTo }) {
+  let navigate = useNavigate()
   useEffect(() => {
     if (goTo === 'write') {
       document.getElementById('OpenWriteModalButton').click()
+    } else if (goTo === '') {
+    } else {
+      navigate('/notfound')
     }
   }, [])
 
