@@ -29,10 +29,6 @@
       "password": 1216985755,
       "name": "",
       "motd": ""
-    },
-    {
-      "id": "ska",
-      "password": 3483987
     }
   ],
   "posts": [
@@ -70,13 +66,6 @@
       "title": "asd",
       "content": "dddddd",
       "createdAt": 1671662660598
-    },
-    {
-      "id": "f000cec8-7466-41ea-81c9-46de158bc301",
-      "author": "ska",
-      "title": "g",
-      "content": "gg",
-      "createdAt": 1671677215690
     }
   ]
 }
