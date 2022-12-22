@@ -87,3 +87,20 @@
 
   margin-top: 0px;
 }
+
+@media (width < 800px) {
+  .Header {
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .HeaderLeftTitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (width < 550px) {
+  .HeaderRight {
+    flex-direction: column;
+  }
+}
