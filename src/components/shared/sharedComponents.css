@@ -25,13 +25,18 @@
   flex-direction: row;
   align-items: center;
   justify-content: left;
+
+  cursor: pointer;
+}
+
+.HeaderLeftLogo {
+  height: 8vh;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .HeaderLeftTitle {
   font-size: 2rem;
-  margin: 1rem;
-
-  cursor: pointer;
 }
 
 .HeaderRight {

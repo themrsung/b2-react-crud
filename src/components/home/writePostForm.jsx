@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
 import { getCurrentUserState } from '../../redux/config/configStore'
 import { SERVER_URL } from '../../serverUrl'
+import styled from 'styled-components'
 
 const WritePostForm = function () {
   const [postTitle, setPostTitle] = useState('')
@@ -26,7 +27,7 @@ const WritePostForm = function () {
   const user = users.filter((user) => user.id === getCurrentUserState().id)[0]
 
   if (!user) {
-    navigate('/login/write')
+    navigate('/login')
   }
 
   const onWritePost = async () => {
@@ -42,7 +43,7 @@ const WritePostForm = function () {
     navigate('/')
   }
   return (
-    <form
+    <StForm
       className="WritePostForm"
       onSubmit={(e) => {
         e.preventDefault()
@@ -50,8 +51,8 @@ const WritePostForm = function () {
       }}
     >
       <div className="WritePostFormTitleContainer">
-        <label>제목</label>
-        <input
+        {/* <label>제목</label> */}
+        <StInput
           type="text"
           value={postTitle}
           onChange={(e) => {
@@ -61,17 +62,63 @@ const WritePostForm = function () {
         />
       </div>
       <div className="WritePostFormContentContainer">
-        <label>내용</label>
-        <textarea
+        {/* <label>내용</label> */}
+        <StText
           value={postContent}
           onChange={(e) => {
             setPostContent(e.target.value)
           }}
         />
       </div>
-      <button type="submit">작성하기</button>
-    </form>
+      <StButton type="submit">작성하기</StButton>
+    </StForm>
   )
 }
 
 export default WritePostForm
+
+const StForm = styled.form`
+  /* background-color: #ffc7c7; */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  /* margin-bottom: 24px; */
+`
+
+const StInput = styled.input`
+  border: 1px solid #dfd3c3;
+  margin: 0 24px;
+  height: 25px;
+  width: 300px;
+  border-radius: 12px;
+  outline: none;
+  padding: 0 10px;
+  text-align: center;
+`
+
+// 텍스트가 들어가는 창은 텍스트에디터를 써도 될듯
+const StText = styled.textarea`
+  width: 400px;
+
+  min-height: 300px;
+  border-radius: 12px;
+  outline: none;
+  border: 1px solid #dfd3c3;
+  /* padding: 0 10px; */
+  text-align: center;
+`
+
+const StButton = styled.button`
+  border: none;
+  background-color: #eb455f;
+  color: white;
+  height: 35px;
+  cursor: pointer;
+  width: 80px;
+  border-radius: 20px;
+  margin: 5px;
+`
