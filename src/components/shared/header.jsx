@@ -2,14 +2,13 @@ import { useNavigate } from 'react-router-dom'
 import { logOut } from '../../auth/logOut'
 import { useState } from 'react'
 
-import { getCurrentUserState, store } from '../../redux/config/configStore'
+import { getCurrentUserState } from '../../redux/config/configStore'
 import './sharedComponents.css'
 
 const Header = function () {
   let navigate = useNavigate()
 
   const [isLoggedIn, setIsLoggedIn] = useState(getCurrentUserState() !== '')
-  console.log(getCurrentUserState() !== '')
 
   return (
     <header className="Header">

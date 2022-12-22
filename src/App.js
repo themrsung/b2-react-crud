@@ -14,15 +14,17 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
-          <Route path="profile/:id" element={<UserProfile />} />
-          <Route path="profile" element={<UserProfile />} />
-          <Route path="write" element={<WritePost />} />
-          <Route path="view/:id" element={<ViewPost />} />
-        </Routes>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
+            <Route path="profile/:id" element={<UserProfile />} />
+            <Route path="profile" element={<UserProfile />} />
+            <Route path="write" element={<WritePost />} />
+            <Route path="view/:id" element={<ViewPost />} />
+          </Routes>
+        </main>
         <Footer />
       </BrowserRouter>
     </>
