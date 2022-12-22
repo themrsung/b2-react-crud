@@ -2,13 +2,17 @@ import { useNavigate } from 'react-router-dom'
 import { logOut } from '../../auth/logOut'
 import { useState } from 'react'
 
-import { getCurrentUserState } from '../../redux/config/configStore'
+import { getCurrentUserState, store } from '../../redux/config/configStore'
 import './sharedComponents.css'
+import { createSelector } from '@reduxjs/toolkit'
 
 const Header = function () {
   let navigate = useNavigate()
 
-  const [isLoggedIn, setIsLoggedIn] = useState(getCurrentUserState() !== '')
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  store.subscribe(() => {
+    setIsLoggedIn(getCurrentUserState().id !== '')
+  })
 
   return (
     <header className="Header">
@@ -79,6 +83,7 @@ const Header = function () {
                     className="Button BigButton MenuButton"
                     onClick={() => {
                       logOut()
+                      navigate('/')
                     }}
                   >
                     Logout
