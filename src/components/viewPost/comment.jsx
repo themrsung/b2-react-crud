@@ -1,8 +1,11 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { createPath, useNavigate } from 'react-router-dom'
 import { SERVER_URL } from '../../serverUrl'
 
 const Comment = ({ comment, postId }) => {
+  let navigate = useNavigate()
+
   const [isChangingComment, setIsChangingComment] = useState(false)
   const [newCommentContent, setNewCommentContent] = useState(comment.content)
   const [post, setPost] = useState({})
@@ -50,7 +53,16 @@ const Comment = ({ comment, postId }) => {
           <div>
             <p>{comment.content}</p>
             <p>
-              by {comment.author} at {comment.createdAt}
+              by{' '}
+              <span
+                style={{ cursor: 'pointer' }}
+                onClick={() => {
+                  navigate('/profile/' + comment.author)
+                }}
+              >
+                {comment.author}
+              </span>{' '}
+              at {comment.createdAt}
             </p>
           </div>
           <div>
