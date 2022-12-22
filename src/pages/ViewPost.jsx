@@ -19,9 +19,6 @@ const ViewPost = function () {
 
   useEffect(() => {
     fetchPost()
-    if (!post.title) {
-      navigate('/notfound')
-    }
   }, [])
 
   return (
