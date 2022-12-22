@@ -36,7 +36,8 @@ const WritePostForm = function () {
       author: getCurrentUserState().id,
       title: postTitle,
       content: postContent,
-      createdAt: Date.now()
+      createdAt: Date.now(),
+      comments: []
     }
 
     await axios.post(SERVER_URL + '/posts', post)
