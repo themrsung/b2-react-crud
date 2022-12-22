@@ -4,7 +4,7 @@ import { SERVER_URL } from '../../serverUrl'
 
 const Comment = ({ comment, postId }) => {
   const [isChangingComment, setIsChangingComment] = useState(false)
-  const [newCommentContent, setNewCommentContent] = useState('')
+  const [newCommentContent, setNewCommentContent] = useState(comment.content)
   const [post, setPost] = useState({})
 
   const onCommentEdit = async () => {
@@ -73,7 +73,13 @@ const Comment = ({ comment, postId }) => {
           </div>
           <div>
             <button onClick={onCommentEdit}>수정 완료</button>
-            <button>취소</button>
+            <button
+              onClick={() => {
+                setIsChangingComment(false)
+              }}
+            >
+              취소
+            </button>
           </div>
         </>
       )}
