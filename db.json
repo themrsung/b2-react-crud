@@ -78,6 +78,13 @@
       "title": "g",
       "content": "gg",
       "createdAt": 1671677215690
+    },
+    {
+      "id": "dbf47900-a1ae-477e-ab5d-ebd786899c88",
+      "author": "ska",
+      "title": "행복",
+      "content": "내년에는 행복한 일만 있기를",
+      "createdAt": 1671689429116
     }
   ]
 }
