@@ -99,7 +99,7 @@ const UserProfileComponent = function ({ userId }) {
         <div className="UserProfileMotd">
           {!isChangingUserProfileMotd ? (
             <div>
-              <h3>{user.motd ? user.motd : 'motd'}</h3>
+              <h3>{user.motd ? user.motd : 'Message of the day'}</h3>
               {isProfileOfCurrentUser ? (
                 <button onClick={onUserProfileMotdChangeClicked}>수정</button>
               ) : (
@@ -116,8 +116,8 @@ const UserProfileComponent = function ({ userId }) {
             >
               <input
                 type="text"
-                placeholder=""
-                value={newUserProfileMotd}
+                placeholder="Message of the day"
+                required
                 onChange={(e) => {
                   setNewUserProfileMotd(e.target.value)
                 }}
