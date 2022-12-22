@@ -72,11 +72,26 @@
       "createdAt": 1671662660598
     },
     {
+<<<<<<< HEAD
       "id": "99e64fd1-4841-4ee0-a239-c87cf05de52e",
       "author": "김원준",
       "title": "한글이 되네요",
       "content": "ㅎ",
       "createdAt": 1671672588981
+=======
+      "id": "69530741-df18-44e6-a802-1f44ba5bf571",
+      "author": "rkdlq",
+      "title": "hihi",
+      "content": "hihi",
+      "createdAt": 1671671240109
+    },
+    {
+      "id": "bf574f5d-edb8-48f0-a1ba-4738c6ee0d66",
+      "author": "rkdlq",
+      "title": "hih",
+      "content": "hi",
+      "createdAt": 1671671244136
+>>>>>>> 10e2ecfbe15fb2203f7c94d0fa6483f17a4885c1
     }
   ]
 }
