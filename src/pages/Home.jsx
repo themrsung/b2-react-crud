@@ -10,9 +10,6 @@ const Home = function ({ goTo }) {
   useEffect(() => {
     if (goTo === 'write') {
       document.getElementById('OpenWriteModalButton').click()
-    } else if (goTo === '') {
-    } else {
-      navigate('/notfound')
     }
   }, [])
 

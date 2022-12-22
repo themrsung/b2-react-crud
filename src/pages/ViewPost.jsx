@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import Post from '../components/shared/post'
 import { SERVER_URL } from '../serverUrl'
 
@@ -15,8 +15,13 @@ const ViewPost = function () {
     setPost(response.data)
   }
 
+  let navigate = useNavigate()
+
   useEffect(() => {
     fetchPost()
+    if (!post.title) {
+      navigate('/notfound')
+    }
   }, [])
 
   return (
