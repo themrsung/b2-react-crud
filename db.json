@@ -62,7 +62,27 @@
       "title": "안녕",
       "content": "반갑다.",
       "createdAt": 1671699439125,
-      "comments": [{}]
+      "comments": [
+        {},
+        {
+          "content": "d",
+          "id": "4acc8dbb-361b-47d3-8456-0552b17f6c8e",
+          "author": "test",
+          "createdAt": 1671702907655
+        },
+        {
+          "content": "dd",
+          "id": "ced5eb06-df83-4827-bf31-24637f6f5c16",
+          "author": "test",
+          "createdAt": 1671702953891
+        },
+        {
+          "content": "asdasd",
+          "id": "7dfe9467-e323-4c6b-b2a5-f1a1467b5d86",
+          "author": "test",
+          "createdAt": 1671702959353
+        }
+      ]
     }
   ]
 }
