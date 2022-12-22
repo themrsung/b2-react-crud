@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { hashPassword } from '../../auth/hashPassword'
 import { setCurrentUserState } from '../../redux/config/configStore'
 import { SERVER_URL } from '../../serverUrl'
@@ -22,13 +22,16 @@ const LoginForm = function () {
     fetchUsers()
   }, [])
 
+  let params = useParams()
+  const goBackTo = params.id ? params.id : ''
+
   const onUserLogin = () => {
     const user = users.filter((user) => user.id === userId)[0]
     if (user.password === hashPassword(userPassword)) {
       setCurrentUserState({
         id: user.id
       })
-      navigate('/')
+      navigate('/' + goBackTo)
       return
     }
 

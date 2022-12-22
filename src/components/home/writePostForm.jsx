@@ -26,7 +26,7 @@ const WritePostForm = function () {
   const user = users.filter((user) => user.id === getCurrentUserState().id)[0]
 
   if (!user) {
-    navigate('/login')
+    navigate('/login/write')
   }
 
   const onWritePost = async () => {
