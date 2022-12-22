@@ -31,13 +31,6 @@ const ViewPost = function () {
     <div className="ViewPost">
       <Post post={post} noLink={true} />
 
-      {/* 수정버튼  */}
-      <button>수정</button>
-      <button>삭제</button>
-      {/* 삭제버튼 */}
-      {/* <button type="button" onClick={() => onDeleteBtn(post.Id)}>
-        삭제
-      </button> */}
       <ViewCommentsComponent postId={postId} />
     </div>
   )
