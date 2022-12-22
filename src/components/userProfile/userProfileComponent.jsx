@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { getCurrentUserState } from '../../redux/config/configStore'
 import { SERVER_URL } from '../../serverUrl'
 import styled from 'styled-components'
 
@@ -13,6 +12,8 @@ const UserProfileComponent = function ({ userId }) {
     const data = response.data
     setUsers(data)
   }
+  // const [show, setShow] = useState(false)
+  // const cancelOnclickHandler = () => setShow((event) => !event)
 
   useEffect(() => {
     fetchUsers()
@@ -25,11 +26,6 @@ const UserProfileComponent = function ({ userId }) {
   if (!user) {
     navigate('/login/profile')
   }
-
-  const currentlyLoggedInUserId = getCurrentUserState().id
-  const isProfileOfCurrentUser = user
-    ? user.id === currentlyLoggedInUserId
-    : false
 
   const [isChangingUserProfileName, setIsChangingUserProfileName] =
     useState(false)
@@ -63,16 +59,13 @@ const UserProfileComponent = function ({ userId }) {
   return user ? (
     <ProfileBox>
       <h2>프로필 수정</h2>
+      <hr />
       <div className="UserProfileComponent">
         <div className="UserProfileName">
           {!isChangingUserProfileName ? (
             <div>
               <h3>{user.name ? user.name : 'username'}</h3>
-              {isProfileOfCurrentUser ? (
-                <button onClick={onUserProfileNameChangeClicked}>수정</button>
-              ) : (
-                <></>
-              )}
+              <button onClick={onUserProfileNameChangeClicked}>수정</button>
             </div>
           ) : (
             <form
@@ -82,27 +75,28 @@ const UserProfileComponent = function ({ userId }) {
                 onUserProfileNameChangeClicked()
               }}
             >
+              <h3>{user.name ? user.name : 'username'}</h3>
               <input
                 type="text"
-                placeholder={user.name}
+                placeholder="Nickname"
                 required
                 onChange={(e) => {
                   setNewUserProfileName(e.target.value)
                 }}
               />
-              <button type="submit">수정 완료</button>
+              <Button>
+                <button type="submit">수정 완료</button>
+                <button>취소</button>
+              </Button>
             </form>
           )}
         </div>
+
         <div className="UserProfileMotd">
           {!isChangingUserProfileMotd ? (
             <div>
               <h3>{user.motd ? user.motd : 'Message of the day'}</h3>
-              {isProfileOfCurrentUser ? (
-                <button onClick={onUserProfileMotdChangeClicked}>수정</button>
-              ) : (
-                <></>
-              )}
+              <button onClick={onUserProfileMotdChangeClicked}>수정</button>
             </div>
           ) : (
             <form
@@ -112,18 +106,23 @@ const UserProfileComponent = function ({ userId }) {
                 onUserProfileMotdChangeClicked()
               }}
             >
+              <h3>{user.motd ? user.motd : 'Message of the day'}</h3>
               <input
                 type="text"
-                placeholder={user.motd}
+                placeholder="Message of the day"
                 required
                 onChange={(e) => {
                   setNewUserProfileMotd(e.target.value)
                 }}
               />
-              <button type="submit">수정 완료</button>
+              <Button>
+                <button type="submit">수정 완료</button>
+                <button>취소</button>
+              </Button>
             </form>
           )}
         </div>
+        <hr />
       </div>
     </ProfileBox>
   ) : (
@@ -134,7 +133,12 @@ const UserProfileComponent = function ({ userId }) {
 export default UserProfileComponent
 
 const ProfileBox = styled.div`
+  margin: 35px;
   width: 420px;
   height: 300px;
   padding: 20px;
+`
+
+const Button = styled.div`
+  margin: 5px;
 `
