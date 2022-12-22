@@ -1,6 +1,6 @@
 import './App.css'
-import Header from './components/home/shared/header'
-import Footer from './components/home/shared/footer'
+import Header from './components/shared/header'
+import Footer from './components/shared/footer'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Login from './pages/Login'
 import Register from './pages/Register'
