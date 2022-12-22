@@ -6,7 +6,7 @@ const NewsfeedComponent = function ({ posts }) {
   return (
     <div className="NewsfeedComponent" style={newsfeedStyle}>
       {posts.map((post) => {
-        return <Post key={post.id} post={post} />
+        return <Post key={post.id} post={post} noModifyButtons={true} />
       })}
     </div>
   )

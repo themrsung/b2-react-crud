@@ -17,9 +17,11 @@ const ViewCommentsComponent = ({ postId }) => {
     setComments(response.data.comments)
   }
 
+  const [dummyStateBoolean, setDummyStateBoolean] = useState(false)
+
   useEffect(() => {
     fetchPost()
-  }, [])
+  }, [dummyStateBoolean])
 
   const [userComment, setUserComment] = useState('')
 
@@ -38,13 +40,14 @@ const ViewCommentsComponent = ({ postId }) => {
       createdAt: Date.now()
     }
 
-    let newComments = comments
+    let newComments = comments ? comments : []
     newComments.push(comment)
-    console.log(newComments)
 
     const res = await axios.patch(SERVER_URL + '/posts/' + postId, {
       comments: newComments
     })
+
+    setDummyStateBoolean(!dummyStateBoolean)
   }
 
   return (
@@ -69,7 +72,7 @@ const ViewCommentsComponent = ({ postId }) => {
         </form>
       </div>
       <div>
-        {comments.map((comment) => {
+        {comments?.map((comment) => {
           return <Comment key={comment.id} comment={comment} postId={postId} />
         })}
       </div>
