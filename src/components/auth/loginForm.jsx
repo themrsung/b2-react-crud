@@ -68,6 +68,16 @@ const LoginForm = function () {
       </div>
 
       <button type="submit">로그인</button>
+      <div className="RegisterButtonArea">
+        <h3>회원이 아니신가요?</h3>
+        <button
+          onClick={() => {
+            navigate('/register')
+          }}
+        >
+          회원가입
+        </button>
+      </div>
     </form>
   )
 }
