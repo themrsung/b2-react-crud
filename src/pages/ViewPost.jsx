@@ -26,8 +26,6 @@ const ViewPost = function () {
     fetchPost()
   }, [])
 
-  console.log(post)
-
   return (
     <div className="ViewPost">
       <Post post={post} noLink={true} />
