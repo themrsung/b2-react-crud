@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { hashPassword } from '../../auth/hashPassword'
 import { setCurrentUserState } from '../../redux/config/configStore'
 import { SERVER_URL } from '../../serverUrl'
-import Cookies from 'universal-cookie'
+import * as jose from 'jose'
 
 const LoginForm = function () {
   let navigate = useNavigate()
@@ -13,7 +13,7 @@ const LoginForm = function () {
 
   const [users, setUsers] = useState([])
 
-  const cookies = new Cookies()
+  // const cookies = new Cookies()
 
   const fetchUsers = async function () {
     const response = await axios.get(SERVER_URL + '/users')
@@ -23,7 +23,7 @@ const LoginForm = function () {
   let params = useParams()
   const goBackTo = params.id ? params.id : ''
 
-  // const [autoLogin, setAutoLogin] = useState(true)
+  const [autoLogin, setAutoLogin] = useState(true)
 
   useEffect(() => {
     // if (cookies.get('auto-login') === 'true') {
@@ -45,6 +45,18 @@ const LoginForm = function () {
       // if (autoLogin) {
       //   cookies.set('auto-login', 'true', { path: '/' })
       //   cookies.set('auto-login-id', user.id, { path: '/' })
+      // }
+
+      // if (autoLogin) {
+      //   const secret = new TextEncoder().encode('autologintest')
+      //   const alg = 'HS256'
+      //   const jwt = new jose.SignJWT({ 'urn:example:claim': true })
+      //     .setProtectedHeader({ alg })
+      //     .setIssuedAt()
+      //     .setIssuer('urn:example:issuer')
+      //     .setAudience('urn:example:audience')
+      //     .setExpirationTime('1w')
+      //     .sign(secret)
       // }
       navigate('/' + goBackTo)
       return
