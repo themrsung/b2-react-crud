@@ -70,7 +70,7 @@ const ViewCommentsComponent = ({ postId }) => {
       </div>
       <div>
         {comments.map((comment) => {
-          return <Comment key={comment.id} comment={comment} />
+          return <Comment key={comment.id} comment={comment} postId={postId} />
         })}
       </div>
     </div>
