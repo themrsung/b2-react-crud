@@ -58,7 +58,13 @@ const Header = function () {
                 // onClick={() => {
                 //   navigate('/write')
                 // }}
-                onClick={openModal}
+                onClick={() => {
+                  if (isLoggedIn) {
+                    openModal()
+                  } else {
+                    navigate('/login/write')
+                  }
+                }}
               >
                 Write
               </button>
