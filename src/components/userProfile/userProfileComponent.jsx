@@ -23,7 +23,7 @@ const UserProfileComponent = function ({ userId }) {
   let navigate = useNavigate()
 
   if (!user) {
-    navigate('/login')
+    navigate('/login/profile')
   }
 
   const currentlyLoggedInUserId = getCurrentUserState().id
