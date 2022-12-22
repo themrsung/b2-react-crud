@@ -12,7 +12,11 @@ const ModalForm = (props) => {
         <section>
           <header>
             {header}
-            <button className="Close" onClick={close}>
+            <button
+              id="CloseWritePostModalButton"
+              style={{ cursor: 'pointer', border: 'none' }}
+              onClick={close}
+            >
               &times;
             </button>
           </header>

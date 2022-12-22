@@ -40,6 +40,7 @@ const Post = function ({ post, noLink = false, noModifyButtons = false }) {
       }
 
       await axios.put(SERVER_URL + '/posts/' + post.id, newPost)
+      window.location.reload()
     }
     setIsChangingPost(!isChangingPost)
   }

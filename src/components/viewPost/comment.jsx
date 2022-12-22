@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { createPath, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { SERVER_URL } from '../../serverUrl'
 
 const Comment = ({ comment, postId }) => {

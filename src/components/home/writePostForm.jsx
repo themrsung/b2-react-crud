@@ -41,7 +41,8 @@ const WritePostForm = function () {
     }
 
     await axios.post(SERVER_URL + '/posts', post)
-    navigate('/')
+    navigate('/view/' + post.id)
+    document.getElementById('CloseWritePostModalButton').click()
   }
   return (
     <StForm
