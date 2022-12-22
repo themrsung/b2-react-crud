@@ -4,7 +4,6 @@ import { useState } from 'react'
 
 import { getCurrentUserState, store } from '../../redux/config/configStore'
 import './sharedComponents.css'
-import { createSelector } from '@reduxjs/toolkit'
 
 const Header = function () {
   let navigate = useNavigate()
