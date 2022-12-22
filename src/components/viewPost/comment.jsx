@@ -28,6 +28,8 @@ const Comment = ({ comment, postId }) => {
         comments: newComments
       })
 
+      window.location.reload()
+
       setDummyStateBoolean(!dummyStateBoolean)
     }
     setIsChangingComment(!isChangingComment)
@@ -48,6 +50,8 @@ const Comment = ({ comment, postId }) => {
     await axios.patch(SERVER_URL + '/posts/' + postId, {
       comments: newComments
     })
+    window.location.reload()
+
     setIsChangingComment(!isChangingComment)
   }
 
