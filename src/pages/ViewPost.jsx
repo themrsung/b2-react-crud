@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import Post from '../components/shared/post'
+import ViewCommentsComponent from '../components/viewPost/viewCommentsComponent'
 import { SERVER_URL } from '../serverUrl'
 
 const ViewPost = function () {
@@ -37,6 +38,7 @@ const ViewPost = function () {
       {/* <button type="button" onClick={() => onDeleteBtn(post.Id)}>
         삭제
       </button> */}
+      <ViewCommentsComponent postId={postId} />
     </div>
   )
 }
