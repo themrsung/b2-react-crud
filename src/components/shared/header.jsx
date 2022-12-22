@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { getCurrentUserState, store } from '../../redux/config/configStore'
 import './sharedComponents.css'
 
+import ModalForm from '../home/modalForm'
 import logo from '../../logo.svg'
 
 const Header = function () {
@@ -14,6 +15,16 @@ const Header = function () {
   store.subscribe(() => {
     setIsLoggedIn(getCurrentUserState().id !== '')
   })
+
+  // 모달관련
+  const [modalOpen, setModalOpen] = useState(false)
+
+  const openModal = () => {
+    setModalOpen(true)
+  }
+  const closeModal = () => {
+    setModalOpen(false)
+  }
 
   return (
     <header className="Header">
@@ -44,12 +55,18 @@ const Header = function () {
             <li>
               <button
                 className="Button BigButton MenuButton"
-                onClick={() => {
-                  navigate('/write')
-                }}
+                // onClick={() => {
+                //   navigate('/write')
+                // }}
+                onClick={openModal}
               >
                 Write
               </button>
+              <ModalForm
+                open={modalOpen}
+                close={closeModal}
+                header="HAPPY NEW YEAR"
+              ></ModalForm>
             </li>
           </ul>
         </nav>
