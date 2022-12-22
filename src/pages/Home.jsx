@@ -27,7 +27,7 @@ const Home = function () {
 
   useEffect(() => {
     fetchPosts()
-  })
+  }, [])
 
   return (
     <div className="Home">
