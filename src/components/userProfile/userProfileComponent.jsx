@@ -63,8 +63,8 @@ const UserProfileComponent = function ({ userId }) {
   return user ? (
     <ProfileBox>
       <h2>프로필 수정</h2>
-      <div>
-        <div>
+      <div className="UserProfileComponent">
+        <div className="UserProfileName">
           {!isChangingUserProfileName ? (
             <div>
               <h3>{user.name ? user.name : 'username'}</h3>
@@ -76,6 +76,7 @@ const UserProfileComponent = function ({ userId }) {
             </div>
           ) : (
             <form
+              className="UserProfileNameChangeForm"
               onSubmit={(e) => {
                 e.preventDefault()
                 onUserProfileNameChangeClicked()
@@ -93,7 +94,7 @@ const UserProfileComponent = function ({ userId }) {
             </form>
           )}
         </div>
-        <div>
+        <div className="UserProfileMotd">
           {!isChangingUserProfileMotd ? (
             <div>
               <h3>{user.motd ? user.motd : 'Message of the day'}</h3>
@@ -105,6 +106,7 @@ const UserProfileComponent = function ({ userId }) {
             </div>
           ) : (
             <form
+              className="UserProfileMotdChangeForm"
               onSubmit={(e) => {
                 e.preventDefault()
                 onUserProfileMotdChangeClicked()
