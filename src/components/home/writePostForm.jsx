@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
 import { getCurrentUserState } from '../../redux/config/configStore'
 import { SERVER_URL } from '../../serverUrl'
@@ -45,7 +45,7 @@ const WritePostForm = function () {
     navigate('/view/' + post.id)
     document.getElementById('CloseWritePostModalButton').click()
   }
-  const getErrorMsg = (params) => {
+  const getErrorMsg = () => {
     return alert('제목과 내용을 입력해주세요.')
   }
 
