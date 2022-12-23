@@ -66,7 +66,7 @@
 .Modal > section > header {
   position: relative;
   padding: 16px 64px 16px 16px;
-  background-color: #eb455f;
+  background-color: #2e2727;
   font-weight: 700;
   color: white;
 }
@@ -87,7 +87,7 @@
   border-bottom: 1px solid #dee2e6;
   border-top: 1px solid #dee2e6;
 }
-.Modal > section > footer {
+/* .Modal > section > footer {
   padding: 12px 16px;
   text-align: right;
 }
@@ -97,7 +97,7 @@
   background-color: #6c757d;
   border-radius: 5px;
   font-size: 13px;
-}
+} */
 .Modal.OpenModal {
   display: flex;
   align-items: center;
