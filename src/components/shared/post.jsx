@@ -78,8 +78,10 @@ const Post = function ({ post, noLink = false, noModifyButtons = false }) {
   }
 
   const onPostDelete = async () => {
-    await axios.delete(SERVER_URL + '/posts/' + post.id)
-    navigate('/')
+    if (window.confirm('이 글을 정말 삭제하시겠습니까?')) {
+      await axios.delete(SERVER_URL + '/posts/' + post.id)
+      navigate('/')
+    }
   }
 
   return (
