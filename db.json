@@ -14,7 +14,6 @@
       ]
     },
     {
-<<<<<<< HEAD
       "id": "0555ba1d-eb2e-45d4-acfc-dbcabbb8f823",
       "author": "happy",
       "content": "수정완료",
@@ -28,22 +27,6 @@
           "createdAt": 1671775642660
         }
       ]
-=======
-      "id": "42e1912e-b72d-4a67-97ba-12be48be06fb",
-      "author": "ska",
-      "title": "test",
-      "content": "testest",
-      "createdAt": 1671774655612,
-      "comments": []
-    },
-    {
-      "id": "4b2d8469-3a9c-4b4e-a90c-5de20693fbbd",
-      "author": "ska",
-      "title": "a",
-      "content": "aa",
-      "createdAt": 1671774664569,
-      "comments": []
->>>>>>> eb3bd445e38c42fab93b6e6fd0d2482d5d8ab6fc
     }
   ],
   "users": [
