@@ -56,5 +56,22 @@
       "name": "sbdldj4"
     }
   ],
-  "posts": []
+  "posts": [
+    {
+      "id": "ac45c063-1066-4637-815f-dffcc8549c1c",
+      "author": "happy",
+      "title": "sdf",
+      "content": "sdfsd",
+      "createdAt": 1671773280536,
+      "comments": []
+    },
+    {
+      "id": "4cbdea6e-925e-4301-a5f9-ba640e0bdbb9",
+      "author": "happy",
+      "title": "sdf",
+      "content": "dsfs",
+      "createdAt": 1671773287363,
+      "comments": []
+    }
+  ]
 }
