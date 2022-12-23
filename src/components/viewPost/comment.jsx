@@ -73,13 +73,36 @@ const Comment = ({ comment, postId }) => {
     setLike(like + 1)
   }
 
+  const [userName, setUserName] = useState('')
+
+  const [users, setUsers] = useState([])
+
+  const fetchUsers = async function () {
+    const response = await axios.get(SERVER_URL + '/users')
+    const data = response.data
+    setUsers(data)
+
+    // setTimeout(() => {
+    //   const user = users.filter((u) => u.id === comment.author)
+
+    //   console.log(users)
+    // }, 5000)
+  }
+
+  useEffect(() => {
+    fetchUsers()
+    setTimeout(() => {
+      console.log(users)
+    }, 5000)
+  }, [])
+
   return (
     <div className="CommentDiv">
       {!isChangingComment ? (
         <>
           <div>
-            <p>{comment.content}</p>
-            <p>
+            <p className="CommentContent">{comment.content}</p>
+            <p className="CommentMetaData">
               by{' '}
               <span
                 style={{ cursor: 'pointer' }}
