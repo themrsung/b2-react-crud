@@ -80,7 +80,6 @@ const WritePostForm = function () {
 export default WritePostForm
 
 const StForm = styled.form`
-  /* background-color: #ffc7c7; */
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -92,7 +91,7 @@ const StForm = styled.form`
 `
 
 const StInput = styled.input`
-  border: 1px solid #dfd3c3;
+  border: 1px solid #ff2e01;
   margin: 0 24px;
   height: 25px;
   width: 300px;
@@ -109,14 +108,14 @@ const StText = styled.textarea`
   min-height: 300px;
   border-radius: 12px;
   outline: none;
-  border: 1px solid #dfd3c3;
+  border: 1px solid #ff2e01;
   /* padding: 0 10px; */
   text-align: center;
 `
 
 const StButton = styled.button`
   border: none;
-  background-color: #eb455f;
+  background-color: #2e2727;
   color: white;
   height: 35px;
   cursor: pointer;
