@@ -90,20 +90,20 @@ const Post = function ({ post, noLink = false, noModifyButtons = false }) {
           {!isChangingPost ? (
             <>
               {' '}
-              <button class="Button" onClick={onPostEdit}>
+              <button className="Button" onClick={onPostEdit}>
                 수정
               </button>
-              <button class="Button" onClick={onPostDelete}>
+              <button className="Button" onClick={onPostDelete}>
                 삭제
               </button>
             </>
           ) : (
             <>
-              <button class="Button" onClick={onPostEdit}>
+              <button className="Button" onClick={onPostEdit}>
                 수정완료
               </button>
               <button
-                class="Button"
+                className="Button"
                 onClick={() => {
                   setIsChangingPost(false)
                 }}
