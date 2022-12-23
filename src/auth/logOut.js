@@ -4,4 +4,5 @@ export const logOut = () => {
   setCurrentUserState({
     id: ''
   })
+  window.sessionStorage.removeItem('currentSession')
 }

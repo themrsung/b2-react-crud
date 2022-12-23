@@ -33,7 +33,7 @@ const UserProfileComponent = function ({ userId }) {
         if (getCurrentUserState().id !== '') {
           setUser(users.filter((u) => u.id === getCurrentUserState().id)[0])
         } else {
-          navigate('/login/profile')
+          // navigate('/login/profile')
         }
       }
       if (user) {
@@ -44,6 +44,9 @@ const UserProfileComponent = function ({ userId }) {
 
       setDummyStateBoolean(!dummyStateBoolean)
     } else {
+      if (getCurrentUserState().id === '') {
+        navigate('/login/profile')
+      }
       if (!user.id) {
         navigate('/notfound')
       }

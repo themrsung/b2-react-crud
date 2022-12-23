@@ -8,8 +8,19 @@ import Home from './pages/Home'
 import UserProfile from './pages/UserProfile'
 import ViewPost from './pages/ViewPost'
 import NotFound from './pages/NotFound'
+import { useEffect } from 'react'
+import { setCurrentUserState } from './redux/config/configStore'
 
 function App() {
+  useEffect(() => {
+    const sessionId = window.sessionStorage.getItem('currentSession')
+    if (sessionId && sessionId !== '') {
+      // assume logged in
+      setCurrentUserState({
+        id: sessionId
+      })
+    }
+  }, [])
   return (
     <>
       <BrowserRouter>
