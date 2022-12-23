@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
 import { getCurrentUserState } from '../../redux/config/configStore'
 import { SERVER_URL } from '../../serverUrl'
-import styled from 'styled-components'
+import './homeComponents.css'
 
 const WritePostForm = function () {
   const [postTitle, setPostTitle] = useState('')
@@ -45,7 +45,7 @@ const WritePostForm = function () {
     document.getElementById('CloseWritePostModalButton').click()
   }
   return (
-    <StForm
+    <form
       className="WritePostForm"
       onSubmit={(e) => {
         e.preventDefault()
@@ -53,8 +53,8 @@ const WritePostForm = function () {
       }}
     >
       <div className="WritePostFormTitleContainer">
-        {/* <label>제목</label> */}
-        <StInput
+        <input
+          className="WritePostFormTitle"
           type="text"
           value={postTitle}
           onChange={(e) => {
@@ -64,8 +64,7 @@ const WritePostForm = function () {
         />
       </div>
       <div className="WritePostFormContentContainer">
-        {/* <label>내용</label> */}
-        <StText
+        <textarea
           placeholder="내용을 입력하세요."
           value={postContent}
           onChange={(e) => {
@@ -76,43 +75,43 @@ const WritePostForm = function () {
       <button type="submit" className="Button">
         작성하기
       </button>
-    </StForm>
+    </form>
   )
 }
 
 export default WritePostForm
 
-const StForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding: 20px;
-  align-items: center;
-  justify-content: center;
-  /* border-radius: 20px; */
-`
+// const StForm = styled.form`
+//   display: flex;
+//   flex-direction: column;
+//   gap: 24px;
+//   padding: 20px;
+//   align-items: center;
+//   justify-content: center;
+//   /* border-radius: 20px; */
+// `
 
-const StInput = styled.input`
-  border: 1px solid #2e2727;
-  margin: 0 24px;
-  height: 25px;
-  width: 300px;
-  border-radius: 12px;
-  outline: none;
-  padding: 0 10px;
-  text-align: center;
-`
+// const StInput = styled.input`
+//   border: 1px solid #2e2727;
+//   margin: 0 24px;
+//   height: 25px;
+//   width: 300px;
+//   border-radius: 12px;
+//   outline: none;
+//   padding: 0 10px;
+//   text-align: center;
+// `
 
-// 텍스트가 들어가는 창은 텍스트에디터를 써도 될듯
-const StText = styled.textarea`
-  width: 400px;
-  min-height: 300px;
-  border-radius: 12px;
-  outline: none;
-  border: 1px solid #2e2727;
-  text-align: center;
-  padding: 10px;
-`
+// // 텍스트가 들어가는 창은 텍스트에디터를 써도 될듯
+// const StText = styled.textarea`
+//   width: 400px;
+//   min-height: 300px;
+//   border-radius: 12px;
+//   outline: none;
+//   border: 1px solid #2e2727;
+//   text-align: center;
+//   padding: 10px;
+// `
 
 // const StButton = styled.button`
 //   border: none;
