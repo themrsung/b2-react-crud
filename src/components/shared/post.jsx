@@ -1,6 +1,7 @@
 import axios from 'axios'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { getCurrentUserState } from '../../redux/config/configStore'
 import { SERVER_URL } from '../../serverUrl'
 import './sharedComponents.css'
 
@@ -23,6 +24,17 @@ const Post = function ({ post, noLink = false, noModifyButtons = false }) {
   const postAuthorStyle = {
     cursor: 'pointer'
   }
+
+  const [isOwnPost, setIsOwnPost] = useState(false)
+
+  useEffect(() => {
+    const userId = window.sessionStorage.getItem('currentSession')
+    if (userId && userId !== '') {
+      if (post.author === userId) {
+        setIsOwnPost(true)
+      }
+    }
+  }, [])
 
   const [isChangingPost, setIsChangingPost] = useState(false)
   const [newPostContent, setNewPostContent] = useState(post.content)
@@ -85,7 +97,7 @@ const Post = function ({ post, noLink = false, noModifyButtons = false }) {
         / at {post.createdAt}
       </p>
 
-      {!noModifyButtons ? (
+      {!noModifyButtons && isOwnPost ? (
         <div>
           {!isChangingPost ? (
             <>
