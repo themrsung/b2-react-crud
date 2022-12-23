@@ -98,12 +98,14 @@ const UserProfileComponent = function ({ userId }) {
             {!isChangingUserProfileName ? (
               <div>
                 <ProfileDiv>{user.name ? user.name : 'username'}</ProfileDiv>
-                <button
-                  className="Button"
-                  onClick={onUserProfileNameChangeClicked}
-                >
-                  수정
-                </button>
+                {isOwnProfile && (
+                  <button
+                    className="Button"
+                    onClick={onUserProfileNameChangeClicked}
+                  >
+                    수정
+                  </button>
+                )}
               </div>
             ) : (
               <form
@@ -143,12 +145,14 @@ const UserProfileComponent = function ({ userId }) {
                 <ProfileDiv>
                   {user.motd ? user.motd : 'Message of the day'}
                 </ProfileDiv>
-                <button
-                  className="Button"
-                  onClick={onUserProfileMotdChangeClicked}
-                >
-                  수정
-                </button>
+                {isOwnProfile && (
+                  <button
+                    className="Button"
+                    onClick={onUserProfileMotdChangeClicked}
+                  >
+                    수정
+                  </button>
+                )}
               </div>
             ) : (
               <form
