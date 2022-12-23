@@ -67,7 +67,7 @@
 .Modal > section > header {
   position: relative;
   padding: 16px 64px 16px 16px;
-  background-color: #2e2727;
+  background-color: black;
   font-weight: 700;
   color: white;
 }
@@ -88,11 +88,6 @@
   border-bottom: 1px solid #dee2e6;
   border-top: 1px solid #dee2e6;
 }
-
-/* .WritePostFormContentContainer,
-.WritePostFormTitleContainer:focus {
-  outline: 1px solid #ff2e01;
-} */
 
 .Modal.OpenModal {
   display: flex;
