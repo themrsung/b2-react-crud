@@ -1,10 +1,9 @@
 import Post from '../shared/post'
+import './style/homeComponents.css'
 
 const NewsfeedComponent = function ({ posts }) {
-  const newsfeedStyle = {}
-
   return (
-    <div className="NewsfeedComponent" style={newsfeedStyle}>
+    <div className="NewsfeedComponent">
       {posts
         .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1))
         .map((post) => {
