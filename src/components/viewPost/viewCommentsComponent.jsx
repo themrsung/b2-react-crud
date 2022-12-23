@@ -69,6 +69,7 @@ const ViewCommentsComponent = ({ postId }) => {
           <div>
             <label></label>
             <input
+              className="InputStyle"
               value={userComment}
               onChange={(e) => {
                 setUserComment(e.target.value)
