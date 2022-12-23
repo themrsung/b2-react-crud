@@ -95,6 +95,21 @@
       "content": "rabbit",
       "createdAt": 1671755035876,
       "comments": []
+    },
+    {
+      "id": "f02ff43f-0e84-4612-b362-01ba08b9cb36",
+      "author": "ska",
+      "title": "제목",
+      "content": "내용",
+      "createdAt": 1671760826344,
+      "comments": [
+        {
+          "content": "ㅇㅎ",
+          "id": "83eb038c-64ea-491d-b554-8e27015e8a6c",
+          "author": "ska",
+          "createdAt": 1671760840185
+        }
+      ]
     }
   ]
 }
