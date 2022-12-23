@@ -75,7 +75,7 @@ const ViewCommentsComponent = ({ postId }) => {
               }}
             />
           </div>
-          <button class="Button" type="submit">
+          <button className="Button" type="submit">
             확인
           </button>
         </form>
