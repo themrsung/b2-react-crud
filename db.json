@@ -1,17 +1,20 @@
 {
+  "posts": [
+    {
+      "id": "5b1759b5-b71f-4d00-8d8a-fca2922e56ea",
+      "author": "김원준",
+      "createdAt": 1671774095631,
+      "comments": [
+        {
+          "content": "댓글 테스트",
+          "id": "245184fc-d2fd-45a8-abe6-12dc066c6665",
+          "author": "김원준",
+          "createdAt": 1671774122923
+        }
+      ]
+    }
+  ],
   "users": [
-    {
-      "id": "admin",
-      "password": 1216985755,
-      "name": "관리자",
-      "motd": "관리자의 한 줄 소개"
-    },
-    {
-      "id": "admin2",
-      "password": 1216985755,
-      "name": "",
-      "motd": ""
-    },
     {
       "id": "admin3",
       "password": 1216985755,
@@ -54,24 +57,6 @@
       "id": "happy",
       "password": -909023779,
       "name": "sbdldj4"
-    }
-  ],
-  "posts": [
-    {
-      "id": "ac45c063-1066-4637-815f-dffcc8549c1c",
-      "author": "happy",
-      "title": "sdf",
-      "content": "sdfsd",
-      "createdAt": 1671773280536,
-      "comments": []
-    },
-    {
-      "id": "4cbdea6e-925e-4301-a5f9-ba640e0bdbb9",
-      "author": "happy",
-      "title": "sdf",
-      "content": "dsfs",
-      "createdAt": 1671773287363,
-      "comments": []
     }
   ]
 }
