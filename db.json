@@ -1,17 +1,20 @@
 {
+  "posts": [
+    {
+      "id": "5b1759b5-b71f-4d00-8d8a-fca2922e56ea",
+      "author": "김원준",
+      "createdAt": 1671774095631,
+      "comments": [
+        {
+          "content": "댓글 테스트",
+          "id": "245184fc-d2fd-45a8-abe6-12dc066c6665",
+          "author": "김원준",
+          "createdAt": 1671774122923
+        }
+      ]
+    }
+  ],
   "users": [
-    {
-      "id": "admin",
-      "password": 1216985755,
-      "name": "관리자",
-      "motd": "관리자의 한 줄 소개"
-    },
-    {
-      "id": "admin2",
-      "password": 1216985755,
-      "name": "",
-      "motd": ""
-    },
     {
       "id": "admin3",
       "password": 1216985755,
@@ -54,24 +57,6 @@
       "id": "happy",
       "password": -909023779,
       "name": "sbdldj4"
-    }
-  ],
-  "posts": [
-    {
-      "id": "02a07f44-bfe8-4168-a16d-81582f01aa9d",
-      "author": "happy",
-      "title": "작성이 잘 되나요",
-      "content": "됨",
-      "createdAt": 1671773882165,
-      "comments": []
-    },
-    {
-      "id": "be7ecd9d-3375-4fdf-ae10-c00872a17899",
-      "author": "happy",
-      "title": "d",
-      "content": "d",
-      "createdAt": 1671774434666,
-      "comments": []
     }
   ]
 }
