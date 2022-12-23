@@ -3,9 +3,11 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { SERVER_URL } from '../../serverUrl'
 import styled from 'styled-components'
+import { getCurrentUserState } from '../../redux/config/configStore'
 
 const UserProfileComponent = function ({ userId }) {
   const [users, setUsers] = useState([])
+  const [user, setUser] = useState({})
 
   const fetchUsers = async function () {
     const response = await axios.get(SERVER_URL + '/users')
@@ -13,17 +15,36 @@ const UserProfileComponent = function ({ userId }) {
     setUsers(data)
   }
 
+  const [dummyStateBoolean, setDummyStateBoolean] = useState(false)
+  const [getMatchingUsersCounter, setGetMatchingUsersCounter] = useState(0)
+
+  let navigate = useNavigate()
+
   useEffect(() => {
     fetchUsers()
-  }, [])
+  }, [dummyStateBoolean])
 
-  const user = users.filter((user) => user.id === userId)[0]
+  useEffect(() => {
+    if (getMatchingUsersCounter < 25) {
+      const matchingUsers = users.filter((u) => u.id === userId)
+      if (matchingUsers && matchingUsers.length > 0) {
+        setUser(matchingUsers[0])
+      } else if (userId === '') {
+        setUser(users.filter((u) => u.id === getCurrentUserState().id)[0])
+      }
+      if (user) {
+        if (user.id === getCurrentUserState().id) {
+          setIsOwnProfile(true)
+        }
+      }
 
-  const navigate = useNavigate()
-
-  if (!user) {
-    navigate('/login/profile')
-  }
+      setDummyStateBoolean(!dummyStateBoolean)
+    } else {
+      if (!user.id) {
+        navigate('/notfound')
+      }
+    }
+  }, [users])
 
   const [isChangingUserProfileName, setIsChangingUserProfileName] =
     useState(false)
@@ -53,21 +74,25 @@ const UserProfileComponent = function ({ userId }) {
     setIsChangingUserProfileMotd(!isChangingUserProfileMotd)
   }
 
+  const [isOwnProfile, setIsOwnProfile] = useState(false)
+
   return user ? (
     <ProfileBox>
-      <h1>프로필 수정</h1>
+      {isOwnProfile ? <h1>프로필 수정</h1> : <h1>프로필</h1>}
       <hr />
       <div className="UserProfileComponent">
         <div className="UserProfileName">
           {!isChangingUserProfileName ? (
             <div>
               <h2>{user.name ? user.name : 'username'}</h2>
-              <button
-                className="Button"
-                onClick={onUserProfileNameChangeClicked}
-              >
-                수정
-              </button>
+              {isOwnProfile && (
+                <button
+                  className="Button"
+                  onClick={onUserProfileNameChangeClicked}
+                >
+                  수정
+                </button>
+              )}
             </div>
           ) : (
             <form
@@ -106,12 +131,14 @@ const UserProfileComponent = function ({ userId }) {
           {!isChangingUserProfileMotd ? (
             <div>
               <h2>{user.motd ? user.motd : 'Message of the day'}</h2>
-              <button
-                className="Button"
-                onClick={onUserProfileMotdChangeClicked}
-              >
-                수정
-              </button>
+              {isOwnProfile && (
+                <button
+                  className="Button"
+                  onClick={onUserProfileMotdChangeClicked}
+                >
+                  수정
+                </button>
+              )}
             </div>
           ) : (
             <form

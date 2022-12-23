@@ -68,7 +68,7 @@
 }
 .Modal > section > header button {
   position: absolute;
-  top: 15px;
+  top: 10px;
   right: 15px;
   width: 30px;
   font-size: 25px;
@@ -76,6 +76,7 @@
   text-align: center;
   color: white;
   background-color: transparent;
+  margin-bottom: 20px;
 }
 
 .Modal > section > main {
