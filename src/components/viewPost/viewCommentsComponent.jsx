@@ -58,8 +58,8 @@ const ViewCommentsComponent = ({ postId }) => {
   }
 
   return (
-    <div className="ViewCommentsComponent">
-      <div>
+    <div className="ViewCommentsDiv">
+      <div className="ComentInputDiv">
         <form
           onSubmit={(e) => {
             e.preventDefault()

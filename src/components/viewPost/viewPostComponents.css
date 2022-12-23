@@ -1,9 +1,32 @@
-.ViewCommentsComponent {
-  border: 2px solid #2e2727;
+.ViewPost {
+  font-size: large;
+  width: 95%;
+  border: 5px solid #2e2727;
+  border-radius: 20px;
+
+  margin: 20px;
   text-align: center;
 }
 
-.ContentObj {
-  border: 1px solid #2e2727;
+.Post {
+  /* background-color: gray; */
+  width: 95%;
+
+  margin: 20px;
   text-align: center;
+}
+
+.ViewCommentsDiv {
+  /* background-color: red; */
+  border-top: 1px solid black;
+  margin: 20px;
+}
+
+.ComentInputDiv {
+  /* background-color: orange; */
+  margin: 20px;
+}
+
+.CommentDiv {
+  /* background-color: yellow; */
 }

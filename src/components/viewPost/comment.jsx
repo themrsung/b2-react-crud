@@ -57,7 +57,7 @@ const Comment = ({ comment, postId }) => {
   }
 
   return (
-    <div className="ContentObj">
+    <div className="CommentDiv">
       {!isChangingComment ? (
         <>
           <div>
