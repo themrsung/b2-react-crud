@@ -58,19 +58,19 @@
   ],
   "posts": [
     {
-      "id": "ac45c063-1066-4637-815f-dffcc8549c1c",
+      "id": "02a07f44-bfe8-4168-a16d-81582f01aa9d",
       "author": "happy",
-      "title": "sdf",
-      "content": "sdfsd",
-      "createdAt": 1671773280536,
+      "title": "작성이 잘 되나요",
+      "content": "됨",
+      "createdAt": 1671773882165,
       "comments": []
     },
     {
-      "id": "4cbdea6e-925e-4301-a5f9-ba640e0bdbb9",
+      "id": "be7ecd9d-3375-4fdf-ae10-c00872a17899",
       "author": "happy",
-      "title": "sdf",
-      "content": "dsfs",
-      "createdAt": 1671773287363,
+      "title": "d",
+      "content": "d",
+      "createdAt": 1671774434666,
       "comments": []
     }
   ]
