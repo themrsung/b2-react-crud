@@ -74,6 +74,7 @@ const ViewCommentsComponent = ({ postId }) => {
               onChange={(e) => {
                 setUserComment(e.target.value)
               }}
+              placeholder="댓글을 입력하세요."
             />
           </div>
           <button className="Button" type="submit">
