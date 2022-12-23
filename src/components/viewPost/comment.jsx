@@ -76,10 +76,12 @@ const Comment = ({ comment, postId }) => {
             </p>
           </div>
           <div>
-            <button className="ContentEditBtn" onClick={onCommentEdit}>
+            <button className="Button" onClick={onCommentEdit}>
               수정
             </button>
-            <button onClick={onCommentDelete}>삭제</button>
+            <button className="Button" onClick={onCommentDelete}>
+              삭제
+            </button>
           </div>
         </>
       ) : (
