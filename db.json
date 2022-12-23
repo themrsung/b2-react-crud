@@ -57,6 +57,12 @@
       "id": "happy",
       "password": -909023779,
       "name": "sbdldj4"
+    },
+    {
+      "id": "김원준",
+      "password": 1480580,
+      "name": "김원준",
+      "motd": ""
     }
   ]
 }
