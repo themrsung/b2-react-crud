@@ -49,6 +49,11 @@
     {
       "id": "rkdlqdyd",
       "password": 256650335
+    },
+    {
+      "id": "happy",
+      "password": -909023779,
+      "name": "sbdldj4"
     }
   ],
   "posts": [
@@ -94,38 +99,6 @@
       "title": "black",
       "content": "rabbit",
       "createdAt": 1671755035876,
-      "comments": []
-    },
-    {
-      "id": "623d957e-82d9-4b8c-aa98-e0c384fb8af8",
-      "author": "ska",
-      "title": "a",
-      "content": "aa",
-      "createdAt": 1671764651627,
-      "comments": []
-    },
-    {
-      "id": "6cea778f-6d85-4006-b416-d8dc919cedb3",
-      "author": "ska",
-      "title": "s",
-      "content": "ss",
-      "createdAt": 1671764659641,
-      "comments": []
-    },
-    {
-      "id": "b9fb51d3-8805-40a9-baa9-37917036b6cf",
-      "author": "ska",
-      "title": "d",
-      "content": "dd",
-      "createdAt": 1671764670308,
-      "comments": []
-    },
-    {
-      "id": "37fb1d9b-592e-4620-b8fd-a6be218598df",
-      "author": "ska",
-      "title": "2023",
-      "content": "ㅎㅇ",
-      "createdAt": 1671764795191,
       "comments": []
     }
   ]
