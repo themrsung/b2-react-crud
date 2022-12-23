@@ -73,7 +73,9 @@ const WritePostForm = function () {
           }}
         />
       </div>
-      <StButton type="submit">작성하기</StButton>
+      <button type="submit" className="Button">
+        작성하기
+      </button>
     </StForm>
   )
 }
@@ -112,13 +114,13 @@ const StText = styled.textarea`
   padding: 10px;
 `
 
-const StButton = styled.button`
-  border: none;
-  background-color: #2e2727;
-  color: white;
-  height: 35px;
-  cursor: pointer;
-  width: 80px;
-  border-radius: 20px;
-  /* margin: 5px; */
-`
+// const StButton = styled.button`
+//   border: none;
+//   background-color: #2e2727;
+//   color: white;
+//   height: 35px;
+//   cursor: pointer;
+//   width: 80px;
+//   border-radius: 20px;
+//   /* margin: 5px; */
+// `
