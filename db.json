@@ -34,7 +34,14 @@
       "title": "김원준 테스트",
       "content": "김원준 테스트",
       "createdAt": 1671776533108,
-      "comments": []
+      "comments": [
+        {
+          "content": "이건 댓글이다",
+          "id": "86b97d85-e1d6-48f6-b9fb-508cfe130bc9",
+          "author": "김원준",
+          "createdAt": 1671777012558
+        }
+      ]
     }
   ],
   "users": [
