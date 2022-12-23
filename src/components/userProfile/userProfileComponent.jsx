@@ -55,14 +55,19 @@ const UserProfileComponent = function ({ userId }) {
 
   return user ? (
     <ProfileBox>
-      <h2>프로필 수정</h2>
+      <h1>프로필 수정</h1>
       <hr />
       <div className="UserProfileComponent">
         <div className="UserProfileName">
           {!isChangingUserProfileName ? (
             <div>
-              <h3>{user.name ? user.name : 'username'}</h3>
-              <button onClick={onUserProfileNameChangeClicked}>수정</button>
+              <h2>{user.name ? user.name : 'username'}</h2>
+              <button
+                className="Button"
+                onClick={onUserProfileNameChangeClicked}
+              >
+                수정
+              </button>
             </div>
           ) : (
             <form
@@ -81,8 +86,11 @@ const UserProfileComponent = function ({ userId }) {
                 }}
               />
               <Button>
-                <button type="submit">수정 완료</button>
+                <button className="Button" type="submit">
+                  수정 완료
+                </button>
                 <button
+                  className="Button"
                   onClick={() => {
                     setIsChangingUserProfileName(false)
                   }}
@@ -97,8 +105,13 @@ const UserProfileComponent = function ({ userId }) {
         <div className="UserProfileMotd">
           {!isChangingUserProfileMotd ? (
             <div>
-              <h3>{user.motd ? user.motd : 'Message of the day'}</h3>
-              <button onClick={onUserProfileMotdChangeClicked}>수정</button>
+              <h2>{user.motd ? user.motd : 'Message of the day'}</h2>
+              <button
+                className="Button"
+                onClick={onUserProfileMotdChangeClicked}
+              >
+                수정
+              </button>
             </div>
           ) : (
             <form
@@ -117,8 +130,11 @@ const UserProfileComponent = function ({ userId }) {
                 }}
               />
               <Button>
-                <button type="submit">수정 완료</button>
+                <button className="Button" type="submit">
+                  수정 완료
+                </button>
                 <button
+                  className="Button"
                   onClick={() => {
                     setIsChangingUserProfileMotd(false)
                   }}
@@ -140,12 +156,11 @@ const UserProfileComponent = function ({ userId }) {
 export default UserProfileComponent
 
 const ProfileBox = styled.div`
-  margin: 35px;
+  margin: 30px;
   width: 420px;
   height: 300px;
   padding: 20px;
 `
-
 const Button = styled.div`
-  margin: 5px;
+  margin: 10px;
 `
