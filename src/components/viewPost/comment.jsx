@@ -86,16 +86,14 @@ const Comment = ({ comment, postId }) => {
               at {comment.createdAt}
             </p>
           </div>
-          {isOwnComment && (
-            <div>
-              <button className="Button ContentEditBtn" onClick={onCommentEdit}>
-                수정
-              </button>
-              <button className="Button" onClick={onCommentDelete}>
-                삭제
-              </button>
-            </div>
-          )}
+          <div>
+            <button className="Button" onClick={onCommentEdit}>
+              수정
+            </button>
+            <button className="Button" onClick={onCommentDelete}>
+              삭제
+            </button>
+          </div>
         </>
       ) : (
         <>
