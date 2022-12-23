@@ -57,6 +57,12 @@
       "id": "happy",
       "password": -909023779,
       "name": "sbdldj4"
+    },
+    {
+      "id": "admin",
+      "password": 1216985755,
+      "name": "관리자",
+      "motd": ""
     }
   ]
 }
