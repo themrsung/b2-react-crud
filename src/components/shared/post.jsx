@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { SERVER_URL } from '../../serverUrl'
 import './sharedComponents.css'
 
-const Post = function ({ post, noLink = false }) {
+const Post = function ({ post, noLink = false, noModifyButtons = false }) {
   let navigate = useNavigate()
   const onPostClick = () => {
     if (!noLink) {
@@ -53,7 +53,7 @@ const Post = function ({ post, noLink = false }) {
     <div className="Post" style={postStyle} onClick={onPostClick}>
       {!isChangingPost ? (
         <>
-          <h3>{post.title}</h3>
+          <h2>{post.title}</h2>
           <p>{post.content}</p>
         </>
       ) : (
@@ -73,7 +73,7 @@ const Post = function ({ post, noLink = false }) {
         </>
       )}
       <p>
-        by{' '}
+        작성자 :{' '}
         <span
           style={postAuthorStyle}
           onClick={() => {
@@ -82,33 +82,39 @@ const Post = function ({ post, noLink = false }) {
         >
           {post.author}
         </span>{' '}
-        at {post.createdAt}
+        / at {post.createdAt}
       </p>
 
-      <div>
-        {!isChangingPost ? (
-          <>
-            {' '}
-            <button class="Button" onClick={onPostEdit}>
-              수정
-            </button>
-            <button class="Button" onClick={onPostDelete}>
-              삭제
-            </button>
-          </>
-        ) : (
-          <>
-            <button onClick={onPostEdit}>수정완료</button>
-            <button
-              onClick={() => {
-                setIsChangingPost(false)
-              }}
-            >
-              수정취소
-            </button>
-          </>
-        )}
-      </div>
+      {!noModifyButtons ? (
+        <div>
+          {!isChangingPost ? (
+            <>
+              {' '}
+              <button class="Button" onClick={onPostEdit}>
+                수정
+              </button>
+              <button class="Button" onClick={onPostDelete}>
+                삭제
+              </button>
+            </>
+          ) : (
+            <>
+              <button class="Button" onClick={onPostEdit}>
+                수정완료
+              </button>
+              <button
+                onClick={() => {
+                  setIsChangingPost(false)
+                }}
+              >
+                수정취소
+              </button>
+            </>
+          )}
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   )
 }

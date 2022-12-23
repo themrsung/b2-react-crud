@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { SERVER_URL } from '../../serverUrl'
+import './viewPostComponents.css'
 
 const Comment = ({ comment, postId }) => {
   let navigate = useNavigate()
@@ -56,7 +57,7 @@ const Comment = ({ comment, postId }) => {
   }
 
   return (
-    <div>
+    <div className="CommentDiv">
       {!isChangingComment ? (
         <>
           <div>
@@ -75,7 +76,9 @@ const Comment = ({ comment, postId }) => {
             </p>
           </div>
           <div>
-            <button onClick={onCommentEdit}>수정</button>
+            <button className="ContentEditBtn" onClick={onCommentEdit}>
+              수정
+            </button>
             <button onClick={onCommentDelete}>삭제</button>
           </div>
         </>

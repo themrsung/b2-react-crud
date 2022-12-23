@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { getCurrentUserState } from '../../redux/config/configStore'
 import { useNavigate } from 'react-router-dom'
 import Comment from './comment'
+import './viewPostComponents.css'
 
 const ViewCommentsComponent = ({ postId }) => {
   const [post, setPost] = useState({})
@@ -57,8 +58,8 @@ const ViewCommentsComponent = ({ postId }) => {
   }
 
   return (
-    <div className="ViewCommentsComponent">
-      <div>
+    <div className="ViewCommentsDiv">
+      <div className="ComentInputDiv">
         <form
           onSubmit={(e) => {
             e.preventDefault()
