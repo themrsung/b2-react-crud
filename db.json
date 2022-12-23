@@ -53,6 +53,14 @@
       "content": "인사",
       "createdAt": 1671777438812,
       "comments": []
+    },
+    {
+      "id": "b5a797d6-e929-4702-b6d9-8962f0418d78",
+      "author": "happy",
+      "title": "ㄴㅇㄹ",
+      "content": "ㄴㅇㄹㄴㅇ",
+      "createdAt": 1671780735412,
+      "comments": []
     }
   ],
   "users": [
@@ -99,7 +107,7 @@
     {
       "id": "happy",
       "password": -909023779,
-      "name": "sbdldj4"
+      "name": "ㄹ"
     },
     {
       "id": "admin",

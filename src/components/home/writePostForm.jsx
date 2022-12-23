@@ -56,8 +56,8 @@ const WritePostForm = function () {
         e.preventDefault()
         if (!postTitle || !postContent) {
           return getErrorMsg()
-          onWritePost()
         }
+        onWritePost()
       }}
     >
       <div className="WritePostFormTitleContainer">
