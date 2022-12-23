@@ -3,9 +3,11 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { SERVER_URL } from '../../serverUrl'
 import styled from 'styled-components'
+import { getCurrentUserState } from '../../redux/config/configStore'
 
 const UserProfileComponent = function ({ userId }) {
   const [users, setUsers] = useState([])
+  const [user, setUser] = useState({})
 
   const fetchUsers = async function () {
     const response = await axios.get(SERVER_URL + '/users')
@@ -13,17 +15,43 @@ const UserProfileComponent = function ({ userId }) {
     setUsers(data)
   }
 
+  const [dummyStateBoolean, setDummyStateBoolean] = useState(false)
+  const [getMatchingUsersCounter, setGetMatchingUsersCounter] = useState(0)
+
+  let navigate = useNavigate()
+
   useEffect(() => {
     fetchUsers()
-  }, [])
+  }, [dummyStateBoolean])
 
-  const user = users.filter((user) => user.id === userId)[0]
+  useEffect(() => {
+    if (getMatchingUsersCounter < 25) {
+      const matchingUsers = users.filter((u) => u.id === userId)
+      if (matchingUsers && matchingUsers.length > 0) {
+        setUser(matchingUsers[0])
+      } else if (userId === '') {
+        if (getCurrentUserState().id !== '') {
+          setUser(users.filter((u) => u.id === getCurrentUserState().id)[0])
+        } else {
+          // navigate('/login/profile')
+        }
+      }
+      if (user) {
+        if (user.id === getCurrentUserState().id) {
+          setIsOwnProfile(true)
+        }
+      }
 
-  const navigate = useNavigate()
-
-  if (!user) {
-    navigate('/login/profile')
-  }
+      setDummyStateBoolean(!dummyStateBoolean)
+    } else {
+      if (getCurrentUserState().id === '') {
+        navigate('/login/profile')
+      }
+      if (!user.id) {
+        navigate('/notfound')
+      }
+    }
+  }, [users])
 
   const [isChangingUserProfileName, setIsChangingUserProfileName] =
     useState(false)
@@ -52,6 +80,8 @@ const UserProfileComponent = function ({ userId }) {
     }
     setIsChangingUserProfileMotd(!isChangingUserProfileMotd)
   }
+
+  const [isOwnProfile, setIsOwnProfile] = useState(false)
 
   return user ? (
     <Box>

@@ -32,7 +32,8 @@ const RegisterForm = function () {
     const user = {
       id: userId,
       password: hashPassword(userPassword),
-      name: userName
+      name: userName,
+      motd: ''
     }
 
     let userIdIsAlreadyTaken = false

@@ -1,6 +1,7 @@
 import axios from 'axios'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { getCurrentUserState } from '../../redux/config/configStore'
 import { SERVER_URL } from '../../serverUrl'
 import './sharedComponents.css'
 
@@ -24,6 +25,17 @@ const Post = function ({ post, noLink = false, noModifyButtons = false }) {
     cursor: 'pointer'
   }
 
+  const [isOwnPost, setIsOwnPost] = useState(false)
+
+  useEffect(() => {
+    const userId = window.sessionStorage.getItem('currentSession')
+    if (userId && userId !== '') {
+      if (post.author === userId) {
+        setIsOwnPost(true)
+      }
+    }
+  }, [])
+
   const [isChangingPost, setIsChangingPost] = useState(false)
   const [newPostContent, setNewPostContent] = useState(post.content)
   const [newPostTitle, setNewPostTitle] = useState(post.title)
@@ -40,7 +52,10 @@ const Post = function ({ post, noLink = false, noModifyButtons = false }) {
       }
 
       await axios.put(SERVER_URL + '/posts/' + post.id, newPost)
+
+      window.location.reload()
     }
+
     setIsChangingPost(!isChangingPost)
   }
 
@@ -85,24 +100,25 @@ const Post = function ({ post, noLink = false, noModifyButtons = false }) {
         / at {post.createdAt}
       </p>
 
-      {!noModifyButtons ? (
+      {!noModifyButtons && isOwnPost ? (
         <div>
           {!isChangingPost ? (
             <>
               {' '}
-              <button class="Button" onClick={onPostEdit}>
+              <button className="Button" onClick={onPostEdit}>
                 수정
               </button>
-              <button class="Button" onClick={onPostDelete}>
+              <button className="Button" onClick={onPostDelete}>
                 삭제
               </button>
             </>
           ) : (
             <>
-              <button class="Button" onClick={onPostEdit}>
+              <button className="Button" onClick={onPostEdit}>
                 수정완료
               </button>
               <button
+                className="Button"
                 onClick={() => {
                   setIsChangingPost(false)
                 }}

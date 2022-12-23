@@ -38,6 +38,10 @@ const LoginForm = function () {
 
   const onUserLogin = () => {
     const user = users.filter((user) => user.id === userId)[0]
+    if (!user) {
+      alert('아이디와 비밀번호를 확인해주세요')
+      return
+    }
     if (user.password === hashPassword(userPassword)) {
       setCurrentUserState({
         id: user.id
@@ -58,6 +62,9 @@ const LoginForm = function () {
       //     .setExpirationTime('1w')
       //     .sign(secret)
       // }
+
+      window.sessionStorage.setItem('currentSession', user.id)
+
       navigate('/' + goBackTo)
       return
     }

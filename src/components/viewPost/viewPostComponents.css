@@ -1,18 +1,19 @@
 .ViewPost {
   font-size: large;
+  max-width: 70%;
   width: 95%;
   border: 5px solid #2e2727;
   border-radius: 20px;
 
-  margin: 20px;
+  margin: 20px auto;
   text-align: center;
 }
 
 .Post {
   /* background-color: gray; */
-  width: 95%;
+  width: 40%;
 
-  margin: 20px;
+  margin: auto;
   text-align: center;
 }
 
@@ -23,7 +24,7 @@
 }
 
 .ComentInputDiv {
-  /* background-color: orange; */
+  background-color: orange;
   margin: 20px;
 }
 
