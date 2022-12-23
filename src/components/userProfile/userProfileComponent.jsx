@@ -16,22 +16,35 @@ const UserProfileComponent = function ({ userId }) {
   }
 
   const [dummyStateBoolean, setDummyStateBoolean] = useState(false)
+  const [getMatchingUsersCounter, setGetMatchingUsersCounter] = useState(0)
+
+  let navigate = useNavigate()
 
   useEffect(() => {
     fetchUsers()
-  }, [])
+  }, [dummyStateBoolean])
 
   useEffect(() => {
-    const matchingUsers = users.filter((u) => u.id === userId)
-    if (matchingUsers && matchingUsers.length > 0) {
-      setUser(matchingUsers[0])
-    } else if (userId === '') {
-      console.log(getCurrentUserState())
-      setUser(users.filter((u) => u.id === getCurrentUserState().id)[0])
-    }
-  })
+    if (getMatchingUsersCounter < 25) {
+      const matchingUsers = users.filter((u) => u.id === userId)
+      if (matchingUsers && matchingUsers.length > 0) {
+        setUser(matchingUsers[0])
+      } else if (userId === '') {
+        setUser(users.filter((u) => u.id === getCurrentUserState().id)[0])
+      }
+      if (user) {
+        if (user.id === getCurrentUserState().id) {
+          setIsOwnProfile(true)
+        }
+      }
 
-  const navigate = useNavigate()
+      setDummyStateBoolean(!dummyStateBoolean)
+    } else {
+      if (!user.id) {
+        navigate('/notfound')
+      }
+    }
+  }, [users])
 
   const [isChangingUserProfileName, setIsChangingUserProfileName] =
     useState(false)
@@ -65,7 +78,7 @@ const UserProfileComponent = function ({ userId }) {
 
   return user ? (
     <ProfileBox>
-      <h1>프로필 수정</h1>
+      {isOwnProfile ? <h1>프로필 수정</h1> : <h1>프로필</h1>}
       <hr />
       <div className="UserProfileComponent">
         <div className="UserProfileName">
