@@ -1,5 +1,5 @@
 import Post from '../shared/post'
-import './style/homeComponents.css'
+import './homeComponents.css'
 
 const NewsfeedComponent = function ({ posts }) {
   return (
@@ -7,7 +7,14 @@ const NewsfeedComponent = function ({ posts }) {
       {posts
         .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1))
         .map((post) => {
-          return <Post key={post.id} post={post} noModifyButtons={true} />
+          return (
+            <Post
+              key={post.id}
+              post={post}
+              noModifyButtons={true}
+              showAll={false}
+            />
+          )
         })}
     </div>
   )

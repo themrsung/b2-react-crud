@@ -72,6 +72,23 @@
   text-align: center;
 }
 
+.PostTitle,
+.PostContent {
+  word-wrap: break-word;
+  max-width: 100%;
+  white-space: normal;
+  margin-right: auto;
+  text-align: left;
+}
+
+.PostMetaData {
+  word-wrap: break-word;
+  max-width: 100%;
+  white-space: normal;
+  margin-left: auto;
+  text-align: right;
+}
+
 .Footer {
   width: 100%;
   height: 15vh;

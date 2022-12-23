@@ -27,3 +27,8 @@
 .CommentDiv {
   /* background-color: yellow; */
 }
+.HeartShape {
+  display: inline;
+  color: red;
+  margin-right: 3px;
+}

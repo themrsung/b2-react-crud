@@ -67,6 +67,12 @@ const Comment = ({ comment, postId }) => {
     setIsChangingComment(!isChangingComment)
   }
 
+  // 좋아요만들기
+  const [like, setLike] = useState(0)
+  const clickLike = (e) => {
+    setLike(like + 1)
+  }
+
   return (
     <div className="CommentDiv">
       {!isChangingComment ? (
@@ -84,6 +90,14 @@ const Comment = ({ comment, postId }) => {
                 {comment.author}
               </span>{' '}
               at {comment.createdAt}
+              <h6>
+                <div>
+                  <span onClick={clickLike} className="HeartShape">
+                    ♡
+                  </span>
+                  {like}
+                </div>
+              </h6>
             </p>
           </div>
           <div>
