@@ -43,8 +43,8 @@
     {
       "id": "dudwns",
       "password": -852673857,
-      "name": "123",
-      "motd": "123"
+      "name": "JYJ",
+      "motd": "오늘의 할일"
     },
     {
       "id": "rkdlqdyd",
@@ -56,5 +56,14 @@
       "name": "sbdldj4"
     }
   ],
-  "posts": []
+  "posts": [
+    {
+      "id": "1f867052-2c4e-491b-a35e-a790993fc256",
+      "author": "dudwns",
+      "title": "asd",
+      "content": "asd",
+      "createdAt": 1671774023111,
+      "comments": []
+    }
+  ]
 }
