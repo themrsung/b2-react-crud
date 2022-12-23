@@ -18,7 +18,7 @@ const UserProfileComponent = function ({ userId }) {
 
   const fetchPosts = async () => {
     const { data } = await axios.get(SERVER_URL + '/posts')
-    setPosts(data)
+    setPosts(data.filter((info) => info.author === user.id))
   }
 
   const [dummyStateBoolean, setDummyStateBoolean] = useState(false)
@@ -201,7 +201,11 @@ const UserProfileComponent = function ({ userId }) {
             </form>
           )}
         </UserProfile>
-        <button className="Button">My Posts</button>
+        {/* <MyPosts>
+          {posts.map((item) => {
+            return <div>{item.title}</div>
+          })}
+        </MyPosts> */}
       </ProfileBox>
     </Box>
   ) : (
@@ -217,19 +221,21 @@ const Box = styled.div`
 `
 
 const ProfileBox = styled.div`
-  min-width: 400px;
-  height: 400px;
+  min-width: 500px;
+  height: 600px;
   padding: 20px;
   border: 2px solid black;
   margin: 20px;
+  margin-right: 100px;
   border-radius: 16px;
 `
+
 const Button = styled.div`
   margin-top: 13px;
 `
 
 const UserProfile = styled.div`
-  height: 100px;
+  height: 130px;
 `
 
 const ProfileDiv = styled.div`
@@ -240,4 +246,11 @@ const ProfileDiv = styled.div`
 const InputBox = styled.input`
   height: 30px;
   border: 2px solid black;
+`
+
+const MyPosts = styled.div`
+  width: 500px;
+  height: 200px;
+  background-color: skyblue;
+  overflow-y: scroll;
 `
