@@ -60,19 +60,22 @@ const WritePostForm = function () {
           onChange={(e) => {
             setPostTitle(e.target.value)
           }}
-          placeholder="제목을 입력하세요..."
+          placeholder="제목을 입력하세요."
         />
       </div>
       <div className="WritePostFormContentContainer">
         {/* <label>내용</label> */}
         <StText
+          placeholder="내용을 입력하세요."
           value={postContent}
           onChange={(e) => {
             setPostContent(e.target.value)
           }}
         />
       </div>
-      <StButton type="submit">작성하기</StButton>
+      <button type="submit" className="Button">
+        작성하기
+      </button>
     </StForm>
   )
 }
@@ -86,12 +89,11 @@ const StForm = styled.form`
   padding: 20px;
   align-items: center;
   justify-content: center;
-  border-radius: 20px;
-  /* margin-bottom: 24px; */
+  /* border-radius: 20px; */
 `
 
 const StInput = styled.input`
-  border: 1px solid #ff2e01;
+  border: 1px solid #2e2727;
   margin: 0 24px;
   height: 25px;
   width: 300px;
@@ -104,22 +106,21 @@ const StInput = styled.input`
 // 텍스트가 들어가는 창은 텍스트에디터를 써도 될듯
 const StText = styled.textarea`
   width: 400px;
-
   min-height: 300px;
   border-radius: 12px;
   outline: none;
-  border: 1px solid #ff2e01;
-  /* padding: 0 10px; */
+  border: 1px solid #2e2727;
   text-align: center;
+  padding: 10px;
 `
 
-const StButton = styled.button`
-  border: none;
-  background-color: #2e2727;
-  color: white;
-  height: 35px;
-  cursor: pointer;
-  width: 80px;
-  border-radius: 20px;
-  margin: 5px;
-`
+// const StButton = styled.button`
+//   border: none;
+//   background-color: #2e2727;
+//   color: white;
+//   height: 35px;
+//   cursor: pointer;
+//   width: 80px;
+//   border-radius: 20px;
+//   /* margin: 5px; */
+// `

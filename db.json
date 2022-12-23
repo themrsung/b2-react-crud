@@ -1,0 +1,100 @@
+{
+  "users": [
+    {
+      "id": "admin",
+      "password": 1216985755,
+      "name": "관리자",
+      "motd": "관리자의 한 줄 소개"
+    },
+    {
+      "id": "admin2",
+      "password": 1216985755,
+      "name": "",
+      "motd": ""
+    },
+    {
+      "id": "admin3",
+      "password": 1216985755,
+      "name": "",
+      "motd": ""
+    },
+    {
+      "id": "admin4",
+      "password": 1216985755,
+      "name": "",
+      "motd": ""
+    },
+    {
+      "id": "admin222",
+      "password": 1216985755,
+      "name": "",
+      "motd": ""
+    },
+    {
+      "id": "ska",
+      "password": 3483987
+    },
+    {
+      "id": "admin!",
+      "password": 646494183,
+      "name": "123",
+      "motd": "1"
+    },
+    {
+      "id": "dudwns",
+      "password": -852673857,
+      "name": "123",
+      "motd": "123"
+    },
+    {
+      "id": "rkdlqdyd",
+      "password": 256650335
+    }
+  ],
+  "posts": [
+    {
+      "id": "c19cb85b-8b56-4033-840e-0b6bffe16c61",
+      "author": "김원준",
+      "title": "안녕",
+      "content": "반갑다.",
+      "createdAt": 1671699439125,
+      "comments": [
+        {},
+        {
+          "content": "d",
+          "id": "4acc8dbb-361b-47d3-8456-0552b17f6c8e",
+          "author": "test",
+          "createdAt": 1671702907655
+        },
+        {
+          "content": "dd",
+          "id": "ced5eb06-df83-4827-bf31-24637f6f5c16",
+          "author": "test",
+          "createdAt": 1671702953891
+        },
+        {
+          "content": "asdasd",
+          "id": "7dfe9467-e323-4c6b-b2a5-f1a1467b5d86",
+          "author": "test",
+          "createdAt": 1671702959353
+        }
+      ]
+    },
+    {
+      "id": "2a672781-447d-4fa9-9aba-3fab6e61f28b",
+      "author": "ska",
+      "title": "새해",
+      "content": "인사",
+      "createdAt": 1671754784978,
+      "comments": []
+    },
+    {
+      "id": "18e978b5-6d56-4c1f-bd59-eb48831fe99e",
+      "author": "ska",
+      "title": "black",
+      "content": "rabbit",
+      "createdAt": 1671755035876,
+      "comments": []
+    }
+  ]
+}

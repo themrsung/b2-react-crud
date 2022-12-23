@@ -18,11 +18,6 @@ const ViewPost = function () {
 
   let navigate = useNavigate()
 
-  // 삭제버튼 이벤트 핸들러
-  // const onDeleteBtn = (postId) => {
-  //   axios.delete(`SERVER_URL + '/posts/' + ${postId}`)
-  // }
-
   useEffect(() => {
     fetchPost()
   }, [])

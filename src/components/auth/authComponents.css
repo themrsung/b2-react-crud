@@ -1,0 +1,100 @@
+.LoginForm,
+.RegisterForm {
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+
+  max-width: 40%;
+  width: 40%;
+  min-width: 5rem;
+}
+
+.LoginFormTitleContainer,
+.RegisterFormTitleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+
+  width: 100%;
+}
+
+.LoginFormTitle,
+.RegisterFormTitle {
+  margin-right: auto;
+  margin-bottom: 0;
+}
+
+.LoginFormTitleHr,
+.RegisterFormTitleHr {
+  width: 100%;
+}
+
+.LoginFormIdContainer,
+.LoginFormPasswordContainer,
+.RegisterFormIdContainer,
+.RegisterFormPasswordContainer,
+.RegisterFormNicknameContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: stretch;
+
+  width: 100%;
+
+  margin-bottom: 0.4rem;
+}
+
+.LoginFormIdContainer > label,
+.LoginFormPasswordContainer > label,
+.RegisterFormIdContainer > label,
+.RegisterFormPasswordContainer > label,
+.RegisterFormNicknameContainer > label {
+  margin-right: auto;
+}
+
+.LoginFormIdContainer > input,
+.LoginFormPasswordContainer > input,
+.RegisterFormIdContainer > input,
+.RegisterFormPasswordContainer > input,
+.RegisterFormNicknameContainer > input {
+  margin-left: auto;
+
+  max-width: 100%;
+}
+
+.LoginButton {
+  margin-left: auto;
+}
+
+.RegisterButtonArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+
+  width: 100%;
+}
+
+.RegisterText {
+  margin-right: auto;
+  margin-bottom: 0;
+}
+
+.RegisterTextHr {
+  width: 100%;
+}
+
+.RegisterButton {
+  margin-left: auto;
+}
+
+@media (width < 750px) {
+  .LoginFormIdContainer,
+  .LoginFormPasswordContainer {
+    flex-direction: column;
+  }
+}

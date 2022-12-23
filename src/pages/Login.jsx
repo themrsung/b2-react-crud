@@ -1,4 +1,5 @@
 import LoginForm from '../components/auth/loginForm'
+import './style/Login.css'
 
 const Login = function () {
   return (
