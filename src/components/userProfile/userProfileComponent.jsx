@@ -8,11 +8,17 @@ import { getCurrentUserState } from '../../redux/config/configStore'
 const UserProfileComponent = function ({ userId }) {
   const [users, setUsers] = useState([])
   const [user, setUser] = useState({})
+  const [posts, setPosts] = useState({})
 
   const fetchUsers = async function () {
     const response = await axios.get(SERVER_URL + '/users')
     const data = response.data
     setUsers(data)
+  }
+
+  const fetchPosts = async () => {
+    const { data } = await axios.get(SERVER_URL + '/posts')
+    setPosts(data)
   }
 
   const [dummyStateBoolean, setDummyStateBoolean] = useState(false)
@@ -23,6 +29,10 @@ const UserProfileComponent = function ({ userId }) {
   useEffect(() => {
     fetchUsers()
   }, [dummyStateBoolean])
+
+  useEffect(() => {
+    fetchPosts()
+  }, [])
 
   useEffect(() => {
     if (getMatchingUsersCounter < 25) {
