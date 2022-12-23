@@ -6,22 +6,10 @@
       "createdAt": 1671774095631,
       "comments": [
         {
-          "content": "",
-          "id": "4357c0d9-f571-4fcd-943f-f84dc9977b1c",
-          "author": "김원준",
-          "createdAt": 1671776514806
-        },
-        {
           "content": "댓글 테스트",
           "id": "245184fc-d2fd-45a8-abe6-12dc066c6665",
           "author": "김원준",
           "createdAt": 1671774122923
-        },
-        {
-          "content": "asd",
-          "id": "633e93f3-9e97-403c-a99d-e35e78845db0",
-          "author": "김원준",
-          "createdAt": 1671776518061
         }
       ]
     },
@@ -81,8 +69,8 @@
     {
       "id": "dudwns",
       "password": -852673857,
-      "name": "123",
-      "motd": "123"
+      "name": "JYJ",
+      "motd": "오늘의 할일"
     },
     {
       "id": "rkdlqdyd",
@@ -97,12 +85,6 @@
       "id": "admin",
       "password": 1216985755,
       "name": "asd",
-      "motd": ""
-    },
-    {
-      "id": "김원준",
-      "password": 1480580,
-      "name": "김원준",
       "motd": ""
     }
   ]
