@@ -67,6 +67,14 @@
       "content": "ㄴㅇㄹㄴㅇ",
       "createdAt": 1671780735412,
       "comments": []
+    },
+    {
+      "id": "a6a30679-f2ce-42e7-923a-fb5c1c19544e",
+      "author": "ska",
+      "title": "test",
+      "content": "testestestestestestestestes",
+      "createdAt": 1671790768573,
+      "comments": []
     }
   ],
   "users": [
