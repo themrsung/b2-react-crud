@@ -38,13 +38,11 @@ const UserProfileComponent = function ({ userId }) {
       }
 
       const currentSession = window.sessionStorage.getItem('currentSession')
-      if (
-        currentSession &&
-        currentSession !== '' &&
-        currentSession === user.id
-      ) {
-        if (user.id === getCurrentUserState().id) {
-          setIsOwnProfile(true)
+      if (currentSession && currentSession !== '') {
+        if (currentSession === user.id) {
+          if (user.id === getCurrentUserState().id) {
+            setIsOwnProfile(true)
+          }
         }
       }
 
