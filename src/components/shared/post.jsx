@@ -1,43 +1,16 @@
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { SERVER_URL } from '../../serverUrl'
 import './sharedComponents.css'
 
-const Post = function ({ post, noLink = false, noModifyButtons = false }) {
+const Post = function ({ post, noLink = false }) {
   let navigate = useNavigate()
   const onPostClick = () => {
     if (!noLink) {
       navigate('/view/' + post.id)
     }
   }
-
-  const [users, setUsers] = useState([])
-
-  const fetchUsers = async function () {
-    const response = await axios.get(SERVER_URL + '/users')
-    const data = response.data
-    setUsers(data)
-  }
-
-  const [dummyStateBoolean, setDummyStateBoolean] = useState(false)
-  const [fetchUserNameCounter, setFetchUserNameCounter] = useState(0)
-  const [userName, setUserName] = useState('')
-  useEffect(() => {
-    if (fetchUserNameCounter < 25) {
-      const matchingUsers = users.filter((user) => user.id === post.author)
-      if (matchingUsers && matchingUsers.length > 0) {
-        const newUserName = matchingUsers[0].name ?? ''
-        setUserName(newUserName)
-        setDummyStateBoolean(!dummyStateBoolean)
-      }
-      setFetchUserNameCounter(fetchUserNameCounter + 1)
-    }
-  }, [users])
-
-  useEffect(() => {
-    fetchUsers()
-  }, [dummyStateBoolean])
 
   const postStyle = noLink
     ? {}
@@ -67,7 +40,6 @@ const Post = function ({ post, noLink = false, noModifyButtons = false }) {
       }
 
       await axios.put(SERVER_URL + '/posts/' + post.id, newPost)
-      window.location.reload()
     }
     setIsChangingPost(!isChangingPost)
   }
@@ -108,35 +80,35 @@ const Post = function ({ post, noLink = false, noModifyButtons = false }) {
             navigate('/profile/' + post.author)
           }}
         >
-          {userName}
+          {post.author}
         </span>{' '}
         at {post.createdAt}
       </p>
 
-      {!noModifyButtons ? (
-        <div>
-          {!isChangingPost ? (
-            <>
-              {' '}
-              <button onClick={onPostEdit}>수정</button>
-              <button onClick={onPostDelete}>삭제</button>
-            </>
-          ) : (
-            <>
-              <button onClick={onPostEdit}>수정완료</button>
-              <button
-                onClick={() => {
-                  setIsChangingPost(false)
-                }}
-              >
-                수정취소
-              </button>
-            </>
-          )}
-        </div>
-      ) : (
-        <></>
-      )}
+      <div>
+        {!isChangingPost ? (
+          <>
+            {' '}
+            <button class="Button" onClick={onPostEdit}>
+              수정
+            </button>
+            <button class="Button" onClick={onPostDelete}>
+              삭제
+            </button>
+          </>
+        ) : (
+          <>
+            <button onClick={onPostEdit}>수정완료</button>
+            <button
+              onClick={() => {
+                setIsChangingPost(false)
+              }}
+            >
+              수정취소
+            </button>
+          </>
+        )}
+      </div>
     </div>
   )
 }
