@@ -11,10 +11,17 @@ const ModalForm = (props) => {
       {open ? (
         <section>
           <header>
-            {header}
-            <button className="Close" onClick={close}>
-              &times;
-            </button>
+            {/* {header} */}
+            <div>
+              <span>Happy2NewYear</span>
+              <button
+                id="CloseWritePostModalButton"
+                style={{ cursor: 'pointer', border: 'none' }}
+                onClick={close}
+              >
+                &times;
+              </button>
+            </div>
           </header>
 
           <main>

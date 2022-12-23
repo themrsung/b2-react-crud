@@ -72,7 +72,6 @@ const UserProfileComponent = function ({ userId }) {
                 onUserProfileNameChangeClicked()
               }}
             >
-              <h3>{user.name ? user.name : 'username'}</h3>
               <input
                 type="text"
                 placeholder="Nickname"
@@ -83,7 +82,13 @@ const UserProfileComponent = function ({ userId }) {
               />
               <Button>
                 <button type="submit">수정 완료</button>
-                <button>취소</button>
+                <button
+                  onClick={() => {
+                    setIsChangingUserProfileName(false)
+                  }}
+                >
+                  취소
+                </button>
               </Button>
             </form>
           )}
@@ -103,7 +108,6 @@ const UserProfileComponent = function ({ userId }) {
                 onUserProfileMotdChangeClicked()
               }}
             >
-              <h3>{user.motd ? user.motd : 'Message of the day'}</h3>
               <input
                 type="text"
                 placeholder="Message of the day"
@@ -114,7 +118,13 @@ const UserProfileComponent = function ({ userId }) {
               />
               <Button>
                 <button type="submit">수정 완료</button>
-                <button>취소</button>
+                <button
+                  onClick={() => {
+                    setIsChangingUserProfileMotd(false)
+                  }}
+                >
+                  취소
+                </button>
               </Button>
             </form>
           )}

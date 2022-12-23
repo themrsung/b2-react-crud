@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { hashPassword } from '../../auth/hashPassword'
 import { setCurrentUserState } from '../../redux/config/configStore'
 import { SERVER_URL } from '../../serverUrl'
-import * as jose from 'jose'
+import './authComponents.css'
 
 const LoginForm = function () {
   let navigate = useNavigate()
@@ -73,6 +73,10 @@ const LoginForm = function () {
         onUserLogin()
       }}
     >
+      <div className="LoginFormTitleContainer">
+        <h3 className="LoginFormTitle">로그인</h3>
+        <hr className="LoginFormTitleHr"></hr>
+      </div>
       <div className="LoginFormIdContainer">
         <label>ID</label>
         <input
@@ -94,10 +98,14 @@ const LoginForm = function () {
         ></input>
       </div>
 
-      <button type="submit">로그인</button>
+      <button className="Button LoginButton" type="submit">
+        로그인
+      </button>
       <div className="RegisterButtonArea">
-        <h3>회원이 아니신가요?</h3>
+        <h3 className="RegisterText">회원이 아니신가요?</h3>
+        <hr className="RegisterTextHr"></hr>
         <button
+          className="Button RegisterButton"
           onClick={() => {
             navigate('/register')
           }}

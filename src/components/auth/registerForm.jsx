@@ -3,11 +3,13 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { hashPassword } from '../../auth/hashPassword'
 import { SERVER_URL } from '../../serverUrl'
+import './authComponents.css'
 
 const RegisterForm = function () {
   let navigate = useNavigate()
   const [userId, setUserId] = useState('')
   const [userPassword, setUserPassword] = useState('')
+  const [userName, setUserName] = useState('')
 
   const [users, setUsers] = useState([])
 
@@ -29,7 +31,8 @@ const RegisterForm = function () {
 
     const user = {
       id: userId,
-      password: hashPassword(userPassword)
+      password: hashPassword(userPassword),
+      name: userName
     }
 
     let userIdIsAlreadyTaken = false
@@ -54,6 +57,10 @@ const RegisterForm = function () {
         onUserRegister()
       }}
     >
+      <div className="RegisterFormTitleContainer">
+        <h3 className="RegisterFormTitle">회원가입</h3>
+        <hr className="RegisterFormTitleHr"></hr>
+      </div>
       <div className="RegisterFormIdContainer">
         <label>ID</label>
         <input
@@ -74,7 +81,19 @@ const RegisterForm = function () {
           }}
         ></input>
       </div>
-      <button type="submit">회원가입</button>
+      <div className="RegisterFormNicknameContainer">
+        <label>NAME</label>
+        <input
+          type="text"
+          value={userName}
+          onChange={(e) => {
+            setUserName(e.target.value)
+          }}
+        ></input>
+      </div>
+      <button className="Button RegisterButton" type="submit">
+        회원가입
+      </button>
     </form>
   )
 }

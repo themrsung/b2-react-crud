@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { createPath, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { SERVER_URL } from '../../serverUrl'
 
 const Comment = ({ comment, postId }) => {
@@ -9,6 +9,8 @@ const Comment = ({ comment, postId }) => {
   const [isChangingComment, setIsChangingComment] = useState(false)
   const [newCommentContent, setNewCommentContent] = useState(comment.content)
   const [post, setPost] = useState({})
+
+  const [dummyStateBoolean, setDummyStateBoolean] = useState(false)
 
   const onCommentEdit = async () => {
     if (isChangingComment) {
@@ -22,9 +24,13 @@ const Comment = ({ comment, postId }) => {
       }
       newComments.push(newComment)
 
-      const res = await axios.patch(SERVER_URL + '/posts/' + postId, {
+      await axios.patch(SERVER_URL + '/posts/' + postId, {
         comments: newComments
       })
+
+      window.location.reload()
+
+      setDummyStateBoolean(!dummyStateBoolean)
     }
     setIsChangingComment(!isChangingComment)
   }
@@ -36,14 +42,17 @@ const Comment = ({ comment, postId }) => {
 
   useEffect(() => {
     fetchPost()
-  }, [])
+  }, [dummyStateBoolean])
 
   const onCommentDelete = async () => {
     const newComments = post.comments.filter((c) => c.id !== comment.id)
 
-    const res = await axios.patch(SERVER_URL + '/posts/' + postId, {
+    await axios.patch(SERVER_URL + '/posts/' + postId, {
       comments: newComments
     })
+    window.location.reload()
+
+    setIsChangingComment(!isChangingComment)
   }
 
   return (

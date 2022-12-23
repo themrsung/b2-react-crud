@@ -14,12 +14,18 @@ const ViewCommentsComponent = ({ postId }) => {
   const fetchPost = async function () {
     const response = await axios.get(SERVER_URL + '/posts/' + postId)
     setPost(response.data)
-    setComments(response.data.comments)
+    setComments(
+      response.data.comments.sort((a, b) =>
+        a.createdAt < b.createdAt ? 1 : -1
+      )
+    )
   }
+
+  const [dummyStateBoolean, setDummyStateBoolean] = useState(false)
 
   useEffect(() => {
     fetchPost()
-  }, [])
+  }, [dummyStateBoolean])
 
   const [userComment, setUserComment] = useState('')
 
@@ -29,6 +35,7 @@ const ViewCommentsComponent = ({ postId }) => {
     const user = getCurrentUserState()
     if (user.id === '') {
       navigate('/login')
+      return
     }
 
     const comment = {
@@ -38,13 +45,15 @@ const ViewCommentsComponent = ({ postId }) => {
       createdAt: Date.now()
     }
 
-    let newComments = comments
+    let newComments = comments ? comments : []
     newComments.push(comment)
-    console.log(newComments)
 
-    const res = await axios.patch(SERVER_URL + '/posts/' + postId, {
+    await axios.patch(SERVER_URL + '/posts/' + postId, {
       comments: newComments
     })
+
+    window.location.reload()
+    setDummyStateBoolean(!dummyStateBoolean)
   }
 
   return (
@@ -69,7 +78,7 @@ const ViewCommentsComponent = ({ postId }) => {
         </form>
       </div>
       <div>
-        {comments.map((comment) => {
+        {comments?.map((comment) => {
           return <Comment key={comment.id} comment={comment} postId={postId} />
         })}
       </div>
