@@ -4,7 +4,12 @@ import { useNavigate } from 'react-router-dom'
 import { SERVER_URL } from '../../serverUrl'
 import './sharedComponents.css'
 
-const Post = function ({ post, noLink = false, noModifyButtons = false }) {
+const Post = function ({
+  post,
+  noLink = false,
+  noModifyButtons = false,
+  showAll = true
+}) {
   let navigate = useNavigate()
   const onPostClick = () => {
     if (!noLink) {
@@ -89,7 +94,7 @@ const Post = function ({ post, noLink = false, noModifyButtons = false }) {
       {!isChangingPost ? (
         <>
           <h2>{post.title}</h2>
-          <p>{post.content}</p>
+          <p>{showAll ? post.content : post.content.substr(0, 100)}</p>
         </>
       ) : (
         <>
