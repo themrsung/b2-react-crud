@@ -39,9 +39,11 @@ const UserProfileComponent = function ({ userId }) {
 
       const currentSession = window.sessionStorage.getItem('currentSession')
       if (currentSession && currentSession !== '') {
-        if (currentSession === user.id) {
-          if (user.id === getCurrentUserState().id) {
-            setIsOwnProfile(true)
+        if (user) {
+          if (currentSession === user.id) {
+            if (user.id === getCurrentUserState().id) {
+              setIsOwnProfile(true)
+            }
           }
         }
       }
@@ -72,6 +74,7 @@ const UserProfileComponent = function ({ userId }) {
         name: newUserProfileName
       })
       await fetchUsers()
+      window.location.reload()
     }
     setIsChangingUserProfileName(!isChangingUserProfileName)
   }
@@ -82,6 +85,7 @@ const UserProfileComponent = function ({ userId }) {
         motd: newUserProfileMotd
       })
       await fetchUsers()
+      window.location.reload()
     }
     setIsChangingUserProfileMotd(!isChangingUserProfileMotd)
   }
@@ -98,12 +102,14 @@ const UserProfileComponent = function ({ userId }) {
             {!isChangingUserProfileName ? (
               <div>
                 <ProfileDiv>{user.name ? user.name : 'username'}</ProfileDiv>
-                <button
-                  className="Button"
-                  onClick={onUserProfileNameChangeClicked}
-                >
-                  수정
-                </button>
+                {isOwnProfile && (
+                  <button
+                    className="Button"
+                    onClick={onUserProfileNameChangeClicked}
+                  >
+                    수정
+                  </button>
+                )}
               </div>
             ) : (
               <form
@@ -143,12 +149,14 @@ const UserProfileComponent = function ({ userId }) {
                 <ProfileDiv>
                   {user.motd ? user.motd : 'Message of the day'}
                 </ProfileDiv>
-                <button
-                  className="Button"
-                  onClick={onUserProfileMotdChangeClicked}
-                >
-                  수정
-                </button>
+                {isOwnProfile && (
+                  <button
+                    className="Button"
+                    onClick={onUserProfileMotdChangeClicked}
+                  >
+                    수정
+                  </button>
+                )}
               </div>
             ) : (
               <form
