@@ -3,6 +3,8 @@
     {
       "id": "5b1759b5-b71f-4d00-8d8a-fca2922e56ea",
       "author": "김원준",
+      "content": "내용1",
+      "title": "제목1",
       "createdAt": 1671774095631,
       "comments": [
         {
@@ -43,6 +45,14 @@
       "content": "asdasdasd",
       "createdAt": 1671776429068,
       "comments": []
+    },
+    {
+      "id": "9b2289ea-c39a-4a4f-ba36-66becedd72bb",
+      "author": "ska",
+      "title": "새해",
+      "content": "인사",
+      "createdAt": 1671777438812,
+      "comments": []
     }
   ],
   "users": [
@@ -66,7 +76,9 @@
     },
     {
       "id": "ska",
-      "password": 3483987
+      "password": 3483987,
+      "name": "동동",
+      "motd": "ㅎㅎ"
     },
     {
       "id": "admin!",
