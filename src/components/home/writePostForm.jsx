@@ -31,9 +31,10 @@ const WritePostForm = function () {
   }
 
   const onWritePost = async () => {
+    const currentUserId = window.sessionStorage.getItem('currentSession')
     const post = {
       id: uuidv4(),
-      author: getCurrentUserState().id,
+      author: currentUserId,
       title: postTitle,
       content: postContent,
       createdAt: Date.now(),
