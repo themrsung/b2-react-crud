@@ -13,6 +13,17 @@ const Comment = ({ comment, postId }) => {
 
   const [dummyStateBoolean, setDummyStateBoolean] = useState(false)
 
+  const [isOwnComment, setIsOwnComment] = useState(false)
+
+  useEffect(() => {
+    const userId = window.sessionStorage.getItem('currentSession')
+    if (userId && userId !== '') {
+      if (comment.author === userId) {
+        setIsOwnComment(true)
+      }
+    }
+  }, [])
+
   const onCommentEdit = async () => {
     if (isChangingComment) {
       let newComments = post.comments.filter((c) => c.id !== comment.id)
@@ -75,12 +86,16 @@ const Comment = ({ comment, postId }) => {
               at {comment.createdAt}
             </p>
           </div>
-          <div>
-            <button className="ContentEditBtn" onClick={onCommentEdit}>
-              수정
-            </button>
-            <button onClick={onCommentDelete}>삭제</button>
-          </div>
+          {isOwnComment && (
+            <div>
+              <button className="Button ContentEditBtn" onClick={onCommentEdit}>
+                수정
+              </button>
+              <button className="Button" onClick={onCommentDelete}>
+                삭제
+              </button>
+            </div>
+          )}
         </>
       ) : (
         <>
@@ -96,8 +111,11 @@ const Comment = ({ comment, postId }) => {
             </p>
           </div>
           <div>
-            <button onClick={onCommentEdit}>수정 완료</button>
+            <button className="Button" onClick={onCommentEdit}>
+              수정 완료
+            </button>
             <button
+              className="Button"
               onClick={() => {
                 setIsChangingComment(false)
               }}
