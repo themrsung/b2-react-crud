@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { SERVER_URL } from '../../serverUrl'
 import './sharedComponents.css'
 
-const Post = function ({ post, noLink = false }) {
+const Post = function ({ post, noLink = false, noModifyButtons = false }) {
   let navigate = useNavigate()
   const onPostClick = () => {
     if (!noLink) {
@@ -85,32 +85,36 @@ const Post = function ({ post, noLink = false }) {
         / at {post.createdAt}
       </p>
 
-      <div>
-        {!isChangingPost ? (
-          <>
-            {' '}
-            <button class="Button" onClick={onPostEdit}>
-              수정
-            </button>
-            <button class="Button" onClick={onPostDelete}>
-              삭제
-            </button>
-          </>
-        ) : (
-          <>
-            <button class="Button" onClick={onPostEdit}>
-              수정완료
-            </button>
-            <button
-              onClick={() => {
-                setIsChangingPost(false)
-              }}
-            >
-              수정취소
-            </button>
-          </>
-        )}
-      </div>
+      {!noModifyButtons ? (
+        <div>
+          {!isChangingPost ? (
+            <>
+              {' '}
+              <button class="Button" onClick={onPostEdit}>
+                수정
+              </button>
+              <button class="Button" onClick={onPostDelete}>
+                삭제
+              </button>
+            </>
+          ) : (
+            <>
+              <button class="Button" onClick={onPostEdit}>
+                수정완료
+              </button>
+              <button
+                onClick={() => {
+                  setIsChangingPost(false)
+                }}
+              >
+                수정취소
+              </button>
+            </>
+          )}
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   )
 }
