@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { getCurrentUserState } from '../../redux/config/configStore'
 import { SERVER_URL } from '../../serverUrl'
 import './sharedComponents.css'
 
@@ -100,7 +99,7 @@ const Post = function ({ post, noLink = false, noModifyButtons = false }) {
         / at {post.createdAt}
       </p>
 
-      {!noModifyButtons && isOwnPost ? (
+      {!noModifyButtons ? (
         <div>
           {!isChangingPost ? (
             <>
