@@ -26,14 +26,33 @@ const Post = function ({ post, noLink = false, noModifyButtons = false }) {
 
   const [isOwnPost, setIsOwnPost] = useState(false)
 
-  useEffect(() => {
-    const userId = window.sessionStorage.getItem('currentSession')
-    if (userId && userId !== '') {
-      if (post.author === userId) {
-        setIsOwnPost(true)
+  const [dummyStateBoolean, setDummyStateBoolean] = useState(false)
+  const [checkIsOwnPostCounter, setCheckIsOwnPostCounter] = useState(0)
+
+  const checkIsOwnPost = async () => {
+    setTimeout(() => {
+      const userId = window.sessionStorage.getItem('currentSession')
+      if (userId && userId !== '') {
+        if (post.author === userId) {
+          setIsOwnPost(true)
+        }
       }
+      setCheckIsOwnPostCounter(checkIsOwnPostCounter + 1)
+      setDummyStateBoolean(!dummyStateBoolean)
+    }, 100)
+  }
+
+  useEffect(() => {
+    if (checkIsOwnPostCounter < 500) {
+      checkIsOwnPost()
     }
-  }, [])
+  }, [dummyStateBoolean])
+
+  // useEffect(() => {
+  //   if (checkIsOwnPostCounter % 10 === 0) {
+  //     setDummyStateBoolean(!dummyStateBoolean)
+  //   }
+  // }, [checkIsOwnPostCounter])
 
   const [isChangingPost, setIsChangingPost] = useState(false)
   const [newPostContent, setNewPostContent] = useState(post.content)
@@ -99,7 +118,7 @@ const Post = function ({ post, noLink = false, noModifyButtons = false }) {
         / at {post.createdAt}
       </p>
 
-      {!noModifyButtons ? (
+      {!noModifyButtons && isOwnPost ? (
         <div>
           {!isChangingPost ? (
             <>
