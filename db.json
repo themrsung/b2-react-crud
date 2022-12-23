@@ -47,10 +47,17 @@
     {
       "id": "4e11d886-d9f6-44e0-8279-9b8dc99cd0f5",
       "author": "admin",
-      "title": "asd",
-      "content": "asdasdasd",
+      "content": "ㅁㅇ너ㅏㅁ너아",
+      "title": "ajsdkjsakdj",
       "createdAt": 1671776429068,
-      "comments": []
+      "comments": [
+        {
+          "content": "222",
+          "id": "f9f78ba2-d144-4fdd-b3d2-0fb34b12da26",
+          "author": "admin",
+          "createdAt": 1671787437518
+        }
+      ]
     },
     {
       "id": "9b2289ea-c39a-4a4f-ba36-66becedd72bb",
@@ -66,14 +73,6 @@
       "title": "ㄴㅇㄹ",
       "content": "ㄴㅇㄹㄴㅇ",
       "createdAt": 1671780735412,
-      "comments": []
-    },
-    {
-      "id": "a6a30679-f2ce-42e7-923a-fb5c1c19544e",
-      "author": "ska",
-      "title": "test",
-      "content": "testestestestestestestestes",
-      "createdAt": 1671790768573,
       "comments": []
     }
   ],
@@ -111,7 +110,7 @@
     {
       "id": "dudwns",
       "password": -852673857,
-      "name": "asdf",
+      "name": "123",
       "motd": "오늘의 할일"
     },
     {
