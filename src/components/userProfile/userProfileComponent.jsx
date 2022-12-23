@@ -36,13 +36,20 @@ const UserProfileComponent = function ({ userId }) {
           // navigate('/login/profile')
         }
       }
-      if (user) {
+
+      const currentSession = window.sessionStorage.getItem('currentSession')
+      if (
+        currentSession &&
+        currentSession !== '' &&
+        currentSession === user.id
+      ) {
         if (user.id === getCurrentUserState().id) {
           setIsOwnProfile(true)
         }
       }
 
       setDummyStateBoolean(!dummyStateBoolean)
+      setGetMatchingUsersCounter(getMatchingUsersCounter + 1)
     } else {
       if (getCurrentUserState().id === '') {
         navigate('/login/profile')

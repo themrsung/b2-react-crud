@@ -73,6 +73,12 @@
       "id": "happy",
       "password": -909023779,
       "name": "sbdldj4"
+    },
+    {
+      "id": "admin",
+      "password": 1216985755,
+      "name": "asd",
+      "motd": ""
     }
   ]
 }
