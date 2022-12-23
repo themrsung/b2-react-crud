@@ -12,14 +12,15 @@
       "content": "수정완료",
       "title": "수정",
       "createdAt": 1671774824586,
-      "comments": [
-        {
-          "id": "189d5bb2-2ffd-4be5-9a98-1f2c98abeacc",
-          "content": "1234",
-          "author": "happy",
-          "createdAt": 1671775642660
-        }
-      ]
+      "comments": []
+    },
+    {
+      "id": "1f867052-2c4e-491b-a35e-a790993fc256",
+      "author": "dudwns",
+      "title": "asd",
+      "content": "asd",
+      "createdAt": 1671774023111,
+      "comments": []
     }
   ],
   "users": [
@@ -72,18 +73,5 @@
       "name": "asd",
       "motd": ""
     }
-<<<<<<< HEAD
-  ],
-  "posts": [
-    {
-      "id": "1f867052-2c4e-491b-a35e-a790993fc256",
-      "author": "dudwns",
-      "title": "asd",
-      "content": "asd",
-      "createdAt": 1671774023111,
-      "comments": []
-    }
-=======
->>>>>>> 5d2e9fbb8849d4573bddaeed9cb1470441b6cb46
   ]
 }
