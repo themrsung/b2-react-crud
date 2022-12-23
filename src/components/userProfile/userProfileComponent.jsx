@@ -30,7 +30,11 @@ const UserProfileComponent = function ({ userId }) {
       if (matchingUsers && matchingUsers.length > 0) {
         setUser(matchingUsers[0])
       } else if (userId === '') {
-        setUser(users.filter((u) => u.id === getCurrentUserState().id)[0])
+        if (getCurrentUserState().id !== '') {
+          setUser(users.filter((u) => u.id === getCurrentUserState().id)[0])
+        } else {
+          navigate('/login/profile')
+        }
       }
       if (user) {
         if (user.id === getCurrentUserState().id) {
