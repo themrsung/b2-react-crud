@@ -115,7 +115,7 @@ const UserProfileComponent = function ({ userId }) {
                   onUserProfileNameChangeClicked()
                 }}
               >
-                <input
+                <InputBox
                   type="text"
                   placeholder="Nickname"
                   required
@@ -160,7 +160,7 @@ const UserProfileComponent = function ({ userId }) {
                   onUserProfileMotdChangeClicked()
                 }}
               >
-                <input
+                <InputBox
                   type="text"
                   placeholder="Message of the day"
                   required
@@ -210,7 +210,7 @@ const ProfileBox = styled.div`
   border-radius: 16px;
 `
 const Button = styled.div`
-  margin: 10px;
+  margin-top: 13px;
 `
 
 const UserProfile = styled.div`
@@ -220,4 +220,9 @@ const UserProfile = styled.div`
 const ProfileDiv = styled.div`
   font-size: 30px;
   font-weight: 700;
+`
+
+const InputBox = styled.input`
+  height: 30px;
+  border: 2px solid black;
 `
