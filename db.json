@@ -6,10 +6,22 @@
       "createdAt": 1671774095631,
       "comments": [
         {
+          "content": "",
+          "id": "4357c0d9-f571-4fcd-943f-f84dc9977b1c",
+          "author": "김원준",
+          "createdAt": 1671776514806
+        },
+        {
           "content": "댓글 테스트",
           "id": "245184fc-d2fd-45a8-abe6-12dc066c6665",
           "author": "김원준",
           "createdAt": 1671774122923
+        },
+        {
+          "content": "asd",
+          "id": "633e93f3-9e97-403c-a99d-e35e78845db0",
+          "author": "김원준",
+          "createdAt": 1671776518061
         }
       ]
     },
@@ -27,6 +39,14 @@
           "createdAt": 1671775642660
         }
       ]
+    },
+    {
+      "id": "3f20f69d-32cf-4137-ade9-db95428b549b",
+      "author": "김원준",
+      "title": "김원준 테스트",
+      "content": "김원준 테스트",
+      "createdAt": 1671776533108,
+      "comments": []
     }
   ],
   "users": [
@@ -77,6 +97,12 @@
       "id": "admin",
       "password": 1216985755,
       "name": "asd",
+      "motd": ""
+    },
+    {
+      "id": "김원준",
+      "password": 1480580,
+      "name": "김원준",
       "motd": ""
     }
   ]
