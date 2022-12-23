@@ -12,6 +12,12 @@
           "id": "245184fc-d2fd-45a8-abe6-12dc066c6665",
           "author": "김원준",
           "createdAt": 1671774122923
+        },
+        {
+          "content": "0",
+          "id": "20bea96d-ba88-44a8-a047-a8a1a0e2c2bf",
+          "author": "admin",
+          "createdAt": 1671787259048
         }
       ]
     },
@@ -52,6 +58,14 @@
       "title": "새해",
       "content": "인사",
       "createdAt": 1671777438812,
+      "comments": []
+    },
+    {
+      "id": "b5a797d6-e929-4702-b6d9-8962f0418d78",
+      "author": "happy",
+      "title": "ㄴㅇㄹ",
+      "content": "ㄴㅇㄹㄴㅇ",
+      "createdAt": 1671780735412,
       "comments": []
     }
   ],
@@ -99,7 +113,7 @@
     {
       "id": "happy",
       "password": -909023779,
-      "name": "sbdldj4"
+      "name": "ㄹ"
     },
     {
       "id": "admin",
