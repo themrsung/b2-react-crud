@@ -1,5 +1,5 @@
 import Post from '../shared/post'
-import './style/homeComponents.css'
+import './homeComponents.css'
 
 const NewsfeedComponent = function ({ posts }) {
   return (

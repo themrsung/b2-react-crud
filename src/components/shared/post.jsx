@@ -93,8 +93,10 @@ const Post = function ({
     <div className="Post" style={postStyle} onClick={onPostClick}>
       {!isChangingPost ? (
         <>
-          <h2>{post.title}</h2>
-          <p>{showAll ? post.content : post.content.substr(0, 100)}</p>
+          <h2 className="PostTitle">{post.title}</h2>
+          <p className="PostContent">
+            {showAll ? post.content : post.content.substr(0, 100)}
+          </p>
         </>
       ) : (
         <>
@@ -112,7 +114,7 @@ const Post = function ({
           ></textarea>
         </>
       )}
-      <p>
+      <p className="PostMetaData">
         작성자 :{' '}
         <span
           style={postAuthorStyle}

@@ -32,6 +32,15 @@
   padding: 10px;
 }
 
+.NewsfeedComponent {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.NewsfeedComponent > div {
+  width: 22vw;
+}
+
 .Modal {
   display: none;
   position: fixed;
