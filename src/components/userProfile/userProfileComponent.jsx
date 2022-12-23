@@ -107,102 +107,101 @@ const UserProfileComponent = function ({ userId }) {
       <ProfileBox>
         <h1>프로필 수정</h1>
         <hr />
-        <div className="UserProfileComponent">
-          <UserProfile className="UserProfileName">
-            {!isChangingUserProfileName ? (
-              <div>
-                <ProfileDiv>{user.name ? user.name : 'username'}</ProfileDiv>
-                {isOwnProfile && (
-                  <button
-                    className="Button"
-                    onClick={onUserProfileNameChangeClicked}
-                  >
-                    수정
-                  </button>
-                )}
-              </div>
-            ) : (
-              <form
-                className="UserProfileNameChangeForm"
-                onSubmit={(e) => {
-                  e.preventDefault()
-                  onUserProfileNameChangeClicked()
+        <UserProfile>
+          {!isChangingUserProfileName ? (
+            <div>
+              <ProfileDiv>{user.name ? user.name : 'username'}</ProfileDiv>
+              {isOwnProfile && (
+                <button
+                  className="Button"
+                  onClick={onUserProfileNameChangeClicked}
+                >
+                  수정
+                </button>
+              )}
+            </div>
+          ) : (
+            <form
+              className="UserProfileNameChangeForm"
+              onSubmit={(e) => {
+                e.preventDefault()
+                onUserProfileNameChangeClicked()
+              }}
+            >
+              <InputBox
+                type="text"
+                placeholder="Nickname"
+                required
+                onChange={(e) => {
+                  setNewUserProfileName(e.target.value)
                 }}
-              >
-                <InputBox
-                  type="text"
-                  placeholder="Nickname"
-                  required
-                  onChange={(e) => {
-                    setNewUserProfileName(e.target.value)
+              />
+              <Button>
+                <button className="Button" type="submit">
+                  수정 완료
+                </button>
+                <button
+                  className="Button"
+                  onClick={() => {
+                    setIsChangingUserProfileName(false)
                   }}
-                />
-                <Button>
-                  <button className="Button" type="submit">
-                    수정 완료
-                  </button>
-                  <button
-                    className="Button"
-                    onClick={() => {
-                      setIsChangingUserProfileName(false)
-                    }}
-                  >
-                    취소
-                  </button>
-                </Button>
-              </form>
-            )}
-          </UserProfile>
-          <div className="UserProfileMotd">
-            {!isChangingUserProfileMotd ? (
-              <div>
-                <ProfileDiv>
-                  {user.motd ? user.motd : 'Message of the day'}
-                </ProfileDiv>
-                {isOwnProfile && (
-                  <button
-                    className="Button"
-                    onClick={onUserProfileMotdChangeClicked}
-                  >
-                    수정
-                  </button>
-                )}
-              </div>
-            ) : (
-              <form
-                className="UserProfileMotdChangeForm"
-                onSubmit={(e) => {
-                  e.preventDefault()
-                  onUserProfileMotdChangeClicked()
+                >
+                  취소
+                </button>
+              </Button>
+            </form>
+          )}
+        </UserProfile>
+        <UserProfile>
+          {!isChangingUserProfileMotd ? (
+            <div>
+              <ProfileDiv>
+                {user.motd ? user.motd : 'Message of the day'}
+              </ProfileDiv>
+              {isOwnProfile && (
+                <button
+                  className="Button"
+                  onClick={onUserProfileMotdChangeClicked}
+                >
+                  수정
+                </button>
+              )}
+            </div>
+          ) : (
+            <form
+              className="UserProfileMotdChangeForm"
+              onSubmit={(e) => {
+                e.preventDefault()
+                onUserProfileMotdChangeClicked()
+              }}
+            >
+              <InputBox
+                type="text"
+                placeholder="Message of the day"
+                required
+                onChange={(e) => {
+                  setNewUserProfileMotd(e.target.value)
                 }}
-              >
-                <InputBox
-                  type="text"
-                  placeholder="Message of the day"
-                  required
-                  onChange={(e) => {
-                    setNewUserProfileMotd(e.target.value)
-                  }}
-                />
-                <br />
+              />
+              <br />
 
-                <Button>
-                  <button className="Button" type="submit">
-                    수정 완료
-                  </button>
-                  <button
-                    className="Button"
-                    onClick={() => {
-                      setIsChangingUserProfileMotd(false)
-                    }}
-                  >
-                    취소
-                  </button>
-                </Button>
-              </form>
-            )}
-          </div>
-        </div>
+              <Button>
+                <button className="Button" type="submit">
+                  수정 완료
+                </button>
+                <button
+                  className="Button"
+                  onClick={() => {
+                    setIsChangingUserProfileMotd(false)
+                  }}
+                >
+                  취소
+                </button>
+              </Button>
+            </form>
+          )}
+        </UserProfile>
+        <button className="Button">My Posts</button>
       </ProfileBox>
     </Box>
   ) : (
@@ -230,7 +229,7 @@ const Button = styled.div`
 `
 
 const UserProfile = styled.div`
-  height: 130px;
+  height: 100px;
 `
 
 const ProfileDiv = styled.div`
