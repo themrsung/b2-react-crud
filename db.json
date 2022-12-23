@@ -74,29 +74,6 @@
       "content": "ㄴㅇㄹㄴㅇ",
       "createdAt": 1671780735412,
       "comments": []
-    },
-    {
-      "id": "2d3731e2-0173-4f0b-a2ca-ad67bc607350",
-      "author": "admin",
-      "title": "0.0.",
-      "content": "333333\n",
-      "createdAt": 1671787386622,
-      "comments": [
-        {
-          "content": "23232",
-          "id": "0c425d3d-3dde-452d-82d6-1343e83304c0",
-          "author": "admin",
-          "createdAt": 1671787395186
-        }
-      ]
-    },
-    {
-      "id": "98e4dee7-f664-4eb6-bfa6-ab0c11ea71d0",
-      "author": "admin",
-      "title": "3333",
-      "content": "000",
-      "createdAt": 1671790131511,
-      "comments": []
     }
   ],
   "users": [
