@@ -103,6 +103,7 @@ const Post = function ({ post, noLink = false, noModifyButtons = false }) {
                 수정완료
               </button>
               <button
+                class="Button"
                 onClick={() => {
                   setIsChangingPost(false)
                 }}
