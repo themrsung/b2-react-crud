@@ -58,6 +58,9 @@ const LoginForm = function () {
       //     .setExpirationTime('1w')
       //     .sign(secret)
       // }
+
+      window.sessionStorage.setItem('currentSession', user.id)
+
       navigate('/' + goBackTo)
       return
     }
