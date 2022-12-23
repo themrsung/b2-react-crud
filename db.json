@@ -79,6 +79,22 @@
           "createdAt": 1671702959353
         }
       ]
+    },
+    {
+      "id": "2a672781-447d-4fa9-9aba-3fab6e61f28b",
+      "author": "ska",
+      "title": "새해",
+      "content": "인사",
+      "createdAt": 1671754784978,
+      "comments": []
+    },
+    {
+      "id": "18e978b5-6d56-4c1f-bd59-eb48831fe99e",
+      "author": "ska",
+      "title": "black",
+      "content": "rabbit",
+      "createdAt": 1671755035876,
+      "comments": []
     }
   ]
 }
