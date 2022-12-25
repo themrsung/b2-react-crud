@@ -67,13 +67,42 @@ const Comment = ({ comment, postId }) => {
     setIsChangingComment(!isChangingComment)
   }
 
+  // 좋아요만들기
+  const [like, setLike] = useState(0)
+  const clickLike = (e) => {
+    setLike(like + 1)
+  }
+
+  const [userName, setUserName] = useState('')
+
+  const [users, setUsers] = useState([])
+
+  const fetchUsers = async function () {
+    const response = await axios.get(SERVER_URL + '/users')
+    const data = response.data
+    setUsers(data)
+
+    // setTimeout(() => {
+    //   const user = users.filter((u) => u.id === comment.author)
+
+    //   console.log(users)
+    // }, 5000)
+  }
+
+  useEffect(() => {
+    fetchUsers()
+    setTimeout(() => {
+      console.log(users)
+    }, 5000)
+  }, [])
+
   return (
     <div className="CommentDiv">
       {!isChangingComment ? (
         <>
           <div>
-            <p>{comment.content}</p>
-            <p>
+            <p className="CommentContent">{comment.content}</p>
+            <p className="CommentMetaData">
               by{' '}
               <span
                 style={{ cursor: 'pointer' }}
@@ -84,6 +113,14 @@ const Comment = ({ comment, postId }) => {
                 {comment.author}
               </span>{' '}
               at {comment.createdAt}
+              <h6>
+                <div>
+                  <span onClick={clickLike} className="HeartShape">
+                    ♡
+                  </span>
+                  {like}
+                </div>
+              </h6>
             </p>
           </div>
           <div>

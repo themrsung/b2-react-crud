@@ -47,7 +47,14 @@ const Home = function ({ goTo }) {
 
   return (
     <div className="Home">
-      <NewsfeedComponent posts={posts} />
+      <div
+        style={{
+          width: '80%',
+          margin: 'auto'
+        }}
+      >
+        <NewsfeedComponent posts={posts} />
+      </div>
     </div>
   )
 }
