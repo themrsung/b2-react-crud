@@ -4,21 +4,26 @@ import { useNavigate } from 'react-router-dom'
 import { SERVER_URL } from '../../serverUrl'
 import styled from 'styled-components'
 import { getCurrentUserState } from '../../redux/config/configStore'
+import NewsfeedComponent from '../home/newsfeedComponent'
 
 const UserProfileComponent = function ({ userId }) {
   const [users, setUsers] = useState([])
   const [user, setUser] = useState({})
-  const [posts, setPosts] = useState({})
 
-  const fetchUsers = async function () {
-    const response = await axios.get(SERVER_URL + '/users')
-    const data = response.data
-    setUsers(data)
+  const [posts, setPosts] = useState([])
+
+  const fetchPosts = async function () {
+    const response = await axios.get(SERVER_URL + '/posts')
+    setPosts(response.data)
   }
 
-  const fetchPosts = async () => {
-    const { data } = await axios.get(SERVER_URL + '/posts')
-    setPosts(data.filter((info) => info.author === user.id))
+  useEffect(() => {
+    fetchPosts()
+  }, [])
+
+  const fetchUsers = async function () {
+    const { data } = await axios.get(SERVER_URL + '/users')
+    setUsers(data)
   }
 
   const [dummyStateBoolean, setDummyStateBoolean] = useState(false)
@@ -29,10 +34,6 @@ const UserProfileComponent = function ({ userId }) {
   useEffect(() => {
     fetchUsers()
   }, [dummyStateBoolean])
-
-  useEffect(() => {
-    fetchPosts()
-  }, [])
 
   useEffect(() => {
     if (getMatchingUsersCounter < 25) {
@@ -201,11 +202,9 @@ const UserProfileComponent = function ({ userId }) {
             </form>
           )}
         </UserProfile>
-        {/* <MyPosts>
-          {posts.map((item) => {
-            return <div>{item.title}</div>
-          })}
-        </MyPosts> */}
+        <MyPosts>
+          <NewsfeedComponent posts={posts} />
+        </MyPosts>
       </ProfileBox>
     </Box>
   ) : (
@@ -251,6 +250,6 @@ const InputBox = styled.input`
 const MyPosts = styled.div`
   width: 500px;
   height: 200px;
-  background-color: skyblue;
-  overflow-y: scroll;
+  /* background-color: skyblue; */
+  overflow: scroll;
 `
