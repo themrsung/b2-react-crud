@@ -25,10 +25,38 @@
 }
 
 .CommentDiv {
-  /* background-color: yellow; */
+  width: 60%;
+  margin: auto;
 }
 .HeartShape {
   display: inline;
   color: red;
   margin-right: 3px;
+}
+
+.CommentContent {
+  word-wrap: break-word;
+  max-width: 100%;
+  white-space: normal;
+  margin-right: auto;
+  text-align: left;
+}
+
+.CommentMetaData {
+  word-wrap: break-word;
+  max-width: 100%;
+  white-space: normal;
+  margin-left: auto;
+  text-align: right;
+}
+
+.WriteCommentArea {
+  width: 60%;
+  margin: auto;
+}
+
+.WriteCommentArea > textarea {
+  width: 100%;
+  height: 20px;
+  resize: none;
 }

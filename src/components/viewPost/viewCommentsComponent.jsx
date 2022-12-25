@@ -66,9 +66,9 @@ const ViewCommentsComponent = ({ postId }) => {
             onWriteComment()
           }}
         >
-          <div>
-            <label></label>
-            <input
+          <div className="WriteCommentArea">
+            <h3>댓글 달기 </h3>
+            <textarea
               className="InputStyle"
               value={userComment}
               onChange={(e) => {
