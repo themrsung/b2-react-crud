@@ -2,22 +2,12 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
-import {
-  getWritePostContentState,
-  getWritePostTitleState,
-  store
-} from '../../redux/config/configStore'
 import { SERVER_URL } from '../../serverUrl'
 import './homeComponents.css'
 
 const WritePostForm = function () {
   const [postTitle, setPostTitle] = useState('')
   const [postContent, setPostContent] = useState('')
-
-  store.subscribe(() => {
-    setPostTitle(getWritePostTitleState())
-    setPostContent(getWritePostContentState())
-  })
 
   let navigate = useNavigate()
 
@@ -32,8 +22,8 @@ const WritePostForm = function () {
     const post = {
       id: uuidv4(),
       author: currentUserId,
-      title: postTitle,
-      content: postContent,
+      title: document.getElementById('WritePostTitleInput').value,
+      content: document.getElementById('WritePostContentInput').value,
       createdAt: Date.now(),
       comments: []
     }
@@ -51,7 +41,13 @@ const WritePostForm = function () {
       className="WritePostForm"
       onSubmit={(e) => {
         e.preventDefault()
-        if (!postTitle || !postContent) {
+
+        // setPostTitle(document.getElementById('WritePostTitleInput').value)
+        // setPostContent(document.getElementById('WritePostContentInput').value)
+        if (
+          document.getElementById('WritePostTitleInput').value === '' ||
+          document.getElementById('WritePostContentInput').value === ''
+        ) {
           return getErrorMsg()
         }
         onWritePost()
@@ -59,24 +55,26 @@ const WritePostForm = function () {
     >
       <div className="WritePostFormTitleContainer">
         <input
+          id="WritePostTitleInput"
           className="WritePostFormTitle"
           type="text"
-          value={postTitle}
-          onChange={(e) => {
-            setPostTitle(e.target.value)
-            // setPostTitle('test')
-          }}
+          // value={postTitle}
+          // onChange={(e) => {
+          //   setPostTitle(e.target.value)
+          // }}
+          // onChange={(e) => {}}
           placeholder="제목을 입력하세요."
         />
       </div>
       <div className="WritePostFormContentContainer">
         <textarea
+          id="WritePostContentInput"
           placeholder="내용을 입력하세요."
-          value={postContent}
-          onChange={(e) => {
-            setPostContent(e.target.value)
-            // setPostContent('test')
-          }}
+          // value={postContent}
+          // onChange={(e) => {
+          //   setPostContent(e.target.value)
+          // }}
+          // onChange={(e) => {}}
         />
       </div>
       <button type="submit" className="Button">
