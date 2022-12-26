@@ -67,7 +67,7 @@ const Header = function () {
                 setSearchKeyword(e.target.value)
               }}
             />
-            <button>확인</button>
+            <button type="submit">검색</button>
           </form>
         </div>
       </div>
