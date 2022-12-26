@@ -9,8 +9,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: stretch;
-
-  margin-bottom: 30px;
 }
 
 .HeaderLeft {
@@ -107,8 +105,6 @@
   justify-content: center;
 
   background-color: lightgray;
-
-  margin-top: 30px;
 }
 
 .FooterInfo {
