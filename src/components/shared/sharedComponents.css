@@ -58,7 +58,30 @@
 }
 
 .HeaderMiddleSearchForm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
+
+.HeaderMiddleSearchInput {
+  margin-right: 5%;
+
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 0.6rem;
+
+  padding: 0.2rem 0.5rem;
+  color: white;
+  font-size: larger;
+  font-weight: 1000;
+}
+
+.HeaderMiddleSearchButton {
+  white-space: nowrap;
+  width: fit-content;
+}
+
 .HeaderRightProfileMenuUl {
   display: flex;
   flex-direction: row;

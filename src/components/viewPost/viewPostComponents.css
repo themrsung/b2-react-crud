@@ -22,20 +22,24 @@
 }
 
 .InputStyle {
-  border-radius: 10px;
+  border: 2px solid black;
+  font-size: medium;
+  font-weight: 500;
 }
 
 .CommentDiv {
-  background-color: teal;
+  /* background-color: teal; */
   font-size: medium;
-
+  border: 2px solid black;
+  border-radius: 10px;
   width: 85%;
+
   /* height: 105px; */
-  margin: auto;
+  margin: auto auto 5px auto;
+  padding: 10px;
 }
 .HeartShape {
   display: inline;
-  color: red;
   margin-right: 3px;
   cursor: pointer;
 }
@@ -57,10 +61,10 @@
 }
 
 .WriteCommentArea {
-  background-color: red;
+  /* background-color: red; */
 
-  width: 85%;
-  margin: -17px auto auto;
+  width: 90%;
+  margin: -17px auto 7px auto;
 }
 
 .WriteCommentArea > textarea {

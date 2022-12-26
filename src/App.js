@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     const sessionId = window.sessionStorage.getItem('currentSession')
     if (sessionId && sessionId !== '') {
-      // assume logged in
+      // assume logged in ㅋ
       setCurrentUserState({
         id: sessionId
       })
