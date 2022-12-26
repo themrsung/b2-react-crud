@@ -206,6 +206,7 @@ const UserProfileComponent = function ({ userId }) {
             </form>
           )}
         </UserProfile>
+        <ProfileDiv>My Post</ProfileDiv>
         <div className="MyPosts">
           <div>
             {posts
@@ -252,11 +253,11 @@ const Button = styled.div`
 `
 
 const UserProfile = styled.div`
-  height: 130px;
+  height: 100px;
 `
 
 const ProfileDiv = styled.div`
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 700;
 `
 
