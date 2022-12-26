@@ -22,7 +22,7 @@ export default function SearchResults() {
     const postsContainingKeyword = posts.filter((post) =>
       post.content.includes(searchKeyword)
     )
-    console.log(postsContainingKeyword)
+    // console.log(postsContainingKeyword)
     setSearchedPosts(postsContainingKeyword)
 
     setFetchMatchingPostsCounter(fetchMathingPostsCounter + 1)
