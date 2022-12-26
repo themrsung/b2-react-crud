@@ -75,23 +75,30 @@ const Comment = ({ comment, postId }) => {
 
   const [users, setUsers] = useState([])
 
+  const [dummyStateBoolean2, setDummyStateBoolean2] = useState(false)
+  const [fetchUsersCounter, setFetchUsersCounter] = useState(0)
+
   const fetchUsers = async function () {
-    const response = await axios.get(SERVER_URL + '/users')
-    const data = response.data
-    setUsers(data)
+    if (fetchUsersCounter < 50) {
+      const response = await axios.get(SERVER_URL + '/users')
+      const data = response.data
+      setUsers(data)
 
-    // setTimeout(() => {
-    //   const user = users.filter((u) => u.id === comment.author)
+      // setTimeout(() => {
+      //   const user = users.filter((u) => u.id === comment.author)
 
-    //   console.log(users)
-    // }, 5000)
+      //   console.log(users)
+      // }, 5000)
 
-    if (post.author) {
-      const matchingUsers = users.filter((u) => u.id === post.author)
-      if (matchingUsers.length > 0) {
-        const userName = matchingUsers[0].name
-        setAuthorName(userName)
+      if (post.author) {
+        const matchingUsers = users.filter((u) => u.id === post.author)
+        if (matchingUsers.length > 0) {
+          const userName = matchingUsers[0].name
+          setAuthorName(userName)
+        }
       }
+      setFetchUsersCounter(fetchUsersCounter + 1)
+      setDummyStateBoolean2(!dummyStateBoolean2)
     }
   }
 
@@ -99,7 +106,7 @@ const Comment = ({ comment, postId }) => {
 
   useEffect(() => {
     fetchUsers()
-  }, [])
+  }, [dummyStateBoolean2])
 
   //타임스탬프 변환(댓글)
   const date_comment = new Date(comment.createdAt)
@@ -174,7 +181,7 @@ const Comment = ({ comment, postId }) => {
               }}
             />
             <p>
-              by {authorName}at{comment.createdAt}
+              by {authorName} at{comment.createdAt}
             </p>
           </div>
           <div>
