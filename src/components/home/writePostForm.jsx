@@ -80,7 +80,7 @@ const WritePostForm = function () {
           }}
         />
       </div>
-      <button type="submit" className="Button">
+      <button type="submit" className="customButton">
         작성하기
       </button>
     </form>

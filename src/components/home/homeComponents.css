@@ -9,7 +9,7 @@
 }
 
 .WritePostFormTitle {
-  border: 1px solid #2e2727;
+  border: 2px solid #eb7272;
   margin: 0 24px;
   height: 25px;
   width: 300px;
@@ -17,6 +17,8 @@
   outline: none;
   padding: 0 10px;
   text-align: center;
+
+  font-size: medium;
 }
 
 .WritePostFormContentContainer > textarea {
@@ -27,9 +29,11 @@
   max-width: 450px;
   border-radius: 12px;
   outline: none;
-  border: 1px solid #2e2727;
+  border: 2px solid #eb7272;
   text-align: center;
   padding: 10px;
+
+  font-size: medium;
 }
 
 .NewsfeedComponent {
@@ -71,7 +75,7 @@
 .Modal > section > header {
   position: relative;
   padding: 16px 64px 16px 16px;
-  background-color: black;
+  background-color: #eb7272;
   font-weight: 700;
   color: white;
 }
@@ -100,6 +104,25 @@
   /* 팝업이 열릴때 스르륵 열리는 효과 */
   animation: modal-bg-show 0.3s;
 }
+
+.customButton {
+  background-color: transparent;
+  border: 2px solid #eb7272;
+  color: #2e2727;
+  cursor: pointer;
+
+  margin: 0.1rem 0.3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+
+  transition: linear 0.2s;
+}
+
+.customButton:hover {
+  background-color: #02520f;
+  color: white;
+}
+
 @keyframes modal-show {
   from {
     opacity: 0;
