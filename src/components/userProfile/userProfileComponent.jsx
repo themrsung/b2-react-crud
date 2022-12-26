@@ -110,7 +110,7 @@ const UserProfileComponent = function ({ userId }) {
   return user ? (
     <Box>
       <ProfileBox>
-        <h1>@{userId}</h1>
+        <h1>@{user.id}</h1>
         <hr />
         <UserProfile>
           {!isChangingUserProfileName ? (
