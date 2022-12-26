@@ -2,6 +2,10 @@
   "name": "b2-react-crud",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "18.x",
+    "npm": "7.x"
+  },
   "prettier": {
     "trailingComma": "none",
     "tabWidth": 2,
