@@ -2,7 +2,6 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
-import { getCurrentUserState } from '../../redux/config/configStore'
 import { SERVER_URL } from '../../serverUrl'
 import './homeComponents.css'
 
@@ -12,21 +11,9 @@ const WritePostForm = function () {
 
   let navigate = useNavigate()
 
-  const [users, setUsers] = useState([])
+  const userId = window.sessionStorage.getItem('currentSession')
 
-  const fetchUsers = async function () {
-    const response = await axios.get(SERVER_URL + '/users')
-    const data = response.data
-    setUsers(data)
-  }
-
-  useEffect(() => {
-    fetchUsers()
-  }, [])
-
-  const user = users.filter((user) => user.id === getCurrentUserState().id)[0]
-
-  if (!user) {
+  if (userId && userId !== '') {
     navigate('/login')
   }
 
