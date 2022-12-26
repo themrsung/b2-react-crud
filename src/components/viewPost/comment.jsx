@@ -143,9 +143,9 @@ const Comment = ({ comment, postId }) => {
               / {returnDateComment}
               <h6>
                 <div>
-                  <div onClick={clickLike} className="HeartShape">
+                  <span onClick={clickLike} className="HeartShape">
                     ♡
-                  </div>
+                  </span>
                   {like}
                 </div>
               </h6>
