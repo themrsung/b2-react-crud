@@ -2,6 +2,10 @@
   "name": "b2-react-crud",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "18.x",
+    "npm": "8.x"
+  },
   "prettier": {
     "trailingComma": "none",
     "tabWidth": 2,
@@ -14,6 +18,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.1",
+    "cross-env": "7.0.3",
     "jose": "^4.11.1",
     "json-server": "^0.17.1",
     "react": "^18.2.0",
@@ -32,8 +37,7 @@
     "start:dev": "cross-env NODE_PATH=src react-scripts start",
     "build": "cross-env NODE_PATH=src react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "cross-env NODE_PATH=src npm run build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
