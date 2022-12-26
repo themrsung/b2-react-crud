@@ -22,17 +22,6 @@ const Home = function ({ goTo }) {
   }, [])
 
   //개발용
-  const [users, setUsers] = useState([])
-
-  const fetchUsers = async function () {
-    const response = await axios.get('http://localhost:3001/users')
-    setUsers(response.data)
-  }
-
-  useEffect(() => {
-    fetchUsers()
-  }, [])
-
   //배포용
   const [posts, setPosts] = useState([])
 
