@@ -41,6 +41,17 @@
   width: 22vw;
 }
 
+@media (width < 700px) {
+  .NewsfeedComponent {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .NewsfeedComponent > div {
+    width: auto;
+  }
+}
+
 .Modal {
   display: none;
   position: fixed;
@@ -116,5 +127,11 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@media (width < 800px) {
+  .Post {
+    max-width: 60vw;
   }
 }

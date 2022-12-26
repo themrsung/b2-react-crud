@@ -72,3 +72,13 @@
   height: 25px;
   resize: none;
 }
+
+@media (width < 700px) {
+  .ViewPost {
+    max-width: 80vw;
+    width: 80vw;
+
+    margin: auto;
+    margin-top: 3vh;
+  }
+}
