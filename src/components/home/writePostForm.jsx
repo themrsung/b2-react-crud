@@ -2,12 +2,22 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
+import {
+  getWritePostContentState,
+  getWritePostTitleState,
+  store
+} from '../../redux/config/configStore'
 import { SERVER_URL } from '../../serverUrl'
 import './homeComponents.css'
 
 const WritePostForm = function () {
   const [postTitle, setPostTitle] = useState('')
   const [postContent, setPostContent] = useState('')
+
+  store.subscribe(() => {
+    setPostTitle(getWritePostTitleState())
+    setPostContent(getWritePostContentState())
+  })
 
   let navigate = useNavigate()
 
@@ -54,6 +64,7 @@ const WritePostForm = function () {
           value={postTitle}
           onChange={(e) => {
             setPostTitle(e.target.value)
+            // setPostTitle('test')
           }}
           placeholder="제목을 입력하세요."
         />
@@ -64,6 +75,7 @@ const WritePostForm = function () {
           value={postContent}
           onChange={(e) => {
             setPostContent(e.target.value)
+            // setPostContent('test')
           }}
         />
       </div>
