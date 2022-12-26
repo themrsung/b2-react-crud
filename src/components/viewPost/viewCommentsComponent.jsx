@@ -67,7 +67,7 @@ const ViewCommentsComponent = ({ postId }) => {
           }}
         >
           <div className="WriteCommentArea">
-            <h5> 응원해줄까요 </h5>
+            <h5>댓글은 착하게</h5>
             <textarea
               className="InputStyle"
               value={userComment}
