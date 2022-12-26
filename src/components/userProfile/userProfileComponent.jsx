@@ -206,7 +206,7 @@ const UserProfileComponent = function ({ userId }) {
             </form>
           )}
         </UserProfile>
-        <MyPosts>
+        <div className="MyPosts">
           <div>
             {posts
               .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1))
@@ -222,7 +222,7 @@ const UserProfileComponent = function ({ userId }) {
                 )
               })}
           </div>
-        </MyPosts>
+        </div>
       </ProfileBox>
     </Box>
   ) : (
@@ -263,10 +263,4 @@ const ProfileDiv = styled.div`
 const InputBox = styled.input`
   height: 30px;
   border: 2px solid black;
-`
-
-const MyPosts = styled.div`
-  width: 500px;
-  height: 235px;
-  overflow-y: scroll;
 `
