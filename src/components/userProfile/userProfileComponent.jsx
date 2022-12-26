@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import { SERVER_URL } from '../../serverUrl'
 import styled from 'styled-components'
 import { getCurrentUserState } from '../../redux/config/configStore'
-import NewsfeedComponent from '../home/newsfeedComponent'
+import Post from '../shared/post'
+import '../home/homeComponents.css'
 
 const UserProfileComponent = function ({ userId }) {
   const [users, setUsers] = useState([])
@@ -20,6 +21,8 @@ const UserProfileComponent = function ({ userId }) {
   useEffect(() => {
     fetchPosts()
   }, [])
+
+  // console.log(user, posts)
 
   const fetchUsers = async function () {
     const { data } = await axios.get(SERVER_URL + '/users')
@@ -203,7 +206,21 @@ const UserProfileComponent = function ({ userId }) {
           )}
         </UserProfile>
         <MyPosts>
-          <NewsfeedComponent posts={posts} />
+          <div className="NewsfeedComponent">
+            {posts
+              .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1))
+              .filter((post) => post.author === user.id)
+              .map((post) => {
+                return (
+                  <Post
+                    key={post.id}
+                    post={post}
+                    noModifyButtons={true}
+                    showAll={false}
+                  />
+                )
+              })}
+          </div>
         </MyPosts>
       </ProfileBox>
     </Box>
