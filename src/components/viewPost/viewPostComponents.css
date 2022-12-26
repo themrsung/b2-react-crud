@@ -32,6 +32,7 @@
   display: inline;
   color: red;
   margin-right: 3px;
+  cursor: pointer;
 }
 
 .CommentContent {
