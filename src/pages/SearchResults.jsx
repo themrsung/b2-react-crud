@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import NewsfeedComponent from '../components/home/newsfeedComponent'
 import { SERVER_URL } from '../serverUrl'
+import './style/SearchResults.css'
 
 export default function SearchResults() {
   const params = useParams()

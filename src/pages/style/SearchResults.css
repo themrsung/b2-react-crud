@@ -1,0 +1,20 @@
+.SearchResults > div {
+  max-width: 95vw;
+  margin: auto;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: left;
+}
+
+.SearchResults > div > div {
+  max-width: 20vw;
+}
+
+@media (width < 900px) {
+  .SearchResults > div > div {
+    max-width: 95vw;
+  }
+}
