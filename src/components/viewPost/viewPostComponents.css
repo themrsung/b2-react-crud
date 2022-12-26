@@ -22,6 +22,7 @@
 }
 
 .InputStyle {
+  border: 2px solid black;
   font-size: medium;
   font-weight: 500;
 }
@@ -63,7 +64,7 @@
   /* background-color: red; */
 
   width: 90%;
-  margin: -17px auto auto;
+  margin: -17px auto 7px auto;
 }
 
 .WriteCommentArea > textarea {
