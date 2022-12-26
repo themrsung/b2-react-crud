@@ -101,6 +101,29 @@ const Comment = ({ comment, postId }) => {
     fetchUsers()
   }, [])
 
+  //타임스탬프 변환(댓글)
+  const date_comment = new Date(comment.createdAt)
+
+  const year_comment = date_comment.getFullYear().toString().slice(-2)
+  const month_comment = ('0' + (date_comment.getMonth() + 1)).slice(-2)
+  const day_comment = ('0' + date_comment.getDate()).slice(-2)
+  const hour_comment = ('0' + date_comment.getHours()).slice(-2)
+  const minute_comment = ('0' + date_comment.getMinutes()).slice(-2)
+  const second_comment = ('0' + date_comment.getSeconds()).slice(-2)
+
+  const returnDateComment =
+    year_comment +
+    '.' +
+    month_comment +
+    '.' +
+    day_comment +
+    '. ' +
+    hour_comment +
+    ':' +
+    minute_comment +
+    ':' +
+    second_comment
+
   return (
     <div className="CommentDiv">
       {!isChangingComment ? (
@@ -117,7 +140,7 @@ const Comment = ({ comment, postId }) => {
               >
                 {authorName}
               </span>{' '}
-              at {comment.createdAt}
+              / {returnDateComment}
               <h6>
                 <div>
                   <span onClick={clickLike} className="HeartShape">
@@ -151,7 +174,7 @@ const Comment = ({ comment, postId }) => {
               }}
             />
             <p>
-              by {authorName} at {comment.createdAt}
+              by {authorName}at{comment.createdAt}
             </p>
           </div>
           <div>
