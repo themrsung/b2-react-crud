@@ -60,7 +60,7 @@
   background-color: red;
 
   width: 85%;
-  margin: -17px auto;
+  margin: -17px auto auto;
 }
 
 .WriteCommentArea > textarea {

@@ -9,6 +9,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: stretch;
+
+  margin-bottom: 30px;
 }
 
 .HeaderLeft {
@@ -57,6 +59,8 @@
   list-style: none;
 }
 
+.HeaderMiddleSearchForm {
+}
 .HeaderRightProfileMenuUl {
   display: flex;
   flex-direction: row;
@@ -66,10 +70,14 @@
   list-style: none;
 }
 
+/* post와 댓글창 css 통일중 - 김원준 */
 .Post {
   margin: 20px;
-  border-radius: 50px;
   text-align: center;
+
+  border-radius: 20px;
+  font-size: larger;
+  font-weight: 1000;
 }
 
 .PostTitle,
@@ -78,7 +86,7 @@
   max-width: 100%;
   white-space: normal;
   margin-right: auto;
-  text-align: left;
+  text-align: center;
 }
 
 .PostMetaData {
@@ -86,7 +94,7 @@
   max-width: 100%;
   white-space: normal;
   margin-left: auto;
-  text-align: right;
+  text-align: center;
 }
 
 .Footer {
@@ -99,6 +107,8 @@
   justify-content: center;
 
   background-color: lightgray;
+
+  margin-top: 30px;
 }
 
 .FooterInfo {

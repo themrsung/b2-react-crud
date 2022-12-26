@@ -61,12 +61,13 @@ const Header = function () {
           >
             <input
               className="HeaderMiddleSearchInput"
-              placeholder="검색"
+              placeholder="키워드를 입력해주세요!"
               value={searchKeyword}
               onChange={(e) => {
                 setSearchKeyword(e.target.value)
               }}
             />
+            <button>확인</button>
           </form>
         </div>
       </div>

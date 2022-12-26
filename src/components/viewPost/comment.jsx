@@ -144,7 +144,7 @@ const Comment = ({ comment, postId }) => {
               <h6>
                 <div>
                   <span onClick={clickLike} className="HeartShape">
-                    ♡
+                    ❤️
                   </span>
                   {like}
                 </div>

@@ -22,7 +22,7 @@ const Post = function ({
     : {
         cursor: 'pointer',
         padding: '20px',
-        border: '1px solid black'
+        border: '8px solid #2e2727'
       }
 
   const postAuthorStyle = {
@@ -137,9 +137,9 @@ const Post = function ({
       {!isChangingPost ? (
         <>
           <h2 className="PostTitle">{post.title}</h2>
-          <p className="PostContent">
+          <h3 className="PostContent">
             {showAll ? post.content : post.content.substr(0, 100)}
-          </p>
+          </h3>
         </>
       ) : (
         <>
