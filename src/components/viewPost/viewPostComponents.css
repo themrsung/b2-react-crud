@@ -27,7 +27,10 @@
 }
 
 .CommentDiv {
-  width: 60%;
+  background-color: teal;
+
+  font-size: medium;
+  width: 85%;
   margin: auto;
 }
 .HeartShape {
@@ -54,7 +57,7 @@
 }
 
 .WriteCommentArea {
-  width: 60%;
+  width: 80%;
   margin: auto;
 }
 
