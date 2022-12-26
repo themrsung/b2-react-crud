@@ -110,7 +110,7 @@ const UserProfileComponent = function ({ userId }) {
   return user ? (
     <Box>
       <ProfileBox>
-        {isOwnProfile ? <h1>프로필 수정</h1> : <h1>프로필</h1>}
+        <h1>@{userId}</h1>
         <hr />
         <UserProfile>
           {!isChangingUserProfileName ? (

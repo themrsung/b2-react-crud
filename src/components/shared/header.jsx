@@ -28,6 +28,11 @@ const Header = function () {
 
   const location = useLocation()
 
+  const [searchKeyword, setSearchKeyword] = useState('')
+  const onSearch = () => {
+    navigate('/search/' + searchKeyword)
+  }
+
   return (
     <header className="Header">
       <div className="HeaderLeft">
@@ -43,6 +48,26 @@ const Header = function () {
         >
           <img className="HeaderLeftLogo" src={logo} alt="H2NY-logo" />
           <h1 className="HeaderLeftTitle">Happy2NewYear</h1>
+        </div>
+      </div>
+      <div className="HeaderMiddle">
+        <div className="HeaderMiddleSearchArea">
+          <form
+            className="HeaderMiddleSearchForm"
+            onSubmit={(e) => {
+              e.preventDefault()
+              onSearch()
+            }}
+          >
+            <input
+              className="HeaderMiddleSearchInput"
+              placeholder="검색"
+              value={searchKeyword}
+              onChange={(e) => {
+                setSearchKeyword(e.target.value)
+              }}
+            />
+          </form>
         </div>
       </div>
       <div className="HeaderRight">
