@@ -240,7 +240,7 @@ const Box = styled.div`
 
 const ProfileBox = styled.div`
   min-width: 500px;
-  height: 600px;
+  height: 640px;
   padding: 20px;
   border: 2px solid black;
   margin: 20px;
