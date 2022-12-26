@@ -22,11 +22,12 @@
 }
 
 .InputStyle {
-  border-radius: 10px;
+  font-size: medium;
+  font-weight: 500;
 }
 
 .CommentDiv {
-  background-color: teal;
+  /* background-color: teal; */
   font-size: medium;
 
   width: 85%;
@@ -35,7 +36,6 @@
 }
 .HeartShape {
   display: inline;
-  color: red;
   margin-right: 3px;
   cursor: pointer;
 }
@@ -57,7 +57,7 @@
 }
 
 .WriteCommentArea {
-  background-color: red;
+  /* background-color: red; */
 
   width: 85%;
   margin: -17px auto auto;
