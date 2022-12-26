@@ -48,7 +48,7 @@ const Home = function ({ goTo }) {
   return (
     <div className="Home">
       <div className="HomeBanner">
-        <img src="%PUBLIC_URL%/shcj-banner.png"></img>
+        <img src="/shcj-banner.png" alt="Happy New Years Banner"></img>
       </div>
       <div
         style={{
