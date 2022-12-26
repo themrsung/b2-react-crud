@@ -3,22 +3,22 @@
   font-weight: 1000;
   max-width: 40%;
   width: 95%;
-  border: 5px solid #2e2727;
+  border: 8px solid #2e2727;
   border-radius: 20px;
 
-  margin: 20px auto;
+  margin: 80px auto;
   text-align: center;
 }
 
 .ViewCommentsDiv {
   /* background-color: red; */
-  border-top: 3px solid black;
-  margin: 20px;
+  border-top: 5px solid black;
+
+  margin: 10px;
 }
 
 .ComentInputDiv {
   /* background-color: orange; */
-  margin: 20px;
 }
 
 .InputStyle {
