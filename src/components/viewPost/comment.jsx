@@ -73,8 +73,6 @@ const Comment = ({ comment, postId }) => {
     setLike(like + 1)
   }
 
-  const [userName, setUserName] = useState('')
-
   const [users, setUsers] = useState([])
 
   const fetchUsers = async function () {
@@ -87,13 +85,20 @@ const Comment = ({ comment, postId }) => {
 
     //   console.log(users)
     // }, 5000)
+
+    if (post.author) {
+      const matchingUsers = users.filter((u) => u.id === post.author)
+      if (matchingUsers.length > 0) {
+        const userName = matchingUsers[0].name
+        setAuthorName(userName)
+      }
+    }
   }
+
+  const [authorName, setAuthorName] = useState('')
 
   useEffect(() => {
     fetchUsers()
-    setTimeout(() => {
-      console.log(users)
-    }, 5000)
   }, [])
 
   return (
@@ -110,7 +115,7 @@ const Comment = ({ comment, postId }) => {
                   navigate('/profile/' + comment.author)
                 }}
               >
-                {comment.author}
+                {authorName}
               </span>{' '}
               at {comment.createdAt}
               <h6>
@@ -146,7 +151,7 @@ const Comment = ({ comment, postId }) => {
               }}
             />
             <p>
-              by {comment.author} at {comment.createdAt}
+              by {authorName} at {comment.createdAt}
             </p>
           </div>
           <div>

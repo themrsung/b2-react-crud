@@ -29,6 +29,11 @@ const RegisterForm = function () {
       return
     }
 
+    if (userName === '') {
+      alert('이름은 빈 칸일 수 없습니다.')
+      return
+    }
+
     const user = {
       id: userId,
       password: hashPassword(userPassword),
