@@ -91,7 +91,7 @@ const Comment = ({ comment, postId }) => {
       // }, 5000)
 
       if (comment.author) {
-        const matchingUsers = users.filter((u) => u.id === post.author)
+        const matchingUsers = users.filter((u) => u.id === comment.author)
         if (matchingUsers.length > 0) {
           const userName = matchingUsers[0].name
           setAuthorName(userName)
