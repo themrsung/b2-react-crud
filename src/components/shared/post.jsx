@@ -119,6 +119,19 @@ const Post = function ({
     }
   }, [fetchAuthorNameCounter])
 
+  //타임스탬프 변환
+  const date = new Date(post.createdAt)
+
+  const year = date.getFullYear().toString().slice(-2)
+  const month = ('0' + (date.getMonth() + 1)).slice(-2)
+  const day = ('0' + date.getDate()).slice(-2)
+  const hour = ('0' + date.getHours()).slice(-2)
+  const minute = ('0' + date.getMinutes()).slice(-2)
+  const second = ('0' + date.getSeconds()).slice(-2)
+
+  const returnDate =
+    year + '.' + month + '.' + day + '. ' + hour + ':' + minute + ':' + second
+
   return (
     <div className="Post" style={postStyle} onClick={onPostClick}>
       {!isChangingPost ? (
@@ -154,7 +167,7 @@ const Post = function ({
         >
           {authorName}
         </span>{' '}
-        / at {post.createdAt}
+        / {returnDate}
       </p>
 
       {!noModifyButtons && isOwnPost ? (
