@@ -138,7 +138,11 @@ const Post = function ({
         <>
           <h2 className="PostTitle">{post.title}</h2>
           <h3 className="PostContent">
-            {showAll ? post.content : post.content.substr(0, 100)}
+            {showAll
+              ? post.content
+              : post.content
+              ? post.content.substr(0, 100)
+              : ''}
           </h3>
         </>
       ) : (
