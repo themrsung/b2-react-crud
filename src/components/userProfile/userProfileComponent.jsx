@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import { getCurrentUserState } from '../../redux/config/configStore'
 import Post from '../shared/post'
 import '../home/homeComponents.css'
+import './userProfileComponent.css'
 
 const UserProfileComponent = function ({ userId }) {
   const [users, setUsers] = useState([])
@@ -109,7 +110,7 @@ const UserProfileComponent = function ({ userId }) {
   return user ? (
     <Box>
       <ProfileBox>
-        {isOwnProfile ? <h1>프로필 수정</h1> : <h1>프로필</h1>}
+        <h1>@{userId}</h1>
         <hr />
         <UserProfile>
           {!isChangingUserProfileName ? (
@@ -205,8 +206,9 @@ const UserProfileComponent = function ({ userId }) {
             </form>
           )}
         </UserProfile>
-        <MyPosts>
-          <div className="NewsfeedComponent">
+        <ProfileDiv>My Post</ProfileDiv>
+        <div className="MyPosts">
+          <div>
             {posts
               .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1))
               .filter((post) => post.author === user.id)
@@ -221,7 +223,7 @@ const UserProfileComponent = function ({ userId }) {
                 )
               })}
           </div>
-        </MyPosts>
+        </div>
       </ProfileBox>
     </Box>
   ) : (
@@ -251,22 +253,15 @@ const Button = styled.div`
 `
 
 const UserProfile = styled.div`
-  height: 130px;
+  height: 100px;
 `
 
 const ProfileDiv = styled.div`
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 700;
 `
 
 const InputBox = styled.input`
   height: 30px;
   border: 2px solid black;
-`
-
-const MyPosts = styled.div`
-  width: 500px;
-  height: 200px;
-  /* background-color: skyblue; */
-  overflow: scroll;
 `

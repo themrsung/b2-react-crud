@@ -89,6 +89,36 @@ const Post = function ({
     }
   }
 
+  const [users, setUsers] = useState([])
+  const [authorName, setAuthorName] = useState('')
+
+  const fetchAuthorName = async function () {
+    const response = await axios.get(SERVER_URL + '/users')
+
+    // setTimeout(() => {
+    const data = response.data
+    setUsers(data)
+
+    if (post.author) {
+      const matchingUsers = users.filter((u) => u.id === post.author)
+      if (matchingUsers.length > 0) {
+        const userName = matchingUsers[0].name
+        setAuthorName(userName)
+      }
+    }
+
+    setFetchAuthorNameCounter(fetchAuthorNameCounter + 1)
+    // }, 10)
+  }
+
+  const [fetchAuthorNameCounter, setFetchAuthorNameCounter] = useState(0)
+
+  useEffect(() => {
+    if (fetchAuthorNameCounter < 50) {
+      fetchAuthorName()
+    }
+  }, [fetchAuthorNameCounter])
+
   return (
     <div className="Post" style={postStyle} onClick={onPostClick}>
       {!isChangingPost ? (
@@ -122,7 +152,7 @@ const Post = function ({
             navigate('/profile/' + post.author)
           }}
         >
-          {post.author}
+          {authorName}
         </span>{' '}
         / at {post.createdAt}
       </p>

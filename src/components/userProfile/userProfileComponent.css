@@ -1,0 +1,11 @@
+.MyPosts {
+  width: 500px;
+  height: 235px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.MyPosts::-webkit-scrollbar {
+  display: none;
+}

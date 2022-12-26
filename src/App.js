@@ -10,6 +10,8 @@ import ViewPost from './pages/ViewPost'
 import NotFound from './pages/NotFound'
 import { useEffect } from 'react'
 import { setCurrentUserState } from './redux/config/configStore'
+import SearchResults from './pages/SearchResults'
+import Search from './pages/Search'
 
 function App() {
   useEffect(() => {
@@ -37,6 +39,8 @@ function App() {
             <Route path="profile" element={<UserProfile />} />
             <Route path="write" element={<Home goTo="write" />} />
             <Route path="view/:id" element={<ViewPost />} />
+            <Route path="search/:id" element={<Search />} />
+            <Route path="searchresults/:id" element={<SearchResults />} />
           </Routes>
         </main>
         <Footer />
