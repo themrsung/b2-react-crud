@@ -76,10 +76,10 @@ const ViewCommentsComponent = ({ postId }) => {
               }}
               placeholder="댓글을 입력하세요."
             />
+            <button className="Button" type="submit">
+              확인
+            </button>
           </div>
-          <button className="Button" type="submit">
-            확인
-          </button>
         </form>
       </div>
       <div>
