@@ -72,6 +72,7 @@ const Header = function () {
                 fontSize: 'larger',
                 fontWeight: '1000'
               }}
+              className="Button InversedButton HeaderMiddleSearchButton"
               type="submit"
             >
               검색
