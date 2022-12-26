@@ -1,6 +1,7 @@
 .ViewPost {
-  font-size: large;
-  max-width: 70%;
+  font-size: larger;
+  font-weight: 1000;
+  max-width: 40%;
   width: 95%;
   border: 5px solid #2e2727;
   border-radius: 20px;
@@ -11,7 +12,7 @@
 
 .ViewCommentsDiv {
   /* background-color: red; */
-  border-top: 1px solid black;
+  border-top: 3px solid black;
   margin: 20px;
 }
 
@@ -22,6 +23,7 @@
 
 .InputStyle {
   margin-bottom: 10px;
+  border-radius: 5px;
 }
 
 .CommentDiv {
