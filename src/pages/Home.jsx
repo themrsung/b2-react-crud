@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import NewsfeedComponent from '../components/home/newsfeedComponent'
-import { getCurrentUserState } from '../redux/config/configStore'
+import './style/Home.css'
 import { SERVER_URL } from '../serverUrl'
 
 const Home = function ({ goTo }) {
@@ -48,7 +48,11 @@ const Home = function ({ goTo }) {
   return (
     <div className="Home">
       <div className="HomeBanner">
-        <img src="/shcj-banner.png" alt="Happy New Years Banner"></img>
+        <img
+          className="HomeBannerActual"
+          src="/shcj-banner.png"
+          alt="Happy New Years Banner"
+        ></img>
       </div>
       <div
         style={{
