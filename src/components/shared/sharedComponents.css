@@ -158,6 +158,10 @@
   .Footer {
     height: fit-content;
   }
+
+  .Post {
+    max-width: 100%;
+  }
 }
 
 @media (width < 550px) {

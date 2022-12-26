@@ -1,35 +1,38 @@
 .WritePostForm {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding: 20px;
+  max-width: 100%;
+  gap: 1.5rem;
+  padding: 1.25rem;
   align-items: center;
   justify-content: center;
   /* border-radius: 20px; */
 }
 
 .WritePostFormTitle {
-  border: 1px solid #2e2727;
-  margin: 0 24px;
-  height: 25px;
-  width: 300px;
-  border-radius: 12px;
+  border: 0.0625rem solid #2e2727;
+  margin: 0 1.5rem;
+  height: 1.5625rem;
+  width: 18.75rem;
+  max-width: 80vw;
+  border-radius: 0.75rem;
   outline: none;
-  padding: 0 10px;
+  padding: 0 0.625rem;
   text-align: center;
 }
 
 .WritePostFormContentContainer > textarea {
-  width: 400px;
-  min-height: 300px;
-  max-height: 300px;
-  min-width: 450px;
-  max-width: 450px;
-  border-radius: 12px;
+  width: 25rem;
+  min-height: 18.75rem;
+  max-height: 18.75rem;
+  width: 28.125rem;
+  max-width: 77vw;
+
+  border-radius: 0.75rem;
   outline: none;
-  border: 1px solid #2e2727;
+  border: 0.0625rem solid #2e2727;
   text-align: center;
-  padding: 10px;
+  padding: 0.625rem;
 }
 
 .NewsfeedComponent {

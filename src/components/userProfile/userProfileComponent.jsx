@@ -239,12 +239,14 @@ const Box = styled.div`
 `
 
 const ProfileBox = styled.div`
-  min-width: 31.25rem;
+  min-width: 400px;
+  width: 50%;
+  max-width: 95vw;
   height: 40rem;
   padding: 1.25rem;
   border: 0.125rem solid black;
   margin: 1.25rem;
-  margin-right: 6.25rem;
+  /* margin-right: 6.25rem; */
   border-radius: 1rem;
 `
 
