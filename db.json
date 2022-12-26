@@ -127,7 +127,14 @@
       "title": "2023년에는",
       "content": "2023년에는\n2023년에는\n2023년에는\n2023년에는\n2023년에는",
       "createdAt": 1672025988623,
-      "comments": []
+      "comments": [
+        {
+          "content": "ㄴ아아아",
+          "id": "d45ac9ba-bb95-4269-992d-f32154512180",
+          "author": "admin",
+          "createdAt": 1672029381007
+        }
+      ]
     }
   ],
   "users": [
@@ -180,7 +187,7 @@
       "id": "admin",
       "password": 1216985755,
       "name": "dddd",
-      "motd": ""
+      "motd": "ㅋ"
     },
     {
       "id": "김원준",
