@@ -67,7 +67,12 @@ const Header = function () {
                 setSearchKeyword(e.target.value)
               }}
             />
-            <button type="submit">검색</button>
+            <button
+              className="Button InversedButton HeaderMiddleSearchButton"
+              type="submit"
+            >
+              검색
+            </button>
           </form>
         </div>
       </div>

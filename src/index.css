@@ -27,6 +27,11 @@ main {
   transition: linear 0.2s;
 }
 
+.InversedButton {
+  border-color: white;
+  color: white;
+}
+
 @media (width >= 550px) {
   .BigButton {
     margin: 0.5rem;
@@ -40,6 +45,11 @@ main {
 .Button:hover {
   background-color: black;
   color: white;
+}
+
+.InversedButton:hover {
+  color: black;
+  background-color: white;
 }
 
 .MenuButton {
