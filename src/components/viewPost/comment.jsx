@@ -90,7 +90,7 @@ const Comment = ({ comment, postId }) => {
       //   console.log(users)
       // }, 5000)
 
-      if (post.author) {
+      if (comment.author) {
         const matchingUsers = users.filter((u) => u.id === post.author)
         if (matchingUsers.length > 0) {
           const userName = matchingUsers[0].name
