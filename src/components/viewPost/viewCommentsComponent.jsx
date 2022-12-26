@@ -67,14 +67,14 @@ const ViewCommentsComponent = ({ postId }) => {
           }}
         >
           <div className="WriteCommentArea">
-            <h5>댓글 달기 </h5>
+            <h5> 응원해줄까요 </h5>
             <textarea
               className="InputStyle"
               value={userComment}
               onChange={(e) => {
                 setUserComment(e.target.value)
               }}
-              placeholder="댓글을 입력하세요."
+              placeholder="댓글을 입력해주세요."
             />
             <button className="Button" type="submit">
               확인
