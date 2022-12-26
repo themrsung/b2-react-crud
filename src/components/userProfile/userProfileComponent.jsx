@@ -4,7 +4,9 @@ import { useNavigate } from 'react-router-dom'
 import { SERVER_URL } from '../../serverUrl'
 import styled from 'styled-components'
 import { getCurrentUserState } from '../../redux/config/configStore'
-import NewsfeedComponent from '../home/newsfeedComponent'
+import Post from '../shared/post'
+import '../home/homeComponents.css'
+import './userProfileComponent.css'
 
 const UserProfileComponent = function ({ userId }) {
   const [users, setUsers] = useState([])
@@ -20,6 +22,8 @@ const UserProfileComponent = function ({ userId }) {
   useEffect(() => {
     fetchPosts()
   }, [])
+
+  // console.log(user, posts)
 
   const fetchUsers = async function () {
     const { data } = await axios.get(SERVER_URL + '/users')
@@ -106,7 +110,7 @@ const UserProfileComponent = function ({ userId }) {
   return user ? (
     <Box>
       <ProfileBox>
-        {isOwnProfile ? <h1>프로필 수정</h1> : <h1>프로필</h1>}
+        <h1>@{userId}</h1>
         <hr />
         <UserProfile>
           {!isChangingUserProfileName ? (
@@ -203,7 +207,21 @@ const UserProfileComponent = function ({ userId }) {
           )}
         </UserProfile>
         <MyPosts>
-          <NewsfeedComponent posts={posts} />
+          <div>
+            {posts
+              .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1))
+              .filter((post) => post.author === user.id)
+              .map((post) => {
+                return (
+                  <Post
+                    key={post.id}
+                    post={post}
+                    noModifyButtons={true}
+                    showAll={false}
+                  />
+                )
+              })}
+          </div>
         </MyPosts>
       </ProfileBox>
     </Box>
@@ -249,7 +267,6 @@ const InputBox = styled.input`
 
 const MyPosts = styled.div`
   width: 500px;
-  height: 200px;
-  /* background-color: skyblue; */
-  overflow: scroll;
+  height: 235px;
+  overflow-y: scroll;
 `
