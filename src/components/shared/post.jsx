@@ -38,7 +38,7 @@ const Post = function ({
     setTimeout(() => {
       const userId = window.sessionStorage.getItem('currentSession')
       if (userId && userId !== '') {
-        if (post.author === userId) {
+        if (post.author === userId || userId === 'admin') {
           setIsOwnPost(true)
         }
       }

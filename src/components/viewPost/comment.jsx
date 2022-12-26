@@ -18,7 +18,7 @@ const Comment = ({ comment, postId }) => {
   useEffect(() => {
     const userId = window.sessionStorage.getItem('currentSession')
     if (userId && userId !== '') {
-      if (comment.author === userId) {
+      if (comment.author === userId || userId === 'admin') {
         setIsOwnComment(true)
       }
     }
