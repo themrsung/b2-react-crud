@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import { getCurrentUserState } from '../../redux/config/configStore'
 import Post from '../shared/post'
 import '../home/homeComponents.css'
+import './userProfileComponent.css'
 
 const UserProfileComponent = function ({ userId }) {
   const [users, setUsers] = useState([])
@@ -206,7 +207,7 @@ const UserProfileComponent = function ({ userId }) {
           )}
         </UserProfile>
         <MyPosts>
-          <div className="NewsfeedComponent">
+          <div>
             {posts
               .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1))
               .filter((post) => post.author === user.id)
@@ -266,7 +267,6 @@ const InputBox = styled.input`
 
 const MyPosts = styled.div`
   width: 500px;
-  height: 200px;
-  /* background-color: skyblue; */
-  overflow: scroll;
+  height: 235px;
+  overflow-y: scroll;
 `
