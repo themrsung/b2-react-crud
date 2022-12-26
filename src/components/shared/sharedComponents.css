@@ -59,6 +59,10 @@
 
 .HeaderMiddleSearchForm {
 }
+.HeaderMiddleSearchInput {
+  font-size: larger;
+  font-weight: 1000;
+}
 .HeaderRightProfileMenuUl {
   display: flex;
   flex-direction: row;
