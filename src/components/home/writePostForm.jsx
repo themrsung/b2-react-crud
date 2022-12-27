@@ -31,6 +31,7 @@ const WritePostForm = function () {
     await axios.post(SERVER_URL + '/posts', post)
     navigate('/view/' + post.id)
     document.getElementById('CloseWritePostModalButton').click()
+    window.location.reload()
   }
   const getErrorMsg = () => {
     return alert('제목과 내용을 입력해주세요.')
