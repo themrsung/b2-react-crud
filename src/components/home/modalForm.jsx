@@ -13,7 +13,7 @@ const ModalForm = (props) => {
           <header>
             {/* {header} */}
             <div>
-              <span>Happy2NewYear</span>
+              <span>소원을 말해봐</span>
               <button
                 id="CloseWritePostModalButton"
                 style={{ cursor: 'pointer', border: 'none' }}
