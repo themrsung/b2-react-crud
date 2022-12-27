@@ -23,7 +23,7 @@ const RegisterForm = function () {
     fetchUsers()
   }, [])
 
-  const onUserRegister = () => {
+  const onUserRegister = async () => {
     if (userId === '' || userPassword === '') {
       alert('아이디 및 비밀번호를 확인해주세요.')
       return
@@ -49,7 +49,7 @@ const RegisterForm = function () {
     })
 
     if (!userIdIsAlreadyTaken) {
-      axios.post(SERVER_URL + '/users', user)
+      await axios.post(SERVER_URL + '/users', user)
       navigate('/login')
       window.location.reload()
     } else {
