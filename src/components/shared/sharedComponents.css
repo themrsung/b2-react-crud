@@ -169,3 +169,43 @@
     flex-direction: column;
   }
 }
+
+.editInput {
+  height: 1.5625rem;
+  width: 10.75rem;
+
+  border: 0.0625rem solid #2e2727;
+  margin: 0 1.5rem;
+
+  max-width: 80vw;
+  border-radius: 0.75rem;
+  outline: none;
+  padding: 0 0.625rem;
+  text-align: center;
+}
+
+.editTextarea {
+  /* width: 25rem; */
+  min-height: 10.75rem;
+  max-height: 10.75rem;
+  /* width: 20.125rem; */
+  max-width: 30vw;
+  min-width: 20vw;
+
+  margin-top: 0.625rem;
+  border-radius: 0.75rem;
+  outline: none;
+  border: 0.0625rem solid #2e2727;
+  text-align: center;
+  padding: 0.625rem;
+}
+
+.editPost {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  align-items: center;
+  justify-content: center;
+}

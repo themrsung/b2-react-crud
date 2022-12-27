@@ -162,20 +162,22 @@ const Post = function ({
           </h3>
         </>
       ) : (
-        <>
+        <div className="editPost">
           <input
+            className="editInput"
             value={newPostTitle}
             onChange={(e) => {
               setNewPostTitle(e.target.value)
             }}
           ></input>
           <textarea
+            className="editTextarea"
             value={newPostContent}
             onChange={(e) => {
               setNewPostContent(e.target.value)
             }}
           ></textarea>
-        </>
+        </div>
       )}
       <p className="PostMetaData">
         작성자 :{' '}
