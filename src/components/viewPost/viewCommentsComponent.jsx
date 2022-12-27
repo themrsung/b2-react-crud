@@ -67,7 +67,14 @@ const ViewCommentsComponent = ({ postId }) => {
           }}
         >
           <div className="WriteCommentArea">
-            <h5>댓글은 착하게</h5>
+            <h5
+              style={{
+                color: '#f02e51'
+              }}
+            >
+              👽 클린봇이 악성댓글을 감지합니다 🚨
+            </h5>
+
             <textarea
               className="InputStyle"
               value={userComment}
