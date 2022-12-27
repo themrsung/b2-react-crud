@@ -51,6 +51,7 @@ const RegisterForm = function () {
     if (!userIdIsAlreadyTaken) {
       axios.post(SERVER_URL + '/users', user)
       navigate('/login')
+      window.location.reload()
     } else {
       alert('이미 사용 중인 아이디입니다.')
     }

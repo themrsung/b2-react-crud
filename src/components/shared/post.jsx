@@ -60,8 +60,24 @@ const Post = function ({
   // }, [checkIsOwnPostCounter])
 
   const [isChangingPost, setIsChangingPost] = useState(false)
-  const [newPostContent, setNewPostContent] = useState(post.content)
-  const [newPostTitle, setNewPostTitle] = useState(post.title)
+  const [newPostContent, setNewPostContent] = useState('')
+  const [newPostTitle, setNewPostTitle] = useState('')
+
+  const [dummyStateBoolean2, setDummyStateBoolean2] = useState(false)
+  const [newPostInfoSet, setNewPostInfoSet] = useState(false)
+
+  useEffect(() => {
+    if (!newPostInfoSet) {
+      if (post.title && post.content) {
+        // console.log(post)
+        setNewPostTitle(post.title)
+        setNewPostContent(post.content)
+
+        setNewPostInfoSet(true)
+      }
+      setDummyStateBoolean2(!dummyStateBoolean2)
+    }
+  }, [dummyStateBoolean2])
 
   const onPostEdit = async () => {
     if (isChangingPost) {
