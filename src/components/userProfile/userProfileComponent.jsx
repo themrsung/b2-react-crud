@@ -45,12 +45,11 @@ const UserProfileComponent = function ({ userId }) {
       if (matchingUsers && matchingUsers.length > 0) {
         setUser(matchingUsers[0])
       } else if (userId === '') {
-        if (getCurrentUserState().id !== '') {
-          setUser(users.filter((u) => u.id === getCurrentUserState().id)[0])
+        const currentUserId = window.sessionStorage.getItem('currentSession')
+        if (currentUserId && currentUserId !== '') {
+          setUser(users.filter((u) => u.id === currentUserId)[0])
         } else {
-          if (users.length > 0) {
-            navigate('/login/profile')
-          }
+          navigate('/login/profile')
         }
       }
 
