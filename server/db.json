@@ -8,22 +8,16 @@
       "createdAt": 1671774095631,
       "comments": [
         {
-          "content": "댓글 테스트1",
-          "id": "2807e205-88d8-4fbc-ad95-3e3b98a54910",
+          "content": "댓글 테스트",
+          "id": "245184fc-d2fd-45a8-abe6-12dc066c6665",
           "author": "김원준",
-          "createdAt": 1672021163309
+          "createdAt": 1671774122923
         },
         {
           "content": "0",
           "id": "20bea96d-ba88-44a8-a047-a8a1a0e2c2bf",
           "author": "admin",
           "createdAt": 1671787259048
-        },
-        {
-          "content": "아니 댓글창이 왜이렇게 크냐",
-          "id": "ca7ed5ea-9131-4cbe-b542-b48a671a91a5",
-          "author": "김원준",
-          "createdAt": 1672023304220
         }
       ]
     },
@@ -89,14 +83,7 @@
       "title": "새해",
       "content": "인사",
       "createdAt": 1671777438812,
-      "comments": [
-        {
-          "content": "",
-          "id": "b0610eb3-bfdb-4c50-855b-bf1bac17f5fb",
-          "author": "김원준",
-          "createdAt": 1672025309847
-        }
-      ]
+      "comments": []
     },
     {
       "id": "b5a797d6-e929-4702-b6d9-8962f0418d78",
@@ -112,20 +99,12 @@
       "title": "확인",
       "content": "완료",
       "createdAt": 1672012879910,
-      "comments": []
-    },
-    {
-      "id": "f8bd6c68-4e0e-4d9b-a8da-3652439cf364",
-      "author": "김원준",
-      "title": "2023년에는",
-      "content": "2023년에는\n2023년에는\n2023년에는\n2023년에는\n2023년에는",
-      "createdAt": 1672025988623,
       "comments": [
         {
-          "content": "ㄴ아아아",
-          "id": "d45ac9ba-bb95-4269-992d-f32154512180",
-          "author": "admin",
-          "createdAt": 1672029381007
+          "content": "",
+          "id": "f9aa5c49-64ac-4959-b905-cf8c389aacc6",
+          "author": "ska",
+          "createdAt": 1672018928568
         }
       ]
     }
@@ -180,12 +159,12 @@
       "id": "admin",
       "password": 1216985755,
       "name": "dddd",
-      "motd": "ㅋ"
+      "motd": ""
     },
     {
-      "id": "김원준",
-      "password": 1480580,
-      "name": "김원준",
+      "id": "test123",
+      "password": -1145835484,
+      "name": "test",
       "motd": ""
     }
   ]

@@ -239,13 +239,15 @@ const Box = styled.div`
 `
 
 const ProfileBox = styled.div`
-  min-width: 500px;
-  height: 640px;
-  padding: 20px;
-  border: 2px solid black;
-  margin: 20px;
-  margin-right: 100px;
-  border-radius: 16px;
+  min-width: 400px;
+  width: 50%;
+  max-width: 95vw;
+  height: 40rem;
+  padding: 1.25rem;
+  border: 0.125rem solid black;
+  margin: 1.25rem;
+  /* margin-right: 6.25rem; */
+  border-radius: 1rem;
 `
 
 const Button = styled.div`

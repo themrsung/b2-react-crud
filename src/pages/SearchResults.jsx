@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import NewsfeedComponent from '../components/home/newsfeedComponent'
 import { SERVER_URL } from '../serverUrl'
+import './style/SearchResults.css'
 
 export default function SearchResults() {
   const params = useParams()
@@ -39,7 +40,13 @@ export default function SearchResults() {
 
   return (
     <div className="SearchResults">
-      <NewsfeedComponent posts={searchedPosts} />
+      {searchedPosts.length > 0 ? (
+        <NewsfeedComponent posts={searchedPosts} />
+      ) : (
+        <h2 style={{ width: '100%', textAlign: 'center' }}>
+          검색 결과가 없습니다. 더 열심히 찾아보세요ㅋ
+        </h2>
+      )}
     </div>
   )
 }
