@@ -48,7 +48,9 @@ const UserProfileComponent = function ({ userId }) {
         if (getCurrentUserState().id !== '') {
           setUser(users.filter((u) => u.id === getCurrentUserState().id)[0])
         } else {
-          navigate('/login/profile')
+          if (users.length > 0) {
+            navigate('/login/profile')
+          }
         }
       }
 
