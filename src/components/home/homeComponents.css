@@ -10,7 +10,6 @@
 }
 
 .WritePostFormTitle {
-  border: 0.0625rem solid #2e2727;
   margin: 0 1.5rem;
   height: 1.5625rem;
   width: 18.75rem;
@@ -20,7 +19,10 @@
   padding: 0 0.625rem;
   text-align: center;
 
-  font-size: medium;
+  /* 김원준 css test */
+  border: 0.15rem solid #eb7272;
+  font-size: large;
+  /* border: 0.0625rem solid #2e2727; */
 }
 
 .WritePostFormContentContainer > textarea {
@@ -32,9 +34,14 @@
 
   border-radius: 0.75rem;
   outline: none;
-  border: 0.0625rem solid #2e2727;
+
   text-align: center;
   padding: 0.625rem;
+
+  /* 김원준 css test */
+  border: 0.15rem solid #eb7272;
+  font-size: large;
+  /* border: 0.0625rem solid #2e2727; */
 }
 
 .NewsfeedComponent {
@@ -66,6 +73,8 @@
   left: 0;
   z-index: 99;
   background-color: rgba(0, 0, 0, 0.7);
+
+  font-size: larger;
 }
 
 .Modal > button {
